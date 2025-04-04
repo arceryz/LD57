@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://oxgxc0rq0ps8"]
+
+[ext_resource type="Texture2D" uid="uid://dyk6iq5ie3hwl" path="res://assets/art/title_image.jpg" id="1_fsom3"]
+[ext_resource type="Script" uid="uid://c7mktpyw0etqv" path="res://scenes/main_menu/main_menu.gd" id="1_ob46e"]
+[ext_resource type="Theme" uid="uid://btc1dh741ttvh" path="res://assets/theme.tres" id="2_0ebjn"]
+[ext_resource type="PackedScene" uid="uid://c1yic57wkrj1e" path="res://scenes/levels/level_1.tscn" id="2_uqeha"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ob46e")
+Level1 = ExtResource("2_uqeha")
+
+[node name="TitleImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fsom3")
+
+[node name="TitleText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -237.0
+offset_right = 185.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Game Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 70.0
+offset_right = 131.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_0ebjn")
+text = "Play"
