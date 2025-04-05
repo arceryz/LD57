@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name PlayerC extends CharacterBody2D
 
 const SPEED: float = 500.0
 const JUMP_VELOCITY: float = 700.0
@@ -7,6 +7,7 @@ const FLY_VELOCITY: float = 700.0
 
 @onready var Wings: Node2D = $Wings
 @onready var Anim: AnimationPlayer = $Anim
+@onready var PipHolder: PipHolderC = $PipHolder
 
 var jump_charges: int = 1
 
@@ -16,7 +17,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -JUMP_VELOCITY
 	else:
 		velocity += get_gravity() * delta
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") and PipHolder.use_pip():
 			flap()
 	
 	var direction := Input.get_axis("move_left", "move_right")

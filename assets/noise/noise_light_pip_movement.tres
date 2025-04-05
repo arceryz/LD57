@@ -1,0 +1,7 @@
+[gd_resource type="FastNoiseLite" format=3 uid="uid://ctf811v3n3hvq"]
+
+[resource]
+noise_type = 0
+fractal_type = 0
+fractal_octaves = 2
+metadata/_preview_in_3d_space_ = true

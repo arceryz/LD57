@@ -16,8 +16,13 @@ run/main_scene="uid://oxgxc0rq0ps8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://br0gk6lcq8cp4"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+
 [debug]
 
+gdscript/warnings/unassigned_variable=0
 gdscript/default_gravity=980.0
 
 [display]

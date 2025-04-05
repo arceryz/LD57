@@ -1,3 +1,33 @@
-[gd_scene format=3 uid="uid://dq45dri0s7nq4"]
+[gd_scene load_steps=6 format=3 uid="uid://dq45dri0s7nq4"]
 
-[node name="LightPip" type="Node2D"]
+[ext_resource type="Script" uid="uid://biks42v5yaqkl" path="res://prefabs/light_pip/light_pip.gd" id="1_ai561"]
+[ext_resource type="FastNoiseLite" uid="uid://ctf811v3n3hvq" path="res://assets/noise/noise_light_pip_movement.tres" id="2_nji22"]
+
+[sub_resource type="Gradient" id="Gradient_7ll3s"]
+offsets = PackedFloat32Array(0.311688, 0.844156)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ai561"]
+gradient = SubResource("Gradient_7ll3s")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.504274, 0.5)
+fill_to = Vector2(0.854701, 0.0555556)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nji22"]
+radius = 32.0
+
+[node name="LightPip" type="Area2D"]
+script = ExtResource("1_ai561")
+hover_radius = 20.0
+hover_speed = 30.0
+noise = ExtResource("2_nji22")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-15.1892, 3.28263)
+texture = SubResource("GradientTexture2D_ai561")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nji22")
