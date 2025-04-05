@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm7tfs3l6606r"]
+
+[ext_resource type="Script" uid="uid://dwf0ubfy7ls7y" path="res://prefabs/player/player.gd" id="1_sxsrd"]
+
+[sub_resource type="Gradient" id="Gradient_tvfjm"]
+offsets = PackedFloat32Array(0.5)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sxsrd"]
+gradient = SubResource("Gradient_tvfjm")
+height = 96
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvfjm"]
+size = Vector2(48, 96)
+
+[sub_resource type="Animation" id="Animation_sxsrd"]
+resource_name = "flap"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wings:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.0909176, -0.25, 0, 0.0333333, 11.6037, 17.0903, -0.0666667, -0.899295, 0.166667, -0.0311527, 0.183625, -0.166667, 5.57562, 0.25, 0),
+"times": PackedFloat32Array(0, 0.166667, 0.433333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rdx4y"]
+_data = {
+&"flap": SubResource("Animation_sxsrd")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_sxsrd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.75, 1)
+texture = SubResource("GradientTexture2D_sxsrd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tvfjm")
+
+[node name="Wings" type="Node2D" parent="."]
+position = Vector2(0, 0.183625)
+
+[node name="Left" type="Node2D" parent="Wings"]
+
+[node name="Sprite2D3" type="Sprite2D" parent="Wings/Left"]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+position = Vector2(-32.8016, -23.0876)
+rotation = -2.61043
+scale = Vector2(0.900087, 0.166667)
+texture = SubResource("GradientTexture2D_sxsrd")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Wings/Left"]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+position = Vector2(-30, -7.18363)
+rotation = -2.9752
+scale = Vector2(0.758964, 0.166667)
+texture = SubResource("GradientTexture2D_sxsrd")
+
+[node name="Right" type="Node2D" parent="Wings"]
+rotation = -0.71733
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Wings/Right"]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+position = Vector2(-39.3544, 3.56567)
+rotation = -0.0938867
+scale = Vector2(0.91059, 0.166667)
+texture = SubResource("GradientTexture2D_sxsrd")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Wings/Right"]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+position = Vector2(-26.4795, 12.2396)
+rotation = -0.523124
+scale = Vector2(0.679347, 0.171299)
+texture = SubResource("GradientTexture2D_sxsrd")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rdx4y")
+}
