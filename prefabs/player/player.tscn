@@ -37,7 +37,7 @@ colors = PackedColorArray(1, 1, 1, 1)
 gradient = SubResource("Gradient_tvfjm")
 height = 96
 
-[node name="Player" type="CharacterBody2D" groups=["light_pip"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sxsrd")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
