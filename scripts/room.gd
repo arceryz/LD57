@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 		var shape: RectangleShape2D = cs.shape
 		shape.size.x = max(sw, shape.size.x)
 		shape.size.y = max(sh, shape.size.y)
-		
+
 		if force_screen_width: shape.size.x = sw
 		if force_screen_height: shape.size.y = sh
 	pass
