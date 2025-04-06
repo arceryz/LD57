@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcpp8vo5ly2oq"
-path="res://.godot/imported/test_tileset64.png-2e762de3a4ce471fce7f283d7a02a1d6.ctex"
+uid="uid://bk35ukilt54tf"
+path="res://.godot/imported/limbo.webp-b8c349627827c0fb82af6a048b1c6ba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemap/test_tileset64.png"
-dest_files=["res://.godot/imported/test_tileset64.png-2e762de3a4ce471fce7f283d7a02a1d6.ctex"]
+source_file="res://assets/art/limbo.webp"
+dest_files=["res://.godot/imported/limbo.webp-b8c349627827c0fb82af6a048b1c6ba7.ctex"]
 
 [params]
 

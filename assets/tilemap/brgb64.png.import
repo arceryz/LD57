@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn3yt517m4028"
-path="res://.godot/imported/logo.png-2150b3d14f285274e9f1e3b50c9f9c46.ctex"
+uid="uid://b12ub8py3b7b"
+path="res://.godot/imported/brgb64.png-43312c0e9a8b372e841e9c5f14d9c1c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/logo.png"
-dest_files=["res://.godot/imported/logo.png-2150b3d14f285274e9f1e3b50c9f9c46.ctex"]
+source_file="res://assets/tilemap/brgb64.png"
+dest_files=["res://.godot/imported/brgb64.png-43312c0e9a8b372e841e9c5f14d9c1c2.ctex"]
 
 [params]
 
