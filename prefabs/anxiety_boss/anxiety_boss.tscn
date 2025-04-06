@@ -1,0 +1,193 @@
+[gd_scene load_steps=14 format=3 uid="uid://by5gxb0n020ns"]
+
+[ext_resource type="Script" uid="uid://d2ranft7oh7mi" path="res://prefabs/anxiety_boss/anxiety_boss.gd" id="1_kau3k"]
+[ext_resource type="Texture2D" uid="uid://nqmieprff1va" path="res://assets/art/anxiety_frames/anxiety1.tres" id="1_ouq2b"]
+[ext_resource type="Texture2D" uid="uid://x3g40eqie0ae" path="res://assets/art/anxiety_frames/anxiety2.tres" id="2_kau3k"]
+[ext_resource type="Texture2D" uid="uid://djjdsan8jsudf" path="res://assets/art/anxiety_frames/anxiety3.tres" id="3_cdf38"]
+[ext_resource type="Texture2D" uid="uid://cmq6cov8le3v8" path="res://assets/art/anxiety_frames/anxiety4.tres" id="4_t40mb"]
+[ext_resource type="Texture2D" uid="uid://uikgk0kkx8j1" path="res://assets/art/anxiety_frames/anxiety5.tres" id="5_0lsq4"]
+[ext_resource type="Texture2D" uid="uid://d1w6bswev02cu" path="res://assets/art/anxiety_frames/anxiety6.tres" id="6_2mb5l"]
+[ext_resource type="Texture2D" uid="uid://cbc441pkjyp6f" path="res://assets/art/anxiety_frames/anxiety7.tres" id="7_ijos5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0fio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ouq2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kau3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cdf38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t40mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0lsq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2mb5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ijos5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_cdf38"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t40mb"]
+resource_name = "chilling"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-50, 0), Vector2(50, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kau3k"]
+resource_name = "wakeup"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(1, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 42.5045, -0.0666667, 0, 0.0444444, 0, -44.0114, -0.0444444, 0, 0.0555556, 0, 21.7238, -0.0555556, 0, 0.0777778, 0, -23.6547, -0.0777778, 0, 0.144444, 0, 0.0947729, -0.144444, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.2, 0.333333, 0.5, 0.733333, 1.16667)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t40mb"]
+_data = {
+&"RESET": SubResource("Animation_cdf38"),
+&"chilling": SubResource("Animation_t40mb"),
+&"wakeup": SubResource("Animation_kau3k")
+}
+
+[node name="AnxietyBoss" type="PathFollow2D"]
+script = ExtResource("1_kau3k")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.746388, 0.778121)
+sprite_frames = SubResource("SpriteFrames_d0fio")
+autoplay = "default"
+frame_progress = 0.862346
+speed_scale = 2.0
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_t40mb")
+}
+autoplay = "chilling"

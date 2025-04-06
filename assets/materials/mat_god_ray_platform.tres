@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dhflu7lbnt7t6"]
+
+[ext_resource type="Shader" uid="uid://ciyb0e4bnepsw" path="res://assets/materials/god_ray.gdshader" id="1_sot8f"]
+
+[resource]
+shader = ExtResource("1_sot8f")
+shader_parameter/angle = 0.0
+shader_parameter/position = 0.035
+shader_parameter/spread = 1.0
+shader_parameter/cutoff = -0.00299995
+shader_parameter/falloff = 0.97
+shader_parameter/falloff_start = 0.0
+shader_parameter/edge_fade = 0.488
+shader_parameter/speed = 4.0
+shader_parameter/ray1_density = 9.95
+shader_parameter/ray2_density = 25.955
+shader_parameter/ray2_intensity = 0.356
+shader_parameter/color = Color(1, 1, 1, 0.8)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0

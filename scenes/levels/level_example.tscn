@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bk35ukilt54tf" path="res://assets/art/limbo.webp" id="2_0063r"]
 [ext_resource type="Script" uid="uid://c10pw4tr8qpn0" path="res://scripts/room.gd" id="2_awlyr"]
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="3_awlyr"]
-[ext_resource type="PackedScene" uid="uid://dq45dri0s7nq4" path="res://assets/light_orb.tscn" id="4_wr0rx"]
+[ext_resource type="PackedScene" uid="uid://dq45dri0s7nq4" path="res://prefabs/light_orb/light_orb.tscn" id="4_wr0rx"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="5_a8lfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]

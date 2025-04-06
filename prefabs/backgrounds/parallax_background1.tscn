@@ -1,0 +1,199 @@
+[gd_scene load_steps=8 format=3 uid="uid://csl1dq7beeeey"]
+
+[ext_resource type="Texture2D" uid="uid://dw8b40nsl5hwk" path="res://assets/art/backdrop_bg.png" id="1_kyoqn"]
+[ext_resource type="Texture2D" uid="uid://c6brtlbf8d206" path="res://assets/art/lightmountain1_bg.png" id="2_lg3xb"]
+[ext_resource type="Texture2D" uid="uid://ckibsxurniwls" path="res://assets/art/lightmountain2_bg.png" id="3_uhg0i"]
+[ext_resource type="Texture2D" uid="uid://bj6rpyuc3p5e5" path="res://assets/art/mediumTree1_bg.png" id="4_lg3xb"]
+[ext_resource type="Texture2D" uid="uid://bo3ygb6ngxlv3" path="res://assets/art/darkestTree3_bg.png" id="5_3pdsd"]
+[ext_resource type="Texture2D" uid="uid://c02thvp8jsxvb" path="res://assets/art/mediumTree3_bg.png" id="6_s516h"]
+[ext_resource type="Texture2D" uid="uid://cqqicjedcq2av" path="res://assets/art/LightestTree4_bg.png" id="7_s516h"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="FarBG" type="ParallaxLayer" parent="."]
+position = Vector2(-4, 0)
+motion_scale = Vector2(0.3, 0.1)
+motion_mirroring = Vector2(2500, 2000)
+
+[node name="BackdropBg" type="Sprite2D" parent="FarBG"]
+position = Vector2(1251.5, 999)
+scale = Vector2(1.30781, 1.85926)
+texture = ExtResource("1_kyoqn")
+
+[node name="MidBG" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.3)
+motion_mirroring = Vector2(2500, 2000)
+
+[node name="Node2D" type="Node2D" parent="MidBG"]
+scale = Vector2(1.98075, 1.99394)
+
+[node name="Lightmountain1Bg" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(1670.13, 754.375)
+scale = Vector2(0.747008, 0.598843)
+texture = ExtResource("2_lg3xb")
+
+[node name="Lightmountain1Bg2" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(665.737, 243.357)
+rotation = 3.14159
+scale = Vector2(0.43902, 0.451801)
+texture = ExtResource("2_lg3xb")
+
+[node name="Lightmountain1Bg3" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(1179.23, 232.486)
+scale = Vector2(0.283096, 0.434234)
+texture = ExtResource("2_lg3xb")
+
+[node name="Lightmountain2Bg" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(607.5, 754.625)
+scale = Vector2(0.648437, 0.603009)
+texture = ExtResource("3_uhg0i")
+
+[node name="Lightmountain2Bg2" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(318, 461)
+rotation = 1.5708
+scale = Vector2(0.648437, 0.603009)
+texture = ExtResource("3_uhg0i")
+
+[node name="Lightmountain2Bg4" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(-94.5001, 487.125)
+rotation = 1.5708
+scale = Vector2(0.620982, -0.165906)
+texture = ExtResource("3_uhg0i")
+
+[node name="Lightmountain2Bg6" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(-79, 1668)
+rotation = -1.57079
+scale = Vector2(0.621, 0.166)
+texture = ExtResource("3_uhg0i")
+
+[node name="Lightmountain2Bg3" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(456.037, 1280.3)
+rotation = 3.14159
+scale = Vector2(0.470327, 0.384105)
+texture = ExtResource("3_uhg0i")
+
+[node name="Lightmountain2Bg5" type="Sprite2D" parent="MidBG/Node2D"]
+position = Vector2(1649.93, 1197)
+rotation = 3.14159
+scale = Vector2(0.789728, 0.23051)
+texture = ExtResource("3_uhg0i")
+
+[node name="FrontBG" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 0.5)
+motion_mirroring = Vector2(2500, 2000)
+
+[node name="Node2D" type="Node2D" parent="FrontBG"]
+scale = Vector2(1.57914, 1.87867)
+
+[node name="MediumTree1Bg5" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.288518, 0.288518, 0.288518, 1)
+position = Vector2(881.436, 288.091)
+rotation = 2.08015
+scale = Vector2(0.369697, 0.443115)
+texture = ExtResource("4_lg3xb")
+
+[node name="MediumTree1Bg6" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.288518, 0.288518, 0.288518, 1)
+position = Vector2(326, 325)
+rotation = 2.00573
+scale = Vector2(0.369697, 0.443115)
+texture = ExtResource("4_lg3xb")
+
+[node name="MediumTree1Bg7" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.288518, 0.288518, 0.288518, 1)
+position = Vector2(376, 867)
+rotation = 1.28311
+scale = Vector2(0.304311, 0.31006)
+texture = ExtResource("4_lg3xb")
+
+[node name="MediumTree1Bg4" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.288518, 0.288518, 0.288518, 1)
+position = Vector2(1094.23, 845.457)
+rotation = -2.59436
+scale = Vector2(0.396511, 0.574023)
+texture = ExtResource("4_lg3xb")
+
+[node name="MediumTree1Bg2" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.252028, 0.252028, 0.252028, 1)
+position = Vector2(1327, 490)
+rotation = -2.01473
+scale = Vector2(0.266273, 0.21129)
+texture = ExtResource("4_lg3xb")
+
+[node name="DarkestTree3Bg" type="Sprite2D" parent="FrontBG/Node2D"]
+position = Vector2(1561, 902)
+rotation = -0.824847
+scale = Vector2(0.827141, 0.621342)
+texture = ExtResource("5_3pdsd")
+
+[node name="DarkestTree3Bg2" type="Sprite2D" parent="FrontBG/Node2D"]
+position = Vector2(1470, 677)
+rotation = 2.20024
+scale = Vector2(0.577156, 0.623277)
+texture = ExtResource("5_3pdsd")
+
+[node name="DarkestTree3Bg4" type="Sprite2D" parent="FrontBG/Node2D"]
+position = Vector2(1313, 620)
+rotation = -3.09107
+scale = Vector2(0.577156, 0.623277)
+texture = ExtResource("5_3pdsd")
+
+[node name="DarkestTree3Bg3" type="Sprite2D" parent="FrontBG/Node2D"]
+position = Vector2(1470, 339)
+rotation = -0.677684
+scale = Vector2(0.577156, 0.623277)
+texture = ExtResource("5_3pdsd")
+
+[node name="MediumTree3Bg" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.288518, 0.288518, 0.288518, 1)
+position = Vector2(1512, 31)
+rotation = 3.13547
+scale = Vector2(1.062, 0.733264)
+texture = ExtResource("6_s516h")
+
+[node name="DarkestTree3Bg7" type="Sprite2D" parent="FrontBG/Node2D"]
+position = Vector2(838, 20)
+rotation = -2.75507
+scale = Vector2(0.447477, 0.535806)
+texture = ExtResource("5_3pdsd")
+
+[node name="DarkestTree3Bg8" type="Sprite2D" parent="FrontBG/Node2D"]
+position = Vector2(707, 149)
+rotation = -2.93686
+scale = Vector2(0.447477, 0.535806)
+texture = ExtResource("5_3pdsd")
+
+[node name="MediumTree3Bg2" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.252028, 0.252028, 0.252028, 1)
+position = Vector2(612, 438)
+rotation = -2.93476
+scale = Vector2(0.542289, 0.838198)
+texture = ExtResource("6_s516h")
+
+[node name="LightestTree4Bg" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.0430392, 0.0430392, 0.0430392, 1)
+position = Vector2(124.138, 167.636)
+rotation = 2.76487
+scale = Vector2(0.746208, 0.402273)
+texture = ExtResource("7_s516h")
+
+[node name="LightestTree4Bg2" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.0430392, 0.0430392, 0.0430392, 1)
+position = Vector2(167.142, 419.198)
+rotation = 3.04904
+scale = Vector2(0.967362, 0.643228)
+texture = ExtResource("7_s516h")
+
+[node name="LightestTree4Bg4" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.0430392, 0.0430392, 0.0430392, 1)
+position = Vector2(158.067, 1017.65)
+rotation = -2.99452
+scale = Vector2(0.875604, 0.438143)
+texture = ExtResource("7_s516h")
+
+[node name="LightestTree4Bg3" type="Sprite2D" parent="FrontBG/Node2D"]
+modulate = Color(0.0430392, 0.0430392, 0.0430392, 1)
+position = Vector2(206, 726)
+rotation = -0.625175
+scale = Vector2(1, 0.570329)
+texture = ExtResource("7_s516h")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpsnhpucmga1d"]
+
+[ext_resource type="PackedScene" uid="uid://dxt08hpfgmgyn" path="res://prefabs/obstacles/scare_platform/scare_platform.tscn" id="1_vgqnf"]
+
+[sub_resource type="Curve2D" id="Curve2D_vgqnf"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -217)
+}
+point_count = 2
+
+[node name="ScarePlatUpTiny" type="Path2D"]
+curve = SubResource("Curve2D_vgqnf")
+
+[node name="ScarePlatform" parent="." instance=ExtResource("1_vgqnf")]
+position = Vector2(0, 1)
+scare_move_time = 0.7
+return_wait_time = 0.5

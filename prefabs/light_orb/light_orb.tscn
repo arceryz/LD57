@@ -20,13 +20,14 @@ radius = 32.0
 
 [node name="LightOrb" type="Area2D"]
 script = ExtResource("1_ai561")
+fly_speed = 1500.0
 hover_radius = 20.0
 hover_speed = 30.0
 hover_pattern = ExtResource("2_xinsc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(3.23113, 15.9947)
+position = Vector2(4.65149, 9.36691)
 texture = SubResource("GradientTexture2D_ai561")
 
 [node name="Shape" type="CollisionShape2D" parent="."]

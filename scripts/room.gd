@@ -3,6 +3,8 @@ class_name RoomC extends Node
 
 @export var force_screen_width := false
 @export var force_screen_height := false
+@export var camera_zoom: float = 1.0
+@export var camera_offset := Vector2.ZERO
 
 func _init() -> void:
 	add_to_group("room")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cru4jlhhbwrqb"]
+
+[ext_resource type="Script" uid="uid://xudqpkid6538" path="res://prefabs/obstacles/crystal_platform/crystal_platform.gd" id="1_gmm7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmm7s"]
+size = Vector2(96, 16)
+
+[node name="CrystalPlatform" type="StaticBody2D"]
+script = ExtResource("1_gmm7s")
+platform_lifetime = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_gmm7s")
+one_way_collision = true

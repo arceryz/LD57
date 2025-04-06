@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d1w6bswev02cu"]
+
+[ext_resource type="Texture2D" uid="uid://davpw4vflk8s2" path="res://assets/art/anxiety_spritesheet.png" id="1_vv06i"]
+
+[resource]
+atlas = ExtResource("1_vv06i")
+region = Rect2(6810.43, 367.612, 1221.65, 651.028)
