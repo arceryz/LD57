@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=70 format=4 uid="uid://bofpqf5so0am4"]
+[gd_scene load_steps=71 format=4 uid="uid://bofpqf5so0am4"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -1325,7 +1324,6 @@ texture = ExtResource("11_v6ha0")
 z_index = 2
 position = Vector2(-4359, -3370)
 rotation = 1.71915
-scale = Vector2(1, 1)
 texture = ExtResource("32_o8s4s")
 
 [node name="BlackRoot16" type="Sprite2D" parent="SiebeMap"]
@@ -1390,7 +1388,6 @@ texture = ExtResource("13_mkypq")
 [node name="LightestTree3Bg2" type="Sprite2D" parent="SiebeMap"]
 position = Vector2(-3740, -3376)
 rotation = 2.38237
-scale = Vector2(1, 1)
 texture = ExtResource("12_gmpev")
 
 [node name="BlackRoot19" type="Sprite2D" parent="SiebeMap"]
@@ -1467,13 +1464,11 @@ flip_h = true
 [node name="MediumTree3Bg6" type="Sprite2D" parent="SiebeMap"]
 position = Vector2(-1566, -3925)
 rotation = -3.05433
-scale = Vector2(1, 1)
 texture = ExtResource("10_np2pn")
 
 [node name="MediumTree3Bg7" type="Sprite2D" parent="SiebeMap"]
 position = Vector2(825, -3923)
 rotation = -3.05433
-scale = Vector2(1, 1)
 texture = ExtResource("10_np2pn")
 
 [node name="MediumTree3Bg8" type="Sprite2D" parent="SiebeMap"]
@@ -1689,7 +1684,6 @@ texture = ExtResource("34_row31")
 [node name="Steentje31" type="Sprite2D" parent="SiebeMap"]
 position = Vector2(-453, -3610)
 rotation = 2.25497
-scale = Vector2(1, 1)
 texture = ExtResource("36_hvllt")
 flip_h = true
 
