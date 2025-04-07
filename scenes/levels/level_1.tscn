@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=61 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -162,6 +162,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -1536, -3584, -443.53, 7.78123, 443.53, -7.78123, -768, -3648, -529.124, 5.18749, 529.124, -5.18749, 384, -3456, -539.499, -7.78123, 539.499, 7.78123, 1792, -3712, -819.623, -28.5312, 819.623, 28.5312, 3832, -3581)
 }
 point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4umt"]
+size = Vector2(252, 987)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yk0h"]
+size = Vector2(249, 762)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dga24"]
 size = Vector2(302.5, 673.375)
@@ -448,7 +454,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1917, 828)
+position = Vector2(-1918, 843)
 flap_winddown = 0.4
 flap_duration = 0.0
 
@@ -465,14 +471,31 @@ metadata/_edit_lock_ = true
 curve = SubResource("Curve2D_mkypq")
 metadata/_edit_lock_ = true
 
-[node name="AnxietyBoss" parent="Entities/BossPath" node_paths=PackedStringArray("StartArea") instance=ExtResource("12_mm8aj")]
+[node name="AnxietyBoss" parent="Entities/BossPath" node_paths=PackedStringArray("StartArea", "NoReturnWallBack", "WaitWallFront") instance=ExtResource("12_mm8aj")]
 position = Vector2(-1536, -3584)
 rotates = false
 loop = false
 comfort_distance = 1100.0
 move_speed = 600.0
 StartArea = NodePath("../../BossStartArea")
+NoReturnWallBack = NodePath("../../NoReturnWall")
+WaitWallFront = NodePath("../../WaitWall")
 metadata/_edit_lock_ = true
+
+[node name="WaitWall" type="StaticBody2D" parent="Entities"]
+position = Vector2(-2209, -3396)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/WaitWall"]
+position = Vector2(8, -201.5)
+shape = SubResource("RectangleShape2D_t4umt")
+
+[node name="NoReturnWall" type="StaticBody2D" parent="Entities"]
+position = Vector2(-3041, -3330)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/NoReturnWall"]
+position = Vector2(89.5, -126)
+shape = SubResource("RectangleShape2D_4yk0h")
 
 [node name="Checkpoints" type="Node" parent="."]
 

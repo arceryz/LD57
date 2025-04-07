@@ -8,6 +8,9 @@ class_name AnxietyBoss extends PathFollow2D
 @export var attack_count_variation: int = 1
 
 @export var StartArea: Area2D
+@export var NoReturnWallBack: StaticBody2D
+@export var WaitWallFront: StaticBody2D
+
 @onready var Sprite: AnimatedSprite2D = $Sprite
 @onready var Anim: AnimationPlayer = $Anim
 @onready var Music: AudioStreamPlayer = $BossMusic
@@ -99,12 +102,14 @@ func do_death():
 func _on_area_body_entered(body: Node2D):
 	if body is PlayerC and state == State.WAITING:
 		state = State.WAKING_UP
+		NoReturnWallBack.collision_layer = 1
 		$BossMusic.play()
 		$Boss_VoiceLayer01.play()
 		$Boss_VoiceLayer02.play()
 		$Boss_VoiceLayer03.play()
 		Anim.play("wakeup")
 		await Anim.animation_finished
+		WaitWallFront.collision_layer = 0
 		state = State.ACTIVE
 		attack_timer.start()
 		

@@ -49,7 +49,7 @@ func _on_hit_body_entered(_body: Node2D):
 	kill()
 
 func _physics_process(delta: float) -> void:
-	if not Global.intro_finished:
+	if not Global.player_can_move:
 		return
 	
 	Sprite.flip_h = velocity.x < 0

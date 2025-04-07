@@ -3,10 +3,12 @@ extends Control
 @export var disable := false
 
 func _ready() -> void:
+	Global.player_can_move = false
+
 	if disable:
-		Global.intro_finished = true
+		Global.player_can_move = true
 		queue_free()
 
 func allow_movement():
-	Global.intro_finished = true
+	Global.player_can_move = true
 	pass
