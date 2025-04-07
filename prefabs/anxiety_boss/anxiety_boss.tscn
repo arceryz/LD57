@@ -213,6 +213,8 @@ Vector2i(-1, 4): {
 
 [node name="AnxietyBoss" type="PathFollow2D"]
 script = ExtResource("1_kau3k")
+needle_spawn_range = 500.0
+attack_interval_variation = 2.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 z_index = 5

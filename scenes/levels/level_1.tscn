@@ -238,7 +238,7 @@ metadata/_edit_lock_ = true
 [node name="Boss" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
 force_screen_height = true
-camera_offset = Vector2(300, 0)
+camera_offset = Vector2(700, 0)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Boss"]
@@ -1158,9 +1158,10 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1931, 829)
+position = Vector2(-1915, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
+start_orbs = 1
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
@@ -1179,7 +1180,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-1536, -3584)
 rotates = false
 loop = false
-comfort_distance = 700.0
+comfort_distance = 1100.0
 move_speed = 600.0
 StartArea = NodePath("../../BossStartArea")
 metadata/_edit_lock_ = true
@@ -1205,6 +1206,14 @@ metadata/_edit_lock_ = true
 position = Vector2(75, -211.5)
 shape = SubResource("RectangleShape2D_wtwp4")
 metadata/_edit_lock_ = true
+
+[node name="BossEntrance" type="Area2D" parent="Checkpoints"]
+position = Vector2(-2580, -3292)
+script = ExtResource("9_dga24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/BossEntrance"]
+position = Vector2(75, -211.5)
+shape = SubResource("RectangleShape2D_wtwp4")
 
 [node name="PreBoss2" type="Area2D" parent="Checkpoints"]
 position = Vector2(816, -3445)
