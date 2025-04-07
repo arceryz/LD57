@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bpsnhpucmga1d" path="res://prefabs/templates/scareplat_up_tiny.tscn" id="5_dnkej"]
 [ext_resource type="Material" uid="uid://c7xdf6xmhbc7c" path="res://assets/materials/mat_god_ray.tres" id="5_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://dxt08hpfgmgyn" path="res://prefabs/obstacles/scare_platform/scare_platform.tscn" id="7_iav0o"]
-[ext_resource type="PackedScene" uid="uid://cbmcq5kpg07dj" path="res://prefabs/props/big_tree1.tscn" id="8_wtwp4"]
+[ext_resource type="Texture2D" uid="uid://bo3ygb6ngxlv3" path="res://assets/art/darkestTree3_bg.png" id="8_bahl2"]
 [ext_resource type="Script" uid="uid://cdk17lcxbtqjw" path="res://scripts/checkpoint.gd" id="9_dga24"]
-[ext_resource type="PackedScene" uid="uid://2hr3vqa3uwrk" path="res://prefabs/props/small_twig1.tscn" id="9_mm8aj"]
-[ext_resource type="PackedScene" uid="uid://ieu5g78oar5a" path="res://prefabs/props/dark_twig.tscn" id="11_iwr0g"]
+[ext_resource type="Texture2D" uid="uid://c02thvp8jsxvb" path="res://assets/art/mediumTree3_bg.png" id="10_np2pn"]
+[ext_resource type="Texture2D" uid="uid://bj6rpyuc3p5e5" path="res://assets/art/mediumTree1_bg.png" id="11_v6ha0"]
+[ext_resource type="Texture2D" uid="uid://d3qgjgptr6tgv" path="res://assets/art/LightestTree3_bg.png" id="12_gmpev"]
 [ext_resource type="PackedScene" uid="uid://by5gxb0n020ns" path="res://prefabs/anxiety_boss/anxiety_boss.tscn" id="12_mm8aj"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="13_dnkej"]
-[ext_resource type="PackedScene" uid="uid://7qg4nae8mfoe" path="res://prefabs/props/complex_tree1.tscn" id="15_wtwp4"]
-[ext_resource type="PackedScene" uid="uid://rbqm4f0bs7gv" path="res://prefabs/props/tiny_twig.tscn" id="17_bahl2"]
+[ext_resource type="Texture2D" uid="uid://cqqicjedcq2av" path="res://assets/art/LightestTree4_bg.png" id="13_mkypq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -120,6 +120,20 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_7o3do"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -217)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_o7j4k"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -217)
+}
+point_count = 2
+
 [sub_resource type="Gradient" id="Gradient_s8va5"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dga24"]
@@ -145,21 +159,10 @@ size = Vector2(376, 879)
 [sub_resource type="CircleShape2D" id="CircleShape2D_iav0o"]
 radius = 320.0
 
-[sub_resource type="Curve2D" id="Curve2D_7o3do"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -217)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_o7j4k"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -217)
-}
-point_count = 2
-
 [node name="LevelCameraRailTest" type="Node2D"]
+
+[node name="Darkening" type="CanvasModulate" parent="."]
+color = Color(0.800491, 0.800491, 0.800491, 1)
 
 [node name="RoomCamera" parent="." instance=ExtResource("5_6761a")]
 position = Vector2(-1920, 704)
@@ -170,68 +173,78 @@ position = Vector2(-1920, 704)
 script = ExtResource("4_x42e6")
 force_screen_width = true
 force_screen_height = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/DeepStart"]
 position = Vector2(-1920, 512)
 shape = SubResource("RectangleShape2D_qwpqx")
 debug_color = Color(0, 0.519732, 0.972168, 0)
+metadata/_edit_lock_ = true
 
 [node name="VisionOfFlight" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/VisionOfFlight"]
 position = Vector2(320, -596.242)
 shape = SubResource("RectangleShape2D_sk5k4")
 debug_color = Color(0, 0.519732, 0.972168, 0)
+metadata/_edit_lock_ = true
 
 [node name="AgainDescent?" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
 force_screen_width = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/AgainDescent?"]
 position = Vector2(2560, 1344)
 shape = SubResource("RectangleShape2D_oc4kc")
 debug_color = Color(0, 0.519732, 0.972168, 0)
+metadata/_edit_lock_ = true
 
 [node name="FirstOrb" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/FirstOrb"]
 position = Vector2(5024, 1504)
 shape = SubResource("RectangleShape2D_s8va5")
 debug_color = Color(0, 0.519732, 0.972168, 0)
+metadata/_edit_lock_ = true
 
 [node name="Pit" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
 force_screen_width = true
 force_screen_height = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Pit"]
 position = Vector2(-1920, -1344)
 shape = SubResource("RectangleShape2D_qxy0u")
 debug_color = Color(0, 0.519732, 0.972168, 0)
+metadata/_edit_lock_ = true
 
 [node name="Spikes" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Spikes"]
 position = Vector2(-4000, -2418)
 shape = SubResource("RectangleShape2D_iav0o")
 debug_color = Color(0, 0.519732, 0.972168, 0)
-
-[node name="DarkTwig" parent="Rooms/Spikes" instance=ExtResource("11_iwr0g")]
-position = Vector2(-4017, -2313)
-rotation = -2.53917
+metadata/_edit_lock_ = true
 
 [node name="Boss" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
 force_screen_height = true
 camera_offset = Vector2(300, 0)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Boss"]
 position = Vector2(832, -3584)
 shape = SubResource("RectangleShape2D_dnkej")
 debug_color = Color(0, 0.519732, 0.972168, 0)
+metadata/_edit_lock_ = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_dga24")]
 
@@ -245,97 +258,130 @@ metadata/_edit_lock_ = true
 [node name="ScarePlatUpTiny" parent="Map" instance=ExtResource("5_dnkej")]
 position = Vector2(4550, 1897)
 curve = SubResource("Curve2D_bahl2")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny2" type="Path2D" parent="Map"]
 position = Vector2(4253, 1464)
 curve = SubResource("Curve2D_dnkej")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny2" instance=ExtResource("7_iav0o")]
 position = Vector2(-2, 1)
 scare_move_time = 0.7
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny3" parent="Map" instance=ExtResource("5_dnkej")]
 position = Vector2(2095, 2273)
 curve = SubResource("Curve2D_iwr0g")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny4" type="Path2D" parent="Map"]
 position = Vector2(2270, 1708)
 curve = SubResource("Curve2D_v6ha0")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny4" instance=ExtResource("7_iav0o")]
 position = Vector2(0, 1)
 scare_move_time = 0.7
 return_wait_time = 1.0
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny5" type="Path2D" parent="Map"]
 position = Vector2(762, -190)
 curve = SubResource("Curve2D_mm8aj")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny5" instance=ExtResource("7_iav0o")]
 position = Vector2(163, 53)
 scare_move_time = 0.7
 return_wait_time = 0.5
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny6" type="Path2D" parent="Map"]
 position = Vector2(850, -882)
 curve = SubResource("Curve2D_vgqnf")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny6" instance=ExtResource("7_iav0o")]
 position = Vector2(-116, 106)
 scare_move_time = 0.7
 return_wait_time = 0.7
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny7" type="Path2D" parent="Map"]
 position = Vector2(-1593, -1508)
 curve = SubResource("Curve2D_wtwp4")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny7" instance=ExtResource("7_iav0o")]
 position = Vector2(0, 1)
 scare_move_time = 0.3
 return_wait_time = 1.0
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny8" type="Path2D" parent="Map"]
 position = Vector2(-3991, -1823)
 curve = SubResource("Curve2D_np2pn")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny8" instance=ExtResource("7_iav0o")]
 position = Vector2(29, 210)
 scare_move_time = 0.7
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny9" type="Path2D" parent="Map"]
 position = Vector2(-4768, -2585)
 curve = SubResource("Curve2D_gmpev")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny9" instance=ExtResource("7_iav0o")]
 position = Vector2(-1, 253)
 scare_move_time = 0.7
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny10" type="Path2D" parent="Map"]
 position = Vector2(-1024, -3392)
 curve = SubResource("Curve2D_ndtll")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny10" instance=ExtResource("7_iav0o")]
 position = Vector2(1, 143)
 scare_move_time = 0.5
 return_wait_time = 0.5
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny11" type="Path2D" parent="Map"]
 position = Vector2(1216, -3392)
 curve = SubResource("Curve2D_7h2jl")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny11" instance=ExtResource("7_iav0o")]
 position = Vector2(0, 1)
 scare_move_time = 0.5
 return_wait_time = 1.0
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatUpTiny12" type="Path2D" parent="Map"]
 position = Vector2(2048, -3372)
 curve = SubResource("Curve2D_mqh5v")
+metadata/_edit_lock_ = true
 
 [node name="ScarePlatform" parent="Map/ScarePlatUpTiny12" instance=ExtResource("7_iav0o")]
 position = Vector2(-2, 47)
 scare_move_time = 0.7
 return_wait_time = 0.5
+metadata/_edit_lock_ = true
+
+[node name="ScarePlatUpTiny13" parent="Map" instance=ExtResource("5_dnkej")]
+position = Vector2(5404, 2003)
+curve = SubResource("Curve2D_7o3do")
+metadata/_edit_lock_ = true
+
+[node name="ScarePlatUpTiny14" parent="Map" instance=ExtResource("5_dnkej")]
+modulate = Color(0.847474, 0.847474, 0.847474, 1)
+position = Vector2(973, 552)
+curve = SubResource("Curve2D_o7j4k")
+metadata/_edit_lock_ = true
 
 [node name="Orbs" type="Node" parent="."]
 
@@ -344,53 +390,75 @@ position = Vector2(4187, 1765)
 
 [node name="Decoration" type="Node" parent="."]
 
-[node name="BigTree1" parent="Decoration" instance=ExtResource("8_wtwp4")]
-modulate = Color(1, 1, 1, 1)
+[node name="BigTree1" type="Sprite2D" parent="Decoration"]
+z_index = 3
 position = Vector2(-2019, 244)
 rotation = 2.42938
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree4" parent="Decoration" instance=ExtResource("8_wtwp4")]
+[node name="BigTree4" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(-2768, 728)
 rotation = 7.36841
 scale = Vector2(0.880398, 0.7443)
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree5" parent="Decoration" instance=ExtResource("8_wtwp4")]
+[node name="BigTree5" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(-2553.92, 271.861)
 rotation = 7.59266
 scale = Vector2(1.08204, 1.35605)
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree7" parent="Decoration" instance=ExtResource("8_wtwp4")]
+[node name="BigTree7" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(1952, 1618)
 rotation = 7.59266
 scale = Vector2(0.749435, 1.04809)
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree8" parent="Decoration" instance=ExtResource("8_wtwp4")]
+[node name="BigTree8" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(2471, 1047)
 rotation = 8.40363
 scale = Vector2(0.938752, -0.940754)
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree9" parent="Decoration" instance=ExtResource("8_wtwp4")]
+[node name="BigTree9" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(2132, 2352)
 rotation = 10.9541
 scale = Vector2(0.862273, -1.03788)
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree3" parent="Decoration" instance=ExtResource("8_wtwp4")]
+[node name="BigTree3" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(746, 323)
 rotation = 0.973263
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree6" parent="Decoration" instance=ExtResource("8_wtwp4")]
+[node name="BigTree6" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
 z_index = 4
 position = Vector2(375, 438)
 rotation = 2.67409
 scale = Vector2(0.780843, 0.734354)
+texture = ExtResource("8_bahl2")
 
-[node name="BigTree2" parent="Decoration" instance=ExtResource("8_wtwp4")]
-modulate = Color(1, 1, 1, 1)
+[node name="BigTree2" type="Sprite2D" parent="Decoration"]
+z_index = 3
 position = Vector2(-1841, 141)
 rotation = 0.681364
 scale = Vector2(0.489, -0.533)
+texture = ExtResource("8_bahl2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Decoration"]
+[node name="GodRay" type="Sprite2D" parent="Decoration"]
 modulate = Color(4, 4, 4, 1)
 z_index = -1
 material = ExtResource("5_oc4kc")
@@ -399,36 +467,669 @@ scale = Vector2(1.59814, 2.43555)
 texture = SubResource("GradientTexture2D_dga24")
 metadata/_edit_lock_ = true
 
-[node name="MediumTree3Bg" parent="Decoration" instance=ExtResource("11_iwr0g")]
+[node name="MediumTree3Bg" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(-378, 738)
 rotation = 4.30245
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
 
-[node name="MediumTree3Bg2" parent="Decoration" instance=ExtResource("11_iwr0g")]
+[node name="MediumTree3Bg2" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(-455, 378)
 rotation = 2.62439
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
 
-[node name="MediumTree3Bg5" parent="Decoration" instance=ExtResource("11_iwr0g")]
+[node name="MediumTree3Bg5" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.288518, 0.288518, 0.288518, 1)
+z_index = 3
 position = Vector2(4755, 2130)
 rotation = 3.46401
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
 
-[node name="MediumTree3Bg3" parent="Decoration" instance=ExtResource("11_iwr0g")]
+[node name="MediumTree3Bg3" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.377919, 0.377919, 0.377919, 1)
+z_index = 3
 position = Vector2(-1583, 900)
 rotation = 1.49602
 scale = Vector2(0.490305, 0.586617)
+texture = ExtResource("10_np2pn")
 
-[node name="MediumTree3Bg4" parent="Decoration" instance=ExtResource("11_iwr0g")]
+[node name="MediumTree3Bg4" type="Sprite2D" parent="Decoration"]
 modulate = Color(0.377919, 0.377919, 0.377919, 1)
+z_index = 3
 position = Vector2(-1569, 340)
 rotation = 3.3731
 scale = Vector2(0.490305, 0.586617)
+texture = ExtResource("10_np2pn")
 
-[node name="ComplexTree1" parent="Decoration" instance=ExtResource("15_wtwp4")]
+[node name="ComplexTree1" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
 z_index = 2
 position = Vector2(516, 414)
 rotation = 2.18402
 scale = Vector2(0.326683, 0.298628)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree1Bg" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(-2433, 628)
+rotation = 2.24729
+scale = Vector2(0.471387, 0.398318)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree1Bg2" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(-769, 671)
+rotation = 2.99003
+scale = Vector2(0.352316, 0.283373)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree1Bg3" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(2903, 2141)
+rotation = 2.90067
+scale = Vector2(0.352316, 0.283373)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree1Bg4" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(3266, 2455)
+rotation = 0.624117
+scale = Vector2(0.352316, 0.283373)
+texture = ExtResource("11_v6ha0")
+
+[node name="LightestTree3Bg2" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1791, 954)
+rotation = 1.58357
+scale = Vector2(0.615198, 0.333513)
+texture = ExtResource("12_gmpev")
+
+[node name="LightestTree3Bg" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1327, 541)
+rotation = 3.12975
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="LightestTree3Bg3" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-2045, 910)
+rotation = -2.33146
+scale = Vector2(0.572027, 0.203079)
+texture = ExtResource("12_gmpev")
+
+[node name="SmallTwig1" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(2740, 2238)
+rotation = 2.9247
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="SmallTwig2" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(3387, 2175)
+rotation = -2.47789
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="SmallTwig3" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(2561, 1056)
+rotation = -2.21581
+scale = Vector2(0.343629, 0.277081)
+texture = ExtResource("13_mkypq")
+
+[node name="ComplexTree2" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.47788, 0.47788, 0.47788, 1)
+z_index = 3
+position = Vector2(3127, 474)
+rotation = 2.02811
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="ComplexTree3" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.47788, 0.47788, 0.47788, 1)
+z_index = 3
+position = Vector2(3869, 518)
+rotation = 3.1238
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="ComplexTree4" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.47788, 0.47788, 0.47788, 1)
+z_index = 3
+position = Vector2(2515, 456)
+rotation = -2.04765
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="DarkTwig" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.741385, 0.741385, 0.741385, 1)
+z_index = 3
+position = Vector2(4030, 1339)
+rotation = 1.95636
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig2" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.41598, 0.41598, 0.41598, 1)
+z_index = 2
+position = Vector2(3955, 1990)
+rotation = 2.64693
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="BigTree10" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(5922, 1422)
+rotation = -3.06193
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree11" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(5990, 2007)
+rotation = -1.62573
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree12" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(5809, 2075)
+rotation = -2.08519
+scale = Vector2(0.719926, 0.750671)
+texture = ExtResource("8_bahl2")
+
+[node name="DarkTwig3" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(6005, 1488)
+rotation = -2.88445
+scale = Vector2(0.559896, 0.58114)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig4" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.60933, 0.60933, 0.60933, 1)
+z_index = 3
+position = Vector2(4963, 1945)
+rotation = 1.64883
+scale = Vector2(0.559896, 0.58114)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig5" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.60933, 0.60933, 0.60933, 1)
+z_index = 3
+position = Vector2(4339, 2436)
+rotation = 1.4925
+scale = Vector2(0.559896, 0.58114)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig6" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.60933, 0.60933, 0.60933, 1)
+z_index = 3
+position = Vector2(4122, 2412)
+rotation = -0.994784
+scale = Vector2(0.533571, 0.363272)
+texture = ExtResource("10_np2pn")
+
+[node name="ComplexTree5" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(1185, -1115)
+rotation = -2.36897
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="ComplexTree6" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(685, -1603)
+rotation = 1.38794
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="SmallTwig4" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(796, -1313)
+rotation = 1.25156
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="SmallTwig5" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(613, -420)
+rotation = 1.92852
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="TinyTwig" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(1039, -417)
+rotation = -3.13569
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="TinyTwig2" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(1223, -103)
+rotation = -1.62306
+scale = Vector2(0.433438, 0.280793)
+texture = ExtResource("12_gmpev")
+
+[node name="TinyTwig3" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(646, -1004)
+rotation = 2.50551
+scale = Vector2(0.433438, 0.280793)
+texture = ExtResource("12_gmpev")
+
+[node name="TinyTwig4" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(1056, -1389)
+rotation = 3.09731
+scale = Vector2(0.433438, 0.280793)
+texture = ExtResource("12_gmpev")
+
+[node name="DarkTwig7" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 2
+position = Vector2(-692, -1489)
+rotation = -2.23399
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="SmallTwig6" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 2
+position = Vector2(-443, -1521)
+rotation = 2.15144
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="TinyTwig5" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-191, -1523)
+rotation = -2.96066
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="DarkTwig8" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-2534, -943)
+rotation = 1.31202
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig9" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1380, -1140)
+rotation = -2.25908
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig10" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-2382, -1700)
+rotation = 2.18163
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="BigTree13" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 2
+position = Vector2(-2469, -1498)
+rotation = 2.28193
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree14" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1286, -1697)
+rotation = -3.09273
+scale = Vector2(0.684009, 0.710025)
+texture = ExtResource("8_bahl2")
+
+[node name="DarkTwig11" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-3741, -1685)
+rotation = -1.40977
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig12" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4618, -1959)
+rotation = 3.09507
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="SmallTwig7" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4707, -1904)
+rotation = -2.73948
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="TinyTwig6" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4554, -2208)
+rotation = 0.166705
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="SmallTwig8" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4825, -3198)
+rotation = 2.04
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="SmallTwig9" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4374, -3395)
+rotation = 3.07617
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="TinyTwig7" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4268, -3064)
+rotation = -2.10942
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="ComplexTree7" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(-4546, -2931)
+rotation = -2.47997
+scale = Vector2(0.31261, 0.329535)
+texture = ExtResource("11_v6ha0")
+
+[node name="DarkTwig13" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-3385, -3186)
+rotation = 1.3875
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="BigTree15" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-2849, -3531)
+rotation = 2.74933
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree16" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1034, -3854)
+rotation = 1.4465
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree17" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-175, -3475)
+rotation = -0.14546
+scale = Vector2(1, 1)
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree18" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(698, -3435)
+rotation = -1.80523
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree19" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(1644, -3851)
+rotation = 2.8727
+texture = ExtResource("8_bahl2")
+
+[node name="BigTree20" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(3019, -3540)
+rotation = -1.39619
+texture = ExtResource("8_bahl2")
+
+[node name="DarkTwig14" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(3171, -3552)
+rotation = 0.748591
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig15" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(1850, -3766)
+rotation = 2.64707
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig16" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(888, -3415)
+rotation = 1.00091
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig17" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-139, -3312)
+rotation = 1.00091
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig18" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(252, -3360)
+rotation = -0.79698
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig19" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-550, -3905)
+rotation = 2.95938
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig20" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-675.322, -3975.34)
+rotation = -2.68495
+scale = Vector2(0.697995, 0.57606)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig21" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1317, -3926)
+rotation = -2.68495
+scale = Vector2(0.697995, 0.57606)
+texture = ExtResource("10_np2pn")
+
+[node name="SmallTwig10" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1452, -3261)
+rotation = 1.33227
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="SmallTwig11" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-756, -3418)
+rotation = -2.36125
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="SmallTwig12" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-699, -3627)
+rotation = -1.49401
+scale = Vector2(0.47125, 0.416429)
+texture = ExtResource("13_mkypq")
+
+[node name="TinyTwig8" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(322, -3879)
+rotation = -2.9529
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="TinyTwig9" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(2245, -3942)
+rotation = 2.01735
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="TinyTwig10" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(3657, -3291)
+rotation = 1.13368
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="TinyTwig11" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(4034, -4007)
+rotation = -2.77854
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="ComplexTree8" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(3563, -3919)
+rotation = 2.56021
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="ComplexTree9" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(-2064, -3925)
+rotation = 2.64194
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="ComplexTree10" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(-2134, -3159)
+rotation = -0.462564
+scale = Vector2(0.378194, 0.350244)
+texture = ExtResource("11_v6ha0")
+
+[node name="DarkTwig22" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-1901, -3228)
+rotation = 0.0889307
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="DarkTwig23" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4004, -3448)
+rotation = 2.23654
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="ComplexTree11" type="Sprite2D" parent="Decoration"]
+modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+z_index = 3
+position = Vector2(-3610, -3466)
+rotation = 2.8628
+scale = Vector2(0.484, 0.425833)
+texture = ExtResource("11_v6ha0")
+
+[node name="BigTree21" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4675, -3389)
+rotation = 1.55397
+scale = Vector2(0.802054, 0.864732)
+texture = ExtResource("8_bahl2")
+
+[node name="DarkTwig24" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4629, -2568)
+rotation = -2.49125
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
+
+[node name="TinyTwig12" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4761, -1453)
+rotation = 0.993322
+scale = Vector2(0.525, 0.445714)
+texture = ExtResource("12_gmpev")
+
+[node name="DarkTwig25" type="Sprite2D" parent="Decoration"]
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+position = Vector2(-4017, -2313)
+rotation = -2.53917
+scale = Vector2(0.714, 0.765714)
+texture = ExtResource("10_np2pn")
 
 [node name="Lights" type="Node" parent="."]
 
@@ -444,6 +1145,7 @@ position = Vector2(-1919, 898)
 scale = Vector2(16.0625, 7.4375)
 energy = 1.19
 texture = ExtResource("13_dnkej")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lights"]
 position = Vector2(723, -1152)
@@ -451,6 +1153,7 @@ rotation = -0.301727
 scale = Vector2(16.0625, 7.4375)
 energy = 1.19
 texture = ExtResource("13_dnkej")
+metadata/_edit_lock_ = true
 
 [node name="Entities" type="Node" parent="."]
 
@@ -461,13 +1164,16 @@ flap_duration = 0.0
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/BossStartArea"]
 position = Vector2(128, -96)
 shape = SubResource("RectangleShape2D_mm8aj")
+metadata/_edit_lock_ = true
 
 [node name="BossPath" type="Path2D" parent="Entities"]
 curve = SubResource("Curve2D_mkypq")
+metadata/_edit_lock_ = true
 
 [node name="AnxietyBoss" parent="Entities/BossPath" node_paths=PackedStringArray("StartArea") instance=ExtResource("12_mm8aj")]
 position = Vector2(-1536, -3584)
@@ -476,394 +1182,47 @@ loop = false
 comfort_distance = 700.0
 move_speed = 600.0
 StartArea = NodePath("../../BossStartArea")
+metadata/_edit_lock_ = true
 
 [node name="Checkpoints" type="Node" parent="."]
 
 [node name="Spikes" type="Area2D" parent="Checkpoints"]
 position = Vector2(-3072, -1536)
 script = ExtResource("9_dga24")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Spikes"]
 position = Vector2(0, -128)
 shape = SubResource("RectangleShape2D_dga24")
+metadata/_edit_lock_ = true
 
 [node name="PreBoss" type="Area2D" parent="Checkpoints"]
 position = Vector2(-1644, -3391)
 script = ExtResource("9_dga24")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/PreBoss"]
 position = Vector2(75, -211.5)
 shape = SubResource("RectangleShape2D_wtwp4")
+metadata/_edit_lock_ = true
 
 [node name="PreBoss2" type="Area2D" parent="Checkpoints"]
 position = Vector2(816, -3445)
 script = ExtResource("9_dga24")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/PreBoss2"]
 position = Vector2(75, -211.5)
 shape = SubResource("RectangleShape2D_wtwp4")
+metadata/_edit_lock_ = true
 
 [node name="Start" type="Area2D" parent="Checkpoints"]
 position = Vector2(-1920, 896)
 script = ExtResource("9_dga24")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Start"]
 position = Vector2(27, -44)
 shape = SubResource("CircleShape2D_iav0o")
 debug_color = Color(0, 0.6, 0.7, 0)
 metadata/_edit_lock_ = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.800491, 0.800491, 0.800491, 1)
-
-[node name="ScarePlatUpTiny" parent="." instance=ExtResource("5_dnkej")]
-position = Vector2(5404, 2003)
-curve = SubResource("Curve2D_7o3do")
-
-[node name="ScarePlatUpTiny2" parent="." instance=ExtResource("5_dnkej")]
-modulate = Color(0.847474, 0.847474, 0.847474, 1)
-position = Vector2(973, 552)
-curve = SubResource("Curve2D_o7j4k")
-
-[node name="MediumTree1Bg" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(-2433, 628)
-rotation = 2.24729
-scale = Vector2(0.471387, 0.398318)
-
-[node name="MediumTree1Bg2" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(-769, 671)
-rotation = 2.99003
-scale = Vector2(0.352316, 0.283373)
-
-[node name="MediumTree1Bg3" parent="." instance=ExtResource("15_wtwp4")]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(2903, 2141)
-rotation = 2.90067
-scale = Vector2(0.352316, 0.283373)
-
-[node name="MediumTree1Bg4" parent="." instance=ExtResource("15_wtwp4")]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(3266, 2455)
-rotation = 0.624117
-scale = Vector2(0.352316, 0.283373)
-
-[node name="LightestTree3Bg" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(-1327, 541)
-rotation = -3.15344
-
-[node name="LightestTree3Bg2" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(-1791, 954)
-rotation = -4.69962
-scale = Vector2(0.615198, 0.333513)
-
-[node name="LightestTree3Bg3" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(-2045, 910)
-rotation = -8.61465
-scale = Vector2(0.572027, 0.203079)
-
-[node name="SmallTwig1" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(2740, 2238)
-rotation = -3.35849
-
-[node name="SmallTwig2" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(3387, 2175)
-rotation = -2.47789
-
-[node name="SmallTwig3" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(2561, 1056)
-rotation = -2.21581
-scale = Vector2(0.343629, 0.277081)
-
-[node name="ComplexTree1" parent="." instance=ExtResource("15_wtwp4")]
-modulate = Color(0.47788, 0.47788, 0.47788, 1)
-position = Vector2(3127, 474)
-rotation = 2.02811
-
-[node name="ComplexTree2" parent="." instance=ExtResource("15_wtwp4")]
-modulate = Color(0.47788, 0.47788, 0.47788, 1)
-position = Vector2(3869, 518)
-rotation = 3.1238
-
-[node name="ComplexTree3" parent="." instance=ExtResource("15_wtwp4")]
-modulate = Color(0.47788, 0.47788, 0.47788, 1)
-position = Vector2(2515, 456)
-rotation = -2.04765
-
-[node name="DarkTwig" parent="." instance=ExtResource("11_iwr0g")]
-modulate = Color(0.741385, 0.741385, 0.741385, 1)
-position = Vector2(4030, 1339)
-rotation = 1.95636
-
-[node name="DarkTwig2" parent="." instance=ExtResource("11_iwr0g")]
-modulate = Color(0.41598, 0.41598, 0.41598, 1)
-z_index = 2
-position = Vector2(3955, 1990)
-rotation = 2.64693
-
-[node name="BigTree1" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(5922, 1422)
-rotation = -3.06193
-
-[node name="BigTree2" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(5990, 2007)
-rotation = -1.62573
-
-[node name="BigTree3" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(5809, 2075)
-rotation = -2.08519
-scale = Vector2(0.719926, 0.750671)
-
-[node name="DarkTwig3" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(6005, 1488)
-rotation = -2.88445
-scale = Vector2(0.559896, 0.58114)
-
-[node name="DarkTwig4" parent="." instance=ExtResource("11_iwr0g")]
-modulate = Color(0.60933, 0.60933, 0.60933, 1)
-position = Vector2(4963, 1945)
-rotation = -4.63436
-scale = Vector2(0.559896, 0.58114)
-
-[node name="DarkTwig5" parent="." instance=ExtResource("11_iwr0g")]
-modulate = Color(0.60933, 0.60933, 0.60933, 1)
-position = Vector2(4339, 2436)
-rotation = -4.79069
-scale = Vector2(0.559896, 0.58114)
-
-[node name="DarkTwig6" parent="." instance=ExtResource("11_iwr0g")]
-modulate = Color(0.60933, 0.60933, 0.60933, 1)
-position = Vector2(4122, 2412)
-rotation = -0.994784
-scale = Vector2(0.533571, 0.363272)
-
-[node name="ComplexTree4" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(1185, -1115)
-rotation = -2.36897
-
-[node name="ComplexTree5" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(685, -1603)
-rotation = -4.89525
-
-[node name="SmallTwig4" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(796, -1313)
-rotation = 1.25156
-
-[node name="SmallTwig5" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(613, -420)
-rotation = 1.92852
-
-[node name="TinyTwig" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(1039, -417)
-rotation = -3.13569
-
-[node name="TinyTwig2" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(1223, -103)
-rotation = -1.62306
-scale = Vector2(0.433438, 0.280793)
-
-[node name="TinyTwig3" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(646, -1004)
-rotation = -3.77768
-scale = Vector2(0.433438, 0.280793)
-
-[node name="TinyTwig4" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(1056, -1389)
-rotation = -3.18588
-scale = Vector2(0.433438, 0.280793)
-
-[node name="DarkTwig7" parent="." instance=ExtResource("11_iwr0g")]
-z_index = 2
-position = Vector2(-692, -1489)
-rotation = -2.23399
-
-[node name="SmallTwig6" parent="." instance=ExtResource("9_mm8aj")]
-z_index = 2
-position = Vector2(-443, -1521)
-rotation = -4.13175
-
-[node name="TinyTwig5" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(-191, -1523)
-rotation = 3.32253
-
-[node name="DarkTwig8" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-2534, -943)
-rotation = 1.31202
-
-[node name="DarkTwig9" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-1380, -1140)
-rotation = -2.25908
-
-[node name="DarkTwig10" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-2382, -1700)
-rotation = -4.10156
-
-[node name="BigTree4" parent="." instance=ExtResource("8_wtwp4")]
-z_index = 2
-position = Vector2(-2469, -1498)
-rotation = 2.28193
-
-[node name="BigTree5" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(-1286, -1697)
-rotation = -3.09273
-scale = Vector2(0.684009, 0.710025)
-
-[node name="DarkTwig11" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-3741, -1685)
-rotation = -1.40977
-
-[node name="DarkTwig12" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-4618, -1959)
-rotation = 3.09507
-
-[node name="SmallTwig7" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(-4707, -1904)
-rotation = -2.73948
-
-[node name="TinyTwig6" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(-4554, -2208)
-rotation = -6.11648
-
-[node name="SmallTwig8" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(-4825, -3198)
-rotation = 2.04
-
-[node name="SmallTwig9" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(-4374, -3395)
-rotation = 3.07617
-
-[node name="TinyTwig7" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(-4268, -3064)
-rotation = -2.10942
-
-[node name="ComplexTree6" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(-4546, -2931)
-rotation = -2.47997
-scale = Vector2(0.31261, 0.329535)
-
-[node name="DarkTwig13" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-3385, -3186)
-rotation = 1.3875
-
-[node name="BigTree6" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(-2849, -3531)
-rotation = 2.74933
-
-[node name="BigTree7" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(-1034, -3854)
-rotation = 1.4465
-
-[node name="BigTree8" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(-175, -3475)
-rotation = -0.14546
-
-[node name="BigTree9" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(698, -3435)
-rotation = -1.80523
-
-[node name="BigTree10" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(1644, -3851)
-rotation = -3.41049
-
-[node name="BigTree11" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(3019, -3540)
-rotation = -1.39619
-
-[node name="DarkTwig14" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(3171, -3552)
-rotation = 0.748591
-
-[node name="DarkTwig15" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(1850, -3766)
-rotation = 2.64707
-
-[node name="DarkTwig16" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(888, -3415)
-rotation = 1.00091
-
-[node name="DarkTwig17" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-139, -3312)
-rotation = 1.00091
-
-[node name="DarkTwig18" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(252, -3360)
-rotation = -0.79698
-
-[node name="DarkTwig19" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-550, -3905)
-rotation = -3.32381
-
-[node name="DarkTwig20" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-675.322, -3975.34)
-rotation = -2.68495
-scale = Vector2(0.697995, 0.57606)
-
-[node name="DarkTwig21" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-1317, -3924)
-rotation = -2.68495
-scale = Vector2(0.697995, 0.57606)
-
-[node name="SmallTwig10" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(-1452, -3261)
-rotation = 1.33227
-
-[node name="SmallTwig11" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(-756, -3418)
-rotation = 3.92194
-
-[node name="SmallTwig12" parent="." instance=ExtResource("9_mm8aj")]
-position = Vector2(-699, -3627)
-rotation = 4.78918
-
-[node name="TinyTwig8" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(322, -3879)
-rotation = 3.33029
-
-[node name="TinyTwig9" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(2245, -3942)
-rotation = 2.01735
-
-[node name="TinyTwig10" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(3657, -3291)
-rotation = 1.13368
-
-[node name="TinyTwig11" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(4034, -4007)
-rotation = -2.77854
-
-[node name="ComplexTree7" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(3563, -3919)
-rotation = 2.56021
-
-[node name="ComplexTree8" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(-2064, -3925)
-rotation = 2.64194
-
-[node name="ComplexTree9" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(-2134, -3159)
-rotation = -0.462564
-scale = Vector2(0.378194, 0.350244)
-
-[node name="DarkTwig22" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-1901, -3228)
-rotation = 0.0889307
-
-[node name="DarkTwig23" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-4004, -3448)
-rotation = 2.23654
-
-[node name="ComplexTree10" parent="." instance=ExtResource("15_wtwp4")]
-position = Vector2(-3610, -3466)
-rotation = 2.8628
-
-[node name="BigTree12" parent="." instance=ExtResource("8_wtwp4")]
-position = Vector2(-4675, -3389)
-rotation = 1.55397
-scale = Vector2(0.802054, 0.864732)
-
-[node name="DarkTwig24" parent="." instance=ExtResource("11_iwr0g")]
-position = Vector2(-4629, -2568)
-rotation = 3.79194
-
-[node name="TinyTwig12" parent="." instance=ExtResource("17_bahl2")]
-position = Vector2(-4761, -1453)
-rotation = 0.993322
