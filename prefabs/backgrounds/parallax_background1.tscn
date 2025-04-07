@@ -79,6 +79,7 @@ scale = Vector2(0.789728, 0.23051)
 texture = ExtResource("3_uhg0i")
 
 [node name="FrontBG" type="ParallaxLayer" parent="."]
+visible = false
 motion_scale = Vector2(0.9, 0.5)
 motion_mirroring = Vector2(2500, 2000)
 

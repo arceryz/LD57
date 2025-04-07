@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbmcq5kpg07dj"]
+
+[ext_resource type="Texture2D" uid="uid://bo3ygb6ngxlv3" path="res://assets/art/darkestTree3_bg.png" id="1_ugrjc"]
+
+[node name="BigTree1" type="Sprite2D"]
+modulate = Color(4, 4, 4, 1)
+texture = ExtResource("1_ugrjc")

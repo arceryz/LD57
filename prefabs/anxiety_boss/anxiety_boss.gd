@@ -28,7 +28,6 @@ func _process(_delta: float) -> void:
 			var distance := absf(player.global_position.x - global_position.x)
 			var stray := signf(comfort_distance - distance)
 			
-			print(stray)
 			progress += _delta * move_speed * stray
 			pass
 		State.DEATH:

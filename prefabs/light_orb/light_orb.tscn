@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq45dri0s7nq4"]
+[gd_scene load_steps=7 format=3 uid="uid://dq45dri0s7nq4"]
 
 [ext_resource type="Script" uid="uid://biks42v5yaqkl" path="res://prefabs/light_orb/light_orb.gd" id="1_ai561"]
 [ext_resource type="FastNoiseLite" uid="uid://ctf811v3n3hvq" path="res://assets/noise/noise_orb_hover.tres" id="2_xinsc"]
+[ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="3_h1q02"]
 
 [sub_resource type="Gradient" id="Gradient_7ll3s"]
 offsets = PackedFloat32Array(0.311688, 0.844156)
@@ -27,8 +28,14 @@ hover_pattern = ExtResource("2_xinsc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(4.65149, 9.36691)
+position = Vector2(7.6252, -15.9071)
 texture = SubResource("GradientTexture2D_ai561")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nji22")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3, 1)
+scale = Vector2(4.57812, 4.0625)
+energy = 2.0
+texture = ExtResource("3_h1q02")
