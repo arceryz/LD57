@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cqqicjedcq2av" path="res://assets/art/LightestTree4_bg.png" id="1_r1gfo"]
 
 [node name="SmallTwig1" type="Sprite2D"]
-modulate = Color(2, 2, 2, 1)
+modulate = Color(0, 0, 0, 1)
+z_index = 3
 position = Vector2(35, -9)
 scale = Vector2(0.47125, 0.416429)
 texture = ExtResource("1_r1gfo")

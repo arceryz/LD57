@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://by5gxb0n020ns"]
+[gd_scene load_steps=15 format=3 uid="uid://by5gxb0n020ns"]
 
 [ext_resource type="Script" uid="uid://d2ranft7oh7mi" path="res://prefabs/anxiety_boss/anxiety_boss.gd" id="1_kau3k"]
 [ext_resource type="Texture2D" uid="uid://nqmieprff1va" path="res://assets/art/anxiety_frames/anxiety1.tres" id="1_ouq2b"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://uikgk0kkx8j1" path="res://assets/art/anxiety_frames/anxiety5.tres" id="5_0lsq4"]
 [ext_resource type="Texture2D" uid="uid://d1w6bswev02cu" path="res://assets/art/anxiety_frames/anxiety6.tres" id="6_2mb5l"]
 [ext_resource type="Texture2D" uid="uid://cbc441pkjyp6f" path="res://assets/art/anxiety_frames/anxiety7.tres" id="7_ijos5"]
+[ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="9_cdf38"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d0fio"]
 animations = [{
@@ -179,7 +180,7 @@ _data = {
 script = ExtResource("1_kau3k")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-z_index = 1
+z_index = 5
 scale = Vector2(0.746388, 0.778121)
 sprite_frames = SubResource("SpriteFrames_d0fio")
 autoplay = "default"
@@ -191,3 +192,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_t40mb")
 }
 autoplay = "chilling"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-14.0001, -12.5)
+scale = Vector2(33.9687, 26.6406)
+energy = 3.0
+texture = ExtResource("9_cdf38")
