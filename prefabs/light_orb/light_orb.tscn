@@ -4,7 +4,7 @@
 [ext_resource type="FastNoiseLite" uid="uid://ctf811v3n3hvq" path="res://assets/noise/noise_orb_hover.tres" id="2_xinsc"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="3_h1q02"]
 [ext_resource type="AudioStream" uid="uid://bubnpsng2liik" path="res://assets/audio-max/sound/Depths_Orb_Ambience_Loop.ogg" id="4_eo0er"]
-[ext_resource type="AudioStream" uid="uid://cm08mkuw07ycn" path="res://assets/audio-max/sound/Depths_Orb_Collect.ogg" id="5_24bay"]
+[ext_resource type="AudioStream" uid="uid://c0v3yfwyasmyp" path="res://assets/Audio/SFX/Orb/LD57_Get_Orb.ogg" id="5_63u2b"]
 [ext_resource type="AudioStream" uid="uid://tfayl3klx6sm" path="res://assets/audio-max/music/Depths_Anxiety_Orb_Response_A.ogg" id="6_63u2b"]
 [ext_resource type="AudioStream" uid="uid://bigx815t4taa2" path="res://assets/audio-max/music/Depths_Anxiety_Orb_Response_B.ogg" id="7_uvyfo"]
 
@@ -37,7 +37,7 @@ hover_pattern = ExtResource("2_xinsc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-18.3077, -11.2691)
+position = Vector2(-9.66307, -16.8073)
 texture = SubResource("GradientTexture2D_ai561")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -59,7 +59,7 @@ attenuation = 0.761487
 
 [node name="OrbPickup" type="AudioStreamPlayer2D" parent="Audio"]
 unique_name_in_owner = true
-stream = ExtResource("5_24bay")
+stream = ExtResource("5_63u2b")
 
 [node name="Response" type="AudioStreamPlayer" parent="Audio"]
 unique_name_in_owner = true

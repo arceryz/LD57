@@ -36,6 +36,7 @@ var target_hvelocity := 0.0
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	HitArea.body_entered.connect(_on_hit_body_entered)
+	Sprite.frame_changed.connect(OnFrameChange)
 	for i in range(start_orbs):
 		OrbHolder.generate_orb.call_deferred()
 
@@ -93,6 +94,7 @@ func flap():
 	fly_direction = get_local_mouse_position().normalized()
 	state = State.FLYING
 	wing_flapped.emit()
+	$Flap.play()
 	
 	var tw := create_tween()
 	tw.tween_property(self, "fly_speed", flap_velocity, flap_windup)
@@ -106,6 +108,7 @@ func place_platform():
 	plat.top_level = true
 	plat.global_position = PlatformLocation.global_position
 	add_child(plat)
+	$Place_Platform_SFX.play()
 
 func kill():
 	position = Global.active_checkpoint.position
@@ -114,3 +117,7 @@ func _draw() -> void:
 	var mpos := get_local_mouse_position()
 	#draw_line(Vector2.ZERO, mpos, Color.BLUE)
 	draw_circle(mpos, 10.0, Color.SKY_BLUE, false, 1.0, true)
+
+func OnFrameChange(): 
+	if (Sprite.frame==1 or Sprite.frame==3) and state==State.GROUND:
+		$Footstep.play()

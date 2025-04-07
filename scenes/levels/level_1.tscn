@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=49 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="13_dnkej"]
 [ext_resource type="Texture2D" uid="uid://cqqicjedcq2av" path="res://assets/art/LightestTree4_bg.png" id="13_mkypq"]
 [ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
+[ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
+[ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -1158,9 +1160,10 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1931, 829)
+position = Vector2(4991, 1715)
 flap_winddown = 0.4
 flap_duration = 0.0
+start_orbs = 2
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
@@ -1189,6 +1192,7 @@ metadata/_edit_lock_ = true
 [node name="Spikes" type="Area2D" parent="Checkpoints"]
 position = Vector2(-3072, -1536)
 script = ExtResource("9_dga24")
+order_index = null
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Spikes"]
@@ -1199,6 +1203,7 @@ metadata/_edit_lock_ = true
 [node name="PreBoss" type="Area2D" parent="Checkpoints"]
 position = Vector2(-1644, -3391)
 script = ExtResource("9_dga24")
+order_index = null
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/PreBoss"]
@@ -1209,6 +1214,7 @@ metadata/_edit_lock_ = true
 [node name="PreBoss2" type="Area2D" parent="Checkpoints"]
 position = Vector2(816, -3445)
 script = ExtResource("9_dga24")
+order_index = null
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/PreBoss2"]
@@ -1219,6 +1225,7 @@ metadata/_edit_lock_ = true
 [node name="Start" type="Area2D" parent="Checkpoints"]
 position = Vector2(-1920, 896)
 script = ExtResource("9_dga24")
+order_index = null
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Start"]
@@ -1233,3 +1240,15 @@ metadata/_edit_lock_ = true
 stream = ExtResource("18_np2pn")
 autoplay = true
 bus = &"Music"
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Gen_AmbienceHOW TO LOOP" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_v6ha0")
+volume_db = 6.797
+autoplay = true
+bus = &"SFX"
+
+[node name="Gen_Amb_Randoms" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_gmpev")
+bus = &"SFX"

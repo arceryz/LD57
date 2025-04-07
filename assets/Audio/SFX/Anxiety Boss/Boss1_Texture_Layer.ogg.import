@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ye6y11615qoc"
+path="res://.godot/imported/Boss1_Texture_Layer.ogg-a256004eee759f1fc3674cc359894eaf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/SFX/Anxiety Boss/Boss1_Texture_Layer.ogg"
+dest_files=["res://.godot/imported/Boss1_Texture_Layer.ogg-a256004eee759f1fc3674cc359894eaf.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
