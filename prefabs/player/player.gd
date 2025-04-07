@@ -6,7 +6,15 @@ signal wing_flapped()
 @export var hspeed: float = 500.0
 @export var jump_velocity: float = 700.0
 @export var flap_velocity: float = 700.0
+@export var flap_after_velocity: float = 100.0
+
+@export var flap_windup: float = 0.05
+@export var flap_winddown: float = 0.05
 @export var flap_duration: float = 0.3
+
+@export var walk_accel: float = 20.0
+@export var walk_deaccel: float = 30.0
+@export var start_orbs: int = 0
 
 @onready var OrbHolder: OrbHolderC = $OrbHolder
 @onready var HitArea: Area2D = $HitArea
@@ -21,11 +29,14 @@ enum State {
 }
 var state := State.GROUND
 var fly_direction := Vector2.ZERO
-var after_flap := false
+var fly_speed: float = 0.0
+var target_hvelocity := 0.0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	HitArea.body_entered.connect(_on_hit_body_entered)
+	for i in range(start_orbs):
+		OrbHolder.generate_orb.call_deferred()
 
 func _on_hit_body_entered(_body: Node2D):
 	kill()
@@ -42,12 +53,11 @@ func _physics_process(delta: float) -> void:
 				state = State.FALLING
 			if Input.is_action_just_pressed("flap") and OrbHolder.use_orb():
 				flap()
-			after_flap = false
 			process_walk_movement(delta)
 			pass
 		
 		State.FLYING:
-			velocity = fly_direction * flap_velocity
+			velocity = fly_direction * fly_speed
 			motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 			move_and_slide()
 			pass
@@ -66,19 +76,23 @@ func _physics_process(delta: float) -> void:
 func process_walk_movement(_delta: float):
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 	var direction := Input.get_axis("move_left", "move_right")
-	if not (after_flap and is_zero_approx(direction)):
-		velocity.x = direction * hspeed if direction else move_toward(velocity.x, 0, hspeed)
-		after_flap = false
+	target_hvelocity = direction * hspeed
+
+	var acc := walk_deaccel if is_zero_approx(direction) else walk_accel
+	velocity.x = lerp(velocity.x, target_hvelocity, acc * _delta)
 	move_and_slide()
 
 # Flap once with the wings.
 func flap():
 	fly_direction = get_local_mouse_position().normalized()
 	state = State.FLYING
-	after_flap = true
 	wing_flapped.emit()
-	await get_tree().create_timer(flap_duration).timeout
-	state = State.FALLING
+	
+	var tw := create_tween()
+	tw.tween_property(self, "fly_speed", flap_velocity, flap_windup)
+	tw.tween_interval(flap_duration)
+	tw.tween_property(self, "fly_speed", flap_after_velocity, flap_winddown)
+	tw.tween_property(self, "state", State.FALLING, 0)
 
 # Place platform underneath the player's feet.
 func place_platform():

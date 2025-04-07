@@ -27,10 +27,7 @@ func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	if Engine.is_editor_hint():
 		for i in range(debug_count):
-			var orb := PackedLightOrb.instantiate()
-			orb.top_level = true
-			add_child(orb)
-			receive_orb(orb)
+			generate_orb.call_deferred()
 	pass
 
 func _process(delta: float) -> void:
@@ -108,3 +105,10 @@ func use_orb() -> bool:
 	var orb: LightOrbC = anchored_orbs.pop_back()
 	orb.activate(orb_recovery_time)
 	return true
+
+func generate_orb():
+	var orb := PackedLightOrb.instantiate()
+	orb.top_level = true
+	add_child(orb)
+	orb.global_position = global_position
+	receive_orb(orb)
