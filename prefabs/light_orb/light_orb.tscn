@@ -37,7 +37,7 @@ hover_pattern = ExtResource("2_xinsc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-5.86064, 4.60738)
+position = Vector2(-16.9812, 3.40852)
 texture = SubResource("GradientTexture2D_ai561")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -54,10 +54,10 @@ texture = ExtResource("3_h1q02")
 [node name="OrbLoop" type="AudioStreamPlayer2D" parent="Audio"]
 unique_name_in_owner = true
 stream = ExtResource("4_eo0er")
-volume_db = 3.0
+volume_db = 7.5
 autoplay = true
 max_distance = 4000.0
-attenuation = 0.211231
+attenuation = 2.5
 
 [node name="OrbPickup" type="AudioStreamPlayer2D" parent="Audio"]
 unique_name_in_owner = true
