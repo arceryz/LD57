@@ -2,6 +2,7 @@
 class_name LightOrbC extends Area2D
 
 signal finished_activation(pip)
+signal picked_up
 
 @export_group("Game")
 @export var fly_speed: float = 1000.0
@@ -54,6 +55,7 @@ func pickup():
 	%OrbPickup.play()
 	await get_tree().create_timer(2).timeout
 	%Response.play()
+	picked_up.emit()
 
 
 func process_hover(delta):

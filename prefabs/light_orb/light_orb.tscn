@@ -37,7 +37,7 @@ hover_pattern = ExtResource("2_xinsc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(0.55395, 14.2895)
+position = Vector2(-5.86064, 4.60738)
 texture = SubResource("GradientTexture2D_ai561")
 
 [node name="Shape" type="CollisionShape2D" parent="."]

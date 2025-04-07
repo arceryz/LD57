@@ -29,6 +29,8 @@ func toggle_active():
 		get_tree().paused = false
 		Root.hide()
 	else:
+		if Global.ending_triggered == true:
+			return
 		get_tree().paused = true
 		Root.show()
 

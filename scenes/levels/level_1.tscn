@@ -1,8 +1,9 @@
-[gd_scene load_steps=61 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=62 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
 [ext_resource type="PackedScene" uid="uid://c5cvoo8kci86f" path="res://scenes/game_ui/game_ui.tscn" id="2_t4umt"]
+[ext_resource type="PackedScene" uid="uid://ftk481axnu0" path="res://scenes/credits_ending/credits_ending.tscn" id="3_4yk0h"]
 [ext_resource type="PackedScene" uid="uid://csl1dq7beeeey" path="res://prefabs/backgrounds/parallax_background1.tscn" id="3_dga24"]
 [ext_resource type="PackedScene" uid="uid://dq45dri0s7nq4" path="res://prefabs/light_orb/light_orb.tscn" id="3_nsrm0"]
 [ext_resource type="Script" uid="uid://c10pw4tr8qpn0" path="res://scripts/room.gd" id="4_x42e6"]
@@ -184,10 +185,13 @@ radius = 320.0
 layer = 3
 
 [node name="IntroOverlay" parent="CanvasLayer" instance=ExtResource("29_0qwwm")]
-z_index = 1
+z_index = 3
 disable = true
 
 [node name="GameUi" parent="CanvasLayer" instance=ExtResource("2_t4umt")]
+z_index = 2
+
+[node name="CreditsEnding" parent="CanvasLayer" instance=ExtResource("3_4yk0h")]
 
 [node name="Darkening" type="CanvasModulate" parent="."]
 color = Color(0.800491, 0.800491, 0.800491, 1)
@@ -454,9 +458,10 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1918, 843)
+position = Vector2(-2769, -3253)
 flap_winddown = 0.4
 flap_duration = 0.0
+start_orbs = 1
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)

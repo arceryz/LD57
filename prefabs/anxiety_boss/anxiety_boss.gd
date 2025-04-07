@@ -87,6 +87,7 @@ func do_death():
 	$Boss_VoiceLayer01.stop()
 	$Boss_VoiceLayer02.stop()
 	$Boss_VoiceLayer03.stop()
+	$Boss_Texture_Layer.stop()
 
 	Anim.play("death")
 	await Anim.animation_finished
@@ -95,6 +96,9 @@ func do_death():
 	orb.global_position = global_position
 	orb.scale *= 3.0
 	orb.modulate.a = 0
+
+	var ending: CreditsEndingC = get_tree().get_first_node_in_group("ending")
+	orb.picked_up.connect(ending.trigger_ending)
 	var tw := orb.create_tween()
 	tw.tween_property(orb, "modulate:a", 1.0, 2.0)
 
