@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://by5gxb0n020ns"]
+[gd_scene load_steps=21 format=3 uid="uid://by5gxb0n020ns"]
 
 [ext_resource type="Script" uid="uid://d2ranft7oh7mi" path="res://prefabs/anxiety_boss/anxiety_boss.gd" id="1_kau3k"]
 [ext_resource type="Texture2D" uid="uid://nqmieprff1va" path="res://assets/art/anxiety_frames/anxiety1.tres" id="1_ouq2b"]
@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://d1w6bswev02cu" path="res://assets/art/anxiety_frames/anxiety6.tres" id="6_2mb5l"]
 [ext_resource type="Texture2D" uid="uid://cbc441pkjyp6f" path="res://assets/art/anxiety_frames/anxiety7.tres" id="7_ijos5"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="9_cdf38"]
+[ext_resource type="AudioStream" uid="uid://d3dnaaidacrnv" path="res://assets/audio-max/music/Depths_Anxiety_Intro.ogg" id="10_ydrr0"]
+[ext_resource type="AudioStream" uid="uid://db1hycqb7f6br" path="res://assets/audio-max/music/Depths_Anxiety_Segment_A.ogg" id="11_h5ags"]
+[ext_resource type="AudioStream" uid="uid://ckp4limbblci4" path="res://assets/audio-max/music/Depths_Anxiety_Segment_B.ogg" id="12_f7lfn"]
+[ext_resource type="AudioStream" uid="uid://btq746cefdclr" path="res://assets/audio-max/music/Depths_Anxiety_Segment_C.ogg" id="13_yhv3s"]
+[ext_resource type="AudioStream" uid="uid://dhwsh2ondi1a4" path="res://assets/audio-max/music/Depths_Anxiety_Outro.ogg" id="14_33rep"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d0fio"]
 animations = [{
@@ -176,8 +181,40 @@ _data = {
 &"wakeup": SubResource("Animation_kau3k")
 }
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_7kwoe"]
+clip_count = 5
+clip_0/name = &"Depths Anxiety Intro"
+clip_0/stream = ExtResource("10_ydrr0")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Depths Anxiety Segment A"
+clip_1/stream = ExtResource("11_h5ags")
+clip_1/auto_advance = 1
+clip_1/next_clip = 2
+clip_2/name = &"Depths Anxiety Segment B"
+clip_2/stream = ExtResource("12_f7lfn")
+clip_2/auto_advance = 1
+clip_2/next_clip = 3
+clip_3/name = &"Depths Anxiety Segment C"
+clip_3/stream = ExtResource("13_yhv3s")
+clip_3/auto_advance = 1
+clip_3/next_clip = 1
+clip_4/name = &"Depths Anxiety Outro"
+clip_4/stream = ExtResource("14_33rep")
+clip_4/auto_advance = 0
+_transitions = {
+Vector2i(-1, 4): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 2,
+"to_time": 1
+}
+}
+
 [node name="AnxietyBoss" type="PathFollow2D"]
 script = ExtResource("1_kau3k")
+needle_spawn_range = 500.0
+attack_interval_variation = 2.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 z_index = 5
@@ -198,3 +235,6 @@ position = Vector2(-14.0001, -12.5)
 scale = Vector2(33.9687, 26.6406)
 energy = 3.0
 texture = ExtResource("9_cdf38")
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_7kwoe")

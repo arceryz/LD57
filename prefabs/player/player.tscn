@@ -125,3 +125,6 @@ sprite_frames = SubResource("SpriteFrames_2c4n1")
 animation = &"walk"
 autoplay = "walk"
 frame_progress = 0.314158
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

@@ -73,6 +73,7 @@ func receive_orb(neworb: LightOrbC):
 		reposition_start_points.append(Vector2.ZERO)
 		all_collected_orbs.append(neworb)
 		neworb.finished_activation.connect(receive_orb)
+		neworb.pickup()
 
 	neworb.target_node = self
 	neworb.state = LightOrbC.State.ANCHORED

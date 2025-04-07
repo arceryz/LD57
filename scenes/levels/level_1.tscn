@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=56 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://baw5w50yfhv6j" path="res://assets/art/DrippyBlackness/drip3_anx.png" id="16_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://cd2hu21dmsdkr" path="res://assets/art/DrippyBlackness/drip4_anx.png" id="17_gmpev"]
 [ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="18_mkypq"]
+[ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
 [ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
 [ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
@@ -246,7 +247,7 @@ metadata/_edit_lock_ = true
 [node name="Boss" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
 force_screen_height = true
-camera_offset = Vector2(300, 0)
+camera_offset = Vector2(700, 0)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Boss"]
@@ -435,9 +436,10 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1919, 841)
+position = Vector2(-1915, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
+start_orbs = 1
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
@@ -456,7 +458,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-1536, -3584)
 rotates = false
 loop = false
-comfort_distance = 700.0
+comfort_distance = 1100.0
 move_speed = 600.0
 StartArea = NodePath("../../BossStartArea")
 metadata/_edit_lock_ = true
@@ -482,6 +484,14 @@ metadata/_edit_lock_ = true
 position = Vector2(75, -211.5)
 shape = SubResource("RectangleShape2D_wtwp4")
 metadata/_edit_lock_ = true
+
+[node name="BossEntrance" type="Area2D" parent="Checkpoints"]
+position = Vector2(-2580, -3292)
+script = ExtResource("9_dga24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/BossEntrance"]
+position = Vector2(75, -211.5)
+shape = SubResource("RectangleShape2D_wtwp4")
 
 [node name="PreBoss2" type="Area2D" parent="Checkpoints"]
 position = Vector2(816, -3445)
@@ -1075,3 +1085,10 @@ position = Vector2(2107, 1201)
 rotation = 2.15723
 scale = Vector2(0.265, 0.265)
 texture = ExtResource("8_bahl2")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="Opening" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("18_np2pn")
+autoplay = true
+bus = &"Music"
