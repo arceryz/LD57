@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cm7tfs3l6606r"]
+[gd_scene load_steps=33 format=3 uid="uid://cm7tfs3l6606r"]
 
 [ext_resource type="Script" uid="uid://dwf0ubfy7ls7y" path="res://prefabs/player/player.gd" id="1_sxsrd"]
 [ext_resource type="Script" uid="uid://dhh3fvtw25871" path="res://prefabs/player/orb_holder.gd" id="2_rdx4y"]
@@ -7,7 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://chg1m1fymv0d0" path="res://assets/art/bigwingjump_sheet.png" id="5_klv5p"]
 [ext_resource type="Texture2D" uid="uid://dmadx3nuec21g" path="res://assets/art/RunAnim_sheet.png" id="6_iylwk"]
 [ext_resource type="AudioStream" uid="uid://bj0k6g6817uln" path="res://assets/Audio/SFX/Flap/LD57_Flap-001.ogg" id="7_ev8v4"]
+[ext_resource type="AudioStream" uid="uid://byc2lonqqxyek" path="res://assets/Audio/SFX/Flap/LD57_Flap-002.ogg" id="8_ocyg1"]
+[ext_resource type="AudioStream" uid="uid://bxvtt3lxrn7sm" path="res://assets/Audio/SFX/Footsteps/LD57_Footsteps-001.ogg" id="8_oo3uv"]
 [ext_resource type="AudioStream" uid="uid://d2ks4tbwpspcq" path="res://assets/Audio/SFX/Create_Block/LD57_Create_Block-001.ogg" id="9_2c4n1"]
+[ext_resource type="AudioStream" uid="uid://sj4yuxmpkoej" path="res://assets/Audio/SFX/Footsteps/LD57_Footsteps-002.ogg" id="9_30gqm"]
+[ext_resource type="AudioStream" uid="uid://dgaylhl5iui31" path="res://assets/Audio/SFX/Flap/LD57_Flap-003.ogg" id="9_408ek"]
+[ext_resource type="AudioStream" uid="uid://drhn4mjwd4xgu" path="res://assets/Audio/SFX/Flap/LD57_Flap-004.ogg" id="10_dxdrd"]
+[ext_resource type="AudioStream" uid="uid://b4u3l3a56uhr3" path="res://assets/Audio/SFX/Flap/LD57_Flap-005.ogg" id="11_a2w56"]
+[ext_resource type="AudioStream" uid="uid://v1no0wkvcjbr" path="res://assets/Audio/SFX/Flap/LD57_Flap-006.ogg" id="12_qdvc2"]
+[ext_resource type="AudioStream" uid="uid://dx4qerm6oxg22" path="res://assets/Audio/SFX/Footsteps/LD57_Footsteps-003.ogg" id="15_vtpqo"]
+[ext_resource type="AudioStream" uid="uid://br2c4010wfwig" path="res://assets/Audio/SFX/Footsteps/LD57_Footsteps-004.ogg" id="16_ag4y2"]
+[ext_resource type="AudioStream" uid="uid://bl73do6w7u3q2" path="res://assets/Audio/SFX/Footsteps/LD57_Footsteps-005.ogg" id="17_dmwb1"]
+[ext_resource type="AudioStream" uid="uid://bsh6w1qwxgowk" path="res://assets/Audio/SFX/Footsteps/LD57_Footsteps-006.ogg" id="18_8ris0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvfjm"]
 size = Vector2(48, 96)
@@ -80,7 +91,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hp4ge"]
+streams_count = 6
+stream_0/stream = ExtResource("7_ev8v4")
+stream_1/stream = ExtResource("8_ocyg1")
+stream_2/stream = ExtResource("9_408ek")
+stream_3/stream = ExtResource("10_dxdrd")
+stream_4/stream = ExtResource("11_a2w56")
+stream_5/stream = ExtResource("12_qdvc2")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vhck3"]
+streams_count = 6
+stream_0/stream = ExtResource("8_oo3uv")
+stream_1/stream = ExtResource("9_30gqm")
+stream_2/stream = ExtResource("15_vtpqo")
+stream_3/stream = ExtResource("16_ag4y2")
+stream_4/stream = ExtResource("17_dmwb1")
+stream_5/stream = ExtResource("18_8ris0")
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sxsrd")
@@ -136,7 +163,7 @@ current = true
 [node name="Audio" type="Node" parent="."]
 
 [node name="Flap" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_ev8v4")
+stream = SubResource("AudioStreamRandomizer_hp4ge")
 bus = &"SFX"
 
 [node name="Footstep" type="AudioStreamPlayer" parent="."]

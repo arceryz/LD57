@@ -441,7 +441,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-1915, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
-start_orbs = 1
+start_orbs = 0
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
