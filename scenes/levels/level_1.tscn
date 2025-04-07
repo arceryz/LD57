@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://bofpqf5so0am4"]
+[gd_scene load_steps=70 format=4 uid="uid://bofpqf5so0am4"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://rur1dvw7kdh5" path="res://assets/art/DrippyBlackness/drip2_anx.png" id="15_np2pn"]
 [ext_resource type="Texture2D" uid="uid://baw5w50yfhv6j" path="res://assets/art/DrippyBlackness/drip3_anx.png" id="16_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://cd2hu21dmsdkr" path="res://assets/art/DrippyBlackness/drip4_anx.png" id="17_gmpev"]
-[ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="18_mkypq"]
 [ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
@@ -436,7 +435,7 @@ position = Vector2(4187, 1765)
 modulate = Color(4, 4, 4, 1)
 z_index = -1
 material = ExtResource("5_oc4kc")
-position = Vector2(-1943.44, 304.5)
+position = Vector2(-1915, 299)
 scale = Vector2(1.59814, 2.43555)
 texture = SubResource("GradientTexture2D_dga24")
 metadata/_edit_lock_ = true
@@ -468,7 +467,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-2769, -3253)
+position = Vector2(-2765, -3255)
 flap_winddown = 0.4
 flap_duration = 0.0
 start_orbs = 1
@@ -495,7 +494,6 @@ move_speed = 600.0
 StartArea = NodePath("../../BossStartArea")
 NoReturnWallBack = NodePath("../../NoReturnWall")
 WaitWallFront = NodePath("../../WaitWall")
-metadata/_edit_lock_ = true
 
 [node name="WaitWall" type="StaticBody2D" parent="Entities"]
 position = Vector2(-2209, -3396)
@@ -669,11 +667,6 @@ z_index = 1
 position = Vector2(-2488, 306)
 rotation = 3.14159
 texture = ExtResource("17_gmpev")
-
-[node name="FacePlatform" type="Sprite2D" parent="FaceMasks"]
-position = Vector2(-1589, -1491)
-scale = Vector2(0.6175, 0.315)
-texture = ExtResource("18_mkypq")
 
 [node name="Drip5Anx" type="Sprite2D" parent="FaceMasks"]
 z_index = 1

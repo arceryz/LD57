@@ -30,13 +30,13 @@ func trigger():
 		return
 
 	var tween := create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(self, "modulate:a", 0.3, 0.1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(Platform, "collision_layer", 0, 0)
-	tween.set_parallel(false)
+	#tween.set_parallel(true)
+	#tween.tween_property(self, "modulate:a", 0.3, 0.1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	#tween.tween_property(Platform, "collision_layer", 0, 0)
+	#tween.set_parallel(false)
 	tween.tween_property(self, "progress_ratio", 1.0, scare_move_time).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 
-	tween.tween_property(Platform, "collision_layer", 1, 0)
-	tween.tween_property(self, "modulate:a", 1.0, 0.1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	#tween.tween_property(Platform, "collision_layer", 1, 0)
+	#tween.tween_property(self, "modulate:a", 1.0, 0.1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	tween.tween_interval(return_wait_time)
 	tween.tween_property(self, "progress_ratio", 0.0, return_time).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)

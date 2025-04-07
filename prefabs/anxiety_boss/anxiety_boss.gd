@@ -11,7 +11,7 @@ class_name AnxietyBoss extends PathFollow2D
 @export var NoReturnWallBack: StaticBody2D
 @export var WaitWallFront: StaticBody2D
 
-@onready var Sprite: AnimatedSprite2D = $Sprite
+@onready var Sprite: AnimatedSprite2D = %Sprite
 @onready var Anim: AnimationPlayer = $Anim
 @onready var Music: AudioStreamPlayer = $BossMusic
 const NeedleProjectileP: PackedScene = preload("uid://butpnmv72t18n")
@@ -93,7 +93,7 @@ func do_death():
 	await Anim.animation_finished
 	var orb: LightOrbC = LightOrbP.instantiate()
 	get_tree().root.add_child(orb)
-	orb.global_position = global_position
+	orb.global_position = Sprite.global_position
 	orb.scale *= 3.0
 	orb.modulate.a = 0
 

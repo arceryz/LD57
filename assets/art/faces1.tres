@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://nvlevdtsfp6m"]
+
+[ext_resource type="Texture2D" uid="uid://cu7epcoe04jmq" path="res://assets/art/Face_platorm_anx.png" id="1_t4iai"]
+
+[resource]
+atlas = ExtResource("1_t4iai")
+region = Rect2(27.7632, 7.90793, 120.079, 74.4079)

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b812l0xsw57t"]
+
+[ext_resource type="Script" uid="uid://3aqp7lsheili" path="res://prefabs/obstacles/scare_platform/scare_platform.gd" id="1_ri5qt"]
+[ext_resource type="Texture2D" uid="uid://nvlevdtsfp6m" path="res://assets/art/faces1.tres" id="1_ttk86"]
+[ext_resource type="Texture2D" uid="uid://drteuysi0em1t" path="res://assets/art/faces2.tres" id="2_ri5qt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttk86"]
+size = Vector2(117, 216)
+
+[node name="ScareWall" type="PathFollow2D"]
+script = ExtResource("1_ri5qt")
+
+[node name="Platform" type="AnimatableBody2D" parent="."]
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-0.5, 15)
+shape = SubResource("RectangleShape2D_ttk86")
+one_way_collision = true
+debug_color = Color(0.635294, 0.341755, 1, 0.42)
+
+[node name="Faces1" type="Sprite2D" parent="."]
+position = Vector2(-0.499996, -65.5)
+scale = Vector2(0.983333, 0.905405)
+texture = ExtResource("1_ttk86")
+
+[node name="Faces2" type="Sprite2D" parent="."]
+position = Vector2(-1.5, -9.5)
+scale = Vector2(0.898496, 0.863636)
+texture = ExtResource("2_ri5qt")
+script = ExtResource("1_ri5qt")
+
+[node name="Faces4" type="Sprite2D" parent="."]
+position = Vector2(-2.25, 93.75)
+scale = Vector2(0.898496, 0.824675)
+texture = ExtResource("2_ri5qt")
+flip_h = true
+flip_v = true
+
+[node name="Faces3" type="Sprite2D" parent="."]
+position = Vector2(-1.5, 44.5)
+texture = ExtResource("1_ttk86")
+flip_h = true

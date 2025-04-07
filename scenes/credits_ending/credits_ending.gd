@@ -6,8 +6,8 @@ const MainMenuP: PackedScene = preload("uid://oxgxc0rq0ps8")
 
 func _ready() -> void:
 	Global.ending_triggered = false
-	hide()
 	ReturnButton.pressed.connect(_on_main_menu_pressed)
+	hide()
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_packed(MainMenuP)
