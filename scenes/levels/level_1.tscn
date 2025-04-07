@@ -1,7 +1,9 @@
+
 [gd_scene load_steps=66 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
+[ext_resource type="PackedScene" uid="uid://c5cvoo8kci86f" path="res://scenes/game_ui/game_ui.tscn" id="2_t4umt"]
 [ext_resource type="PackedScene" uid="uid://csl1dq7beeeey" path="res://prefabs/backgrounds/parallax_background1.tscn" id="3_dga24"]
 [ext_resource type="PackedScene" uid="uid://dq45dri0s7nq4" path="res://prefabs/light_orb/light_orb.tscn" id="3_nsrm0"]
 [ext_resource type="Script" uid="uid://c10pw4tr8qpn0" path="res://scripts/room.gd" id="4_x42e6"]
@@ -23,12 +25,12 @@
 [ext_resource type="Texture2D" uid="uid://baw5w50yfhv6j" path="res://assets/art/DrippyBlackness/drip3_anx.png" id="16_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://cd2hu21dmsdkr" path="res://assets/art/DrippyBlackness/drip4_anx.png" id="17_gmpev"]
 [ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="18_mkypq"]
-[ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
 [ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
 [ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
 [ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
+
 [ext_resource type="Texture2D" uid="uid://cvhp6phbgcg0d" path="res://assets/art/BlackRoot1.png" id="30_cfnpk"]
 [ext_resource type="Texture2D" uid="uid://dulkk6lpocaxn" path="res://assets/art/BlackRoot3.png" id="31_wvtie"]
 [ext_resource type="Texture2D" uid="uid://cch6pb5u85y4b" path="res://assets/art/BlackRoot2.png" id="32_o8s4s"]
@@ -37,6 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://pvb8gb0ywwr2" path="res://assets/art/anxiety_frames/steentje3.png" id="35_ytidy"]
 [ext_resource type="Texture2D" uid="uid://bq1oyk41vscug" path="res://assets/art/anxiety_frames/steentje4.png" id="36_hvllt"]
 [ext_resource type="Texture2D" uid="uid://ihsvgut8wo8r" path="res://assets/art/anxiety_frames/steentje1.png" id="37_dp4fg"]
+
+[ext_resource type="PackedScene" uid="uid://1gmv5iuld41k" path="res://scenes/intro_overlay/intro_overlay.tscn" id="29_0qwwm"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -180,6 +185,15 @@ size = Vector2(376, 879)
 radius = 320.0
 
 [node name="LevelCameraRailTest" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="IntroOverlay" parent="CanvasLayer" instance=ExtResource("29_0qwwm")]
+z_index = 1
+disable = true
+
+[node name="GameUi" parent="CanvasLayer" instance=ExtResource("2_t4umt")]
 
 [node name="Darkening" type="CanvasModulate" parent="."]
 color = Color(0.800491, 0.800491, 0.800491, 1)
@@ -446,7 +460,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1915, 840)
+position = Vector2(-1917, 828)
 flap_winddown = 0.4
 flap_duration = 0.0
 
@@ -1118,11 +1132,6 @@ scale = Vector2(0.5125, 0.5125)
 texture = ExtResource("33_ebb2h")
 
 [node name="Music" type="Node" parent="."]
-
-[node name="Opening" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("18_np2pn")
-autoplay = true
-bus = &"Music"
 
 [node name="Audio" type="Node" parent="."]
 
