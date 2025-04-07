@@ -178,6 +178,7 @@ layer = 3
 
 [node name="IntroOverlay" parent="CanvasLayer" instance=ExtResource("29_0qwwm")]
 z_index = 1
+disable = true
 
 [node name="Darkening" type="CanvasModulate" parent="."]
 color = Color(0.800491, 0.800491, 0.800491, 1)
@@ -444,7 +445,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-3557, -3326)
+position = Vector2(-2522, -3269)
 flap_winddown = 0.4
 flap_duration = 0.0
 
