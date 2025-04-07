@@ -1,13 +1,12 @@
-[gd_scene load_steps=36 format=3 uid="uid://by5gxb0n020ns"]
+[gd_scene load_steps=35 format=3 uid="uid://by5gxb0n020ns"]
 
 [ext_resource type="Script" uid="uid://d2ranft7oh7mi" path="res://prefabs/anxiety_boss/anxiety_boss.gd" id="1_kau3k"]
-[ext_resource type="Texture2D" uid="uid://nqmieprff1va" path="res://assets/art/anxiety_frames/anxiety1.tres" id="1_ouq2b"]
-[ext_resource type="Texture2D" uid="uid://x3g40eqie0ae" path="res://assets/art/anxiety_frames/anxiety2.tres" id="2_kau3k"]
-[ext_resource type="Texture2D" uid="uid://djjdsan8jsudf" path="res://assets/art/anxiety_frames/anxiety3.tres" id="3_cdf38"]
-[ext_resource type="Texture2D" uid="uid://cmq6cov8le3v8" path="res://assets/art/anxiety_frames/anxiety4.tres" id="4_t40mb"]
-[ext_resource type="Texture2D" uid="uid://uikgk0kkx8j1" path="res://assets/art/anxiety_frames/anxiety5.tres" id="5_0lsq4"]
-[ext_resource type="Texture2D" uid="uid://d1w6bswev02cu" path="res://assets/art/anxiety_frames/anxiety6.tres" id="6_2mb5l"]
-[ext_resource type="Texture2D" uid="uid://cbc441pkjyp6f" path="res://assets/art/anxiety_frames/anxiety7.tres" id="7_ijos5"]
+[ext_resource type="Texture2D" uid="uid://bd3qtnfxgko5u" path="res://assets/art/anxiety_frames/Untitled_Artwork-1.png" id="2_rokit"]
+[ext_resource type="Texture2D" uid="uid://chcsoso61m0o" path="res://assets/art/anxiety_frames/Untitled_Artwork-2.png" id="3_c4gv1"]
+[ext_resource type="Texture2D" uid="uid://dmo0uhs8sfgho" path="res://assets/art/anxiety_frames/Untitled_Artwork-3.png" id="4_qsrie"]
+[ext_resource type="Texture2D" uid="uid://bkj37255tw4sb" path="res://assets/art/anxiety_frames/Untitled_Artwork-4.png" id="5_sdext"]
+[ext_resource type="Texture2D" uid="uid://b6ms8x858r4ip" path="res://assets/art/anxiety_frames/Untitled_Artwork-5.png" id="6_pcugv"]
+[ext_resource type="Texture2D" uid="uid://dy2ifnava3fcj" path="res://assets/art/anxiety_frames/Untitled_Artwork-6.png" id="7_fim6g"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="9_cdf38"]
 [ext_resource type="AudioStream" uid="uid://d3dnaaidacrnv" path="res://assets/audio-max/music/Depths_Anxiety_Intro.ogg" id="10_ydrr0"]
 [ext_resource type="AudioStream" uid="uid://db1hycqb7f6br" path="res://assets/audio-max/music/Depths_Anxiety_Segment_A.ogg" id="11_h5ags"]
@@ -32,25 +31,22 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ouq2b")
+"texture": ExtResource("2_rokit")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_kau3k")
+"texture": ExtResource("3_c4gv1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_cdf38")
+"texture": ExtResource("4_qsrie")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_t40mb")
+"texture": ExtResource("5_sdext")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_0lsq4")
+"texture": ExtResource("6_pcugv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2mb5l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ijos5")
+"texture": ExtResource("7_fim6g")
 }],
 "loop": true,
 "name": &"default",
@@ -241,14 +237,15 @@ stream_3/stream = ExtResource("27_fim6g")
 [node name="AnxietyBoss" type="PathFollow2D"]
 script = ExtResource("1_kau3k")
 needle_spawn_range = 500.0
-attack_interval_variation = 2.0
+attack_interval = 2.0
+attack_interval_variation = 3.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 z_index = 5
-scale = Vector2(0.746388, 0.778121)
+scale = Vector2(0.436231, 0.459179)
 sprite_frames = SubResource("SpriteFrames_d0fio")
 autoplay = "default"
-frame_progress = 0.862346
+frame_progress = 0.205085
 speed_scale = 2.0
 
 [node name="Anim" type="AnimationPlayer" parent="."]

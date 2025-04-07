@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://davpw4vflk8s2"
-path="res://.godot/imported/anxiety_spritesheet.png-8a577ef5fb0ad124b8202762d580ac68.ctex"
+uid="uid://dkslsh45h8pgk"
+path="res://.godot/imported/Untitled_Artwork-7.png-3c66765df7dd7ffa39ce1e358beb2fa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/anxiety_spritesheet.png"
-dest_files=["res://.godot/imported/anxiety_spritesheet.png-8a577ef5fb0ad124b8202762d580ac68.ctex"]
+source_file="res://assets/art/anxiety_frames/Untitled_Artwork-7.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-7.png-3c66765df7dd7ffa39ce1e358beb2fa4.ctex"]
 
 [params]
 
