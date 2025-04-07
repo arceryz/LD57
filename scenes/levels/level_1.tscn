@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=58 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -24,9 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://cd2hu21dmsdkr" path="res://assets/art/DrippyBlackness/drip4_anx.png" id="17_gmpev"]
 [ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="18_mkypq"]
 [ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
+[ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
 [ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
-[ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
 [ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
 
@@ -441,7 +441,6 @@ metadata/_edit_lock_ = true
 position = Vector2(-1915, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
-start_orbs = 0
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
