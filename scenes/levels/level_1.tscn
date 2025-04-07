@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=66 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -29,6 +29,14 @@
 [ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
 [ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
+[ext_resource type="Texture2D" uid="uid://cvhp6phbgcg0d" path="res://assets/art/BlackRoot1.png" id="30_cfnpk"]
+[ext_resource type="Texture2D" uid="uid://dulkk6lpocaxn" path="res://assets/art/BlackRoot3.png" id="31_wvtie"]
+[ext_resource type="Texture2D" uid="uid://cch6pb5u85y4b" path="res://assets/art/BlackRoot2.png" id="32_o8s4s"]
+[ext_resource type="Texture2D" uid="uid://dxgfhyfqdq0r3" path="res://assets/art/BlackRoot4.png" id="33_ebb2h"]
+[ext_resource type="Texture2D" uid="uid://dfo4c4a4staoe" path="res://assets/art/anxiety_frames/steentje2.png" id="34_row31"]
+[ext_resource type="Texture2D" uid="uid://pvb8gb0ywwr2" path="res://assets/art/anxiety_frames/steentje3.png" id="35_ytidy"]
+[ext_resource type="Texture2D" uid="uid://bq1oyk41vscug" path="res://assets/art/anxiety_frames/steentje4.png" id="36_hvllt"]
+[ext_resource type="Texture2D" uid="uid://ihsvgut8wo8r" path="res://assets/art/anxiety_frames/steentje1.png" id="37_dp4fg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -441,7 +449,6 @@ metadata/_edit_lock_ = true
 position = Vector2(-1915, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
-start_orbs = 0
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
@@ -669,7 +676,6 @@ texture = ExtResource("16_v6ha0")
 z_index = 1
 position = Vector2(626, 394)
 rotation = -1.60047
-scale = Vector2(1, 1)
 texture = ExtResource("17_gmpev")
 flip_v = true
 
@@ -766,7 +772,6 @@ texture = ExtResource("16_v6ha0")
 [node name="Drip5Anx9" type="Sprite2D" parent="FaceMasks"]
 position = Vector2(5115, 2004)
 rotation = 0.0610865
-scale = Vector2(1, 1)
 texture = ExtResource("19_mkypq")
 flip_h = true
 
@@ -833,7 +838,7 @@ position = Vector2(3031, 343)
 texture = ExtResource("20_ndtll")
 
 [node name="Drip2" type="Sprite2D" parent="FaceMasks"]
-position = Vector2(3894, 537)
+position = Vector2(3883, 445)
 rotation = -0.0331613
 texture = ExtResource("21_7h2jl")
 
@@ -1011,7 +1016,6 @@ flip_h = true
 z_index = 1
 position = Vector2(3542, 579)
 rotation = 0.0610865
-scale = Vector2(1, 1)
 texture = ExtResource("21_7h2jl")
 flip_h = true
 
@@ -1025,75 +1029,93 @@ position = Vector2(3307, -3412)
 texture = ExtResource("16_v6ha0")
 
 [node name="MediumTree1Bg" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(-1625, 280)
 rotation = 3.14159
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_v6ha0")
 
 [node name="MediumTree3Bg" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(-2408, 378)
 rotation = -2.83616
 scale = Vector2(0.83, 0.83)
 texture = ExtResource("10_np2pn")
 
 [node name="MediumTree1Bg2" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(-2821, 668)
 rotation = 0.863935
 scale = Vector2(0.37, 0.37)
 texture = ExtResource("11_v6ha0")
 
 [node name="LightestTree4Bg" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(-1481, 857)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("13_mkypq")
 
 [node name="LightestTree3Bg" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(-642, 412)
 rotation = 2.62673
 scale = Vector2(0.395, 0.395)
 texture = ExtResource("12_gmpev")
 
 [node name="MediumTree1Bg3" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(161, 333)
 rotation = -2.96706
 scale = Vector2(0.285, 0.285)
 texture = ExtResource("11_v6ha0")
 
 [node name="MediumTree3Bg2" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(-668, 631)
 rotation = 1.77675
 scale = Vector2(0.585, 0.585)
 texture = ExtResource("10_np2pn")
 
 [node name="LightestTree3Bg2" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(452, 481)
 rotation = -2.85536
 scale = Vector2(0.3, 0.271429)
 texture = ExtResource("12_gmpev")
 
 [node name="MediumTree1Bg4" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(2353, 339)
 rotation = -3.11541
 scale = Vector2(0.47, 0.47)
 texture = ExtResource("11_v6ha0")
 
 [node name="DarkestTree3Bg" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(3195, 431)
 rotation = 3.0456
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_bahl2")
 
 [node name="DarkestTree3Bg2" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(3439, 562)
 rotation = 2.15723
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_bahl2")
 
 [node name="DarkestTree3Bg3" type="Sprite2D" parent="FaceMasks"]
+z_index = -1
 position = Vector2(2107, 1201)
 rotation = 2.15723
 scale = Vector2(0.265, 0.265)
 texture = ExtResource("8_bahl2")
+
+[node name="BlackRoot4" type="Sprite2D" parent="FaceMasks"]
+position = Vector2(5352, 2315)
+rotation = 0.380482
+scale = Vector2(0.5125, 0.5125)
+texture = ExtResource("33_ebb2h")
 
 [node name="Music" type="Node" parent="."]
 
@@ -1111,3 +1133,575 @@ autoplay = true
 
 [node name="Gen_Amb_Randoms" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("20_gmpev")
+
+[node name="MediumTree1Bg" type="Sprite2D" parent="."]
+position = Vector2(-2073, -1640)
+rotation = 2.46091
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("11_v6ha0")
+
+[node name="DarkestTree3Bg" type="Sprite2D" parent="."]
+position = Vector2(-1377, -1744)
+rotation = 0.6353
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("8_bahl2")
+flip_v = true
+
+[node name="LightestTree4Bg" type="Sprite2D" parent="."]
+position = Vector2(-1654, -1732)
+rotation = 3.21141
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("13_mkypq")
+
+[node name="MediumTree3Bg" type="Sprite2D" parent="."]
+position = Vector2(-702, -1543)
+rotation = 3.0456
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_np2pn")
+flip_h = true
+
+[node name="MediumTree3Bg2" type="Sprite2D" parent="."]
+position = Vector2(-1911, -1024)
+rotation = 3.0456
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_np2pn")
+flip_v = true
+
+[node name="DarkestTree3Bg2" type="Sprite2D" parent="."]
+position = Vector2(385, -1551)
+rotation = 1.09083
+scale = Vector2(0.405, 0.405)
+texture = ExtResource("8_bahl2")
+
+[node name="MediumTree1Bg2" type="Sprite2D" parent="."]
+position = Vector2(1256, -1057)
+rotation = 3.6809
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_v6ha0")
+flip_h = true
+
+[node name="MediumTree3Bg3" type="Sprite2D" parent="."]
+position = Vector2(574, -250)
+rotation = 2.85536
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("10_np2pn")
+
+[node name="BlackRoot1" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(2859, 1912)
+rotation = 3.14159
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot3" type="Sprite2D" parent="."]
+position = Vector2(-131, 423)
+rotation = 3.13287
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("31_wvtie")
+
+[node name="BlackRoot2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(6115, 1677)
+rotation = 3.57792
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("32_o8s4s")
+
+[node name="BlackRoot4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3729, 522)
+rotation = 3.14159
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("33_ebb2h")
+flip_h = true
+
+[node name="BlackRoot5" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-3682, -2023)
+rotation = 3.4383
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot6" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-4774, -1961)
+rotation = 6.28319
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("32_o8s4s")
+flip_v = true
+
+[node name="BlackRoot7" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-1449, 1050)
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot8" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(319, 234)
+rotation = 3.33881
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot9" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1863, 197)
+rotation = 1.71391
+scale = Vector2(0.805, 0.805)
+texture = ExtResource("32_o8s4s")
+
+[node name="BlackRoot11" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(2463, 1581)
+rotation = 4.00553
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("31_wvtie")
+flip_h = true
+
+[node name="BlackRoot10" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1231, -1283)
+rotation = 3.70882
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot12" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-894, -1302)
+rotation = -0.191986
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("33_ebb2h")
+
+[node name="BlackRoot13" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-440, -1481)
+rotation = -0.507891
+texture = ExtResource("32_o8s4s")
+
+[node name="BlackRoot14" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-29, -1550)
+rotation = 3.30042
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("30_cfnpk")
+
+[node name="LightestTree3Bg" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-398, -1429)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_gmpev")
+
+[node name="MediumTree1Bg3" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(33.0001, -1482)
+rotation = 3.76991
+texture = ExtResource("11_v6ha0")
+
+[node name="BlackRoot15" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-4359, -3370)
+rotation = 1.71915
+texture = ExtResource("32_o8s4s")
+
+[node name="BlackRoot16" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-3705, -3054)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot26" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-700, 561)
+rotation = 1.71915
+scale = Vector2(0.885, 0.885)
+texture = ExtResource("32_o8s4s")
+
+[node name="BlackRoot27" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-170.111, 947.889)
+scale = Vector2(0.885, 0.885)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot24" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-1880, -3069)
+scale = Vector2(0.604, 0.604)
+texture = ExtResource("30_cfnpk")
+
+[node name="BlackRoot17" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-4713, -3061)
+rotation = 0.762709
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("33_ebb2h")
+
+[node name="BlackRoot18" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-4873, -3548)
+rotation = 2.82743
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("30_cfnpk")
+
+[node name="MediumTree1Bg4" type="Sprite2D" parent="."]
+position = Vector2(-4073, -2982)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree3Bg4" type="Sprite2D" parent="."]
+position = Vector2(-3918, -3176)
+texture = ExtResource("10_np2pn")
+
+[node name="MediumTree3Bg5" type="Sprite2D" parent="."]
+position = Vector2(-4486, -3350)
+rotation = 3.38594
+texture = ExtResource("10_np2pn")
+
+[node name="LightestTree4Bg2" type="Sprite2D" parent="."]
+position = Vector2(-4431, -2933)
+texture = ExtResource("13_mkypq")
+
+[node name="LightestTree4Bg3" type="Sprite2D" parent="."]
+position = Vector2(-3264, -3229)
+texture = ExtResource("13_mkypq")
+
+[node name="LightestTree3Bg2" type="Sprite2D" parent="."]
+position = Vector2(-3740, -3376)
+rotation = 2.38237
+texture = ExtResource("12_gmpev")
+
+[node name="BlackRoot19" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-4382, -2750)
+rotation = -1.2706
+texture = ExtResource("33_ebb2h")
+
+[node name="BlackRoot20" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-3100, -3146)
+rotation = 0.541052
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("31_wvtie")
+flip_h = true
+
+[node name="BlackRoot21" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-3345, -3506)
+rotation = 2.7262
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("31_wvtie")
+
+[node name="BlackRoot25" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-402, -3990)
+rotation = 2.7262
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("31_wvtie")
+flip_h = true
+
+[node name="BlackRoot22" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(265, -4098)
+rotation = 1.67552
+texture = ExtResource("32_o8s4s")
+
+[node name="BlackRoot23" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-469, -3212)
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("30_cfnpk")
+
+[node name="MediumTree1Bg5" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-1250, -3348)
+rotation = 0.445059
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree1Bg6" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-2152, -3900)
+rotation = 3.61807
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree1Bg7" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-27, -3780)
+rotation = 3.61807
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("11_v6ha0")
+flip_h = true
+
+[node name="MediumTree1Bg8" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(2860, -3903)
+rotation = 3.61807
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("11_v6ha0")
+flip_h = true
+
+[node name="MediumTree3Bg6" type="Sprite2D" parent="."]
+position = Vector2(-1566, -3925)
+rotation = 3.22886
+texture = ExtResource("10_np2pn")
+
+[node name="MediumTree3Bg7" type="Sprite2D" parent="."]
+position = Vector2(825, -3923)
+rotation = 3.22886
+texture = ExtResource("10_np2pn")
+
+[node name="MediumTree3Bg8" type="Sprite2D" parent="."]
+position = Vector2(3497, -3323)
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("10_np2pn")
+
+[node name="MediumTree3Bg9" type="Sprite2D" parent="."]
+position = Vector2(3041, -3306)
+rotation = 3.36325
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("10_np2pn")
+flip_h = true
+
+[node name="MediumTree1Bg9" type="Sprite2D" parent="."]
+position = Vector2(49, 395)
+rotation = -3.6809
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("11_v6ha0")
+flip_h = true
+
+[node name="MediumTree3Bg10" type="Sprite2D" parent="."]
+position = Vector2(-433, 773)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("10_np2pn")
+
+[node name="MediumTree3Bg11" type="Sprite2D" parent="."]
+position = Vector2(-287, 404)
+rotation = 2.37365
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("10_np2pn")
+
+[node name="Drip5Anx" type="Sprite2D" parent="."]
+position = Vector2(-403, 567)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5Anx2" type="Sprite2D" parent="."]
+position = Vector2(-656, 675)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5Anx3" type="Sprite2D" parent="."]
+position = Vector2(-460, 660)
+texture = ExtResource("19_mkypq")
+flip_h = true
+
+[node name="Drip5Anx4" type="Sprite2D" parent="."]
+position = Vector2(-162, 386)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(336, 486)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip6Anx2" type="Sprite2D" parent="."]
+position = Vector2(3676, 520)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip6Anx3" type="Sprite2D" parent="."]
+position = Vector2(-3807, -1910)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip6Anx4" type="Sprite2D" parent="."]
+position = Vector2(-3607, -1872)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip6Anx5" type="Sprite2D" parent="."]
+position = Vector2(-3648, -1805)
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("20_ndtll")
+flip_h = true
+
+[node name="Drip5Anx5" type="Sprite2D" parent="."]
+position = Vector2(-4660, -1921)
+texture = ExtResource("19_mkypq")
+
+[node name="Steentje3" type="Sprite2D" parent="."]
+position = Vector2(-2024, 874)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("35_ytidy")
+
+[node name="Steentje4" type="Sprite2D" parent="."]
+position = Vector2(-1841, 887)
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("36_hvllt")
+
+[node name="Steentje5" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-2472, 886)
+scale = Vector2(1.195, 1.195)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje6" type="Sprite2D" parent="."]
+position = Vector2(-737, 886)
+texture = ExtResource("34_row31")
+
+[node name="Steentje7" type="Sprite2D" parent="."]
+position = Vector2(448, 610)
+texture = ExtResource("35_ytidy")
+flip_h = true
+
+[node name="Steentje8" type="Sprite2D" parent="."]
+position = Vector2(2803, 503)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje9" type="Sprite2D" parent="."]
+position = Vector2(3180, 754)
+texture = ExtResource("34_row31")
+flip_h = true
+
+[node name="Steentje10" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(3719, 727)
+texture = ExtResource("36_hvllt")
+
+[node name="Steentje11" type="Sprite2D" parent="."]
+position = Vector2(3575, 754)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje12" type="Sprite2D" parent="."]
+position = Vector2(-2481, -905)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje13" type="Sprite2D" parent="."]
+position = Vector2(-1545, -995)
+texture = ExtResource("35_ytidy")
+
+[node name="Steentje14" type="Sprite2D" parent="."]
+position = Vector2(-885, -1611)
+rotation = 3.14159
+texture = ExtResource("35_ytidy")
+
+[node name="Steentje15" type="Sprite2D" parent="."]
+position = Vector2(259, -1288)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje16" type="Sprite2D" parent="."]
+position = Vector2(-107, -1601)
+rotation = 3.16777
+texture = ExtResource("36_hvllt")
+
+[node name="Steentje17" type="Sprite2D" parent="."]
+position = Vector2(-2812, -1804)
+rotation = 3.14159
+texture = ExtResource("35_ytidy")
+
+[node name="Steentje18" type="Sprite2D" parent="."]
+position = Vector2(-3278, -1378)
+texture = ExtResource("35_ytidy")
+
+[node name="Steentje1" type="Sprite2D" parent="."]
+position = Vector2(-3726, -1669)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje2" type="Sprite2D" parent="."]
+position = Vector2(1338, -840)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje19" type="Sprite2D" parent="."]
+position = Vector2(2389, 2418)
+texture = ExtResource("34_row31")
+
+[node name="Steentje20" type="Sprite2D" parent="."]
+position = Vector2(2839, 2424)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("36_hvllt")
+
+[node name="Steentje21" type="Sprite2D" parent="."]
+position = Vector2(3907, 2422)
+texture = ExtResource("34_row31")
+
+[node name="Steentje22" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(3049, 2359)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje23" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3484, 2417)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("35_ytidy")
+
+[node name="Steentje24" type="Sprite2D" parent="."]
+position = Vector2(5161, 2298)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje25" type="Sprite2D" parent="."]
+position = Vector2(5871, 2098)
+texture = ExtResource("34_row31")
+flip_h = true
+
+[node name="Steentje26" type="Sprite2D" parent="."]
+position = Vector2(1186, 632)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje27" type="Sprite2D" parent="."]
+position = Vector2(-3976, -3223)
+texture = ExtResource("34_row31")
+
+[node name="Steentje28" type="Sprite2D" parent="."]
+position = Vector2(-4293, -3042)
+texture = ExtResource("36_hvllt")
+
+[node name="Steentje29" type="Sprite2D" parent="."]
+position = Vector2(-3165, -3144)
+texture = ExtResource("37_dp4fg")
+flip_h = true
+
+[node name="Steentje30" type="Sprite2D" parent="."]
+position = Vector2(-2162, -3149)
+texture = ExtResource("34_row31")
+
+[node name="Steentje31" type="Sprite2D" parent="."]
+position = Vector2(-453, -3610)
+rotation = 2.25497
+texture = ExtResource("36_hvllt")
+flip_h = true
+
+[node name="Steentje32" type="Sprite2D" parent="."]
+position = Vector2(1735, 671)
+rotation = 4.0544
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("36_hvllt")
+
+[node name="Steentje33" type="Sprite2D" parent="."]
+position = Vector2(1281, -9)
+rotation = 5.21853
+texture = ExtResource("35_ytidy")
+
+[node name="Steentje34" type="Sprite2D" parent="."]
+position = Vector2(516, -3326)
+texture = ExtResource("37_dp4fg")
+flip_h = true
+
+[node name="Steentje35" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(796, -3380)
+rotation = -3.15032
+scale = Vector2(0.73, 0.73)
+texture = ExtResource("34_row31")
+
+[node name="Steentje36" type="Sprite2D" parent="."]
+position = Vector2(1554, -3333)
+texture = ExtResource("34_row31")
+
+[node name="Steentje37" type="Sprite2D" parent="."]
+position = Vector2(3578, -3270)
+texture = ExtResource("37_dp4fg")
+
+[node name="Steentje38" type="Sprite2D" parent="."]
+position = Vector2(4181, -3297)
+texture = ExtResource("35_ytidy")
+flip_h = true
+
+[node name="BlackRoot28" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-2140, 112)
+rotation = -3.42085
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("30_cfnpk")
