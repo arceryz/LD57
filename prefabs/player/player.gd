@@ -37,6 +37,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	HitArea.body_entered.connect(_on_hit_body_entered)
 	Sprite.frame_changed.connect(OnFrameChange)
+	HitArea.area_entered.connect(_on_hit_body_entered)
 	for i in range(start_orbs):
 		OrbHolder.generate_orb.call_deferred()
 

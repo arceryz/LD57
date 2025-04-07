@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8dj3qjjriwy0"]
+
+[ext_resource type="Texture2D" uid="uid://c02thvp8jsxvb" path="res://assets/art/mediumTree3_bg.png" id="1_ebfmk"]
+
+[node name="MediumTree3Bg" type="Sprite2D"]
+texture = ExtResource("1_ebfmk")

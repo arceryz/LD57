@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=56 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -17,9 +17,18 @@
 [ext_resource type="PackedScene" uid="uid://by5gxb0n020ns" path="res://prefabs/anxiety_boss/anxiety_boss.tscn" id="12_mm8aj"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="13_dnkej"]
 [ext_resource type="Texture2D" uid="uid://cqqicjedcq2av" path="res://assets/art/LightestTree4_bg.png" id="13_mkypq"]
+[ext_resource type="Texture2D" uid="uid://b8dslowsgr8kx" path="res://assets/art/faces_anx.png" id="13_mm8aj"]
+[ext_resource type="Texture2D" uid="uid://dwilnb0f287o3" path="res://assets/art/faces_anx2.png" id="14_wtwp4"]
+[ext_resource type="Texture2D" uid="uid://rur1dvw7kdh5" path="res://assets/art/DrippyBlackness/drip2_anx.png" id="15_np2pn"]
+[ext_resource type="Texture2D" uid="uid://baw5w50yfhv6j" path="res://assets/art/DrippyBlackness/drip3_anx.png" id="16_v6ha0"]
+[ext_resource type="Texture2D" uid="uid://cd2hu21dmsdkr" path="res://assets/art/DrippyBlackness/drip4_anx.png" id="17_gmpev"]
+[ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="18_mkypq"]
 [ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
 [ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
 [ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
+[ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
+[ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
+[ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -240,7 +249,7 @@ metadata/_edit_lock_ = true
 [node name="Boss" type="Area2D" parent="Rooms"]
 script = ExtResource("4_x42e6")
 force_screen_height = true
-camera_offset = Vector2(300, 0)
+camera_offset = Vector2(700, 0)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Boss"]
@@ -393,74 +402,6 @@ position = Vector2(4187, 1765)
 
 [node name="Decoration" type="Node" parent="."]
 
-[node name="BigTree1" type="Sprite2D" parent="Decoration"]
-z_index = 3
-position = Vector2(-2019, 244)
-rotation = 2.42938
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree4" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-2768, 728)
-rotation = 7.36841
-scale = Vector2(0.880398, 0.7443)
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree5" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-2553.92, 271.861)
-rotation = 7.59266
-scale = Vector2(1.08204, 1.35605)
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree7" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(1952, 1618)
-rotation = 7.59266
-scale = Vector2(0.749435, 1.04809)
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree8" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(2471, 1047)
-rotation = 8.40363
-scale = Vector2(0.938752, -0.940754)
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree9" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(2132, 2352)
-rotation = 10.9541
-scale = Vector2(0.862273, -1.03788)
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(746, 323)
-rotation = 0.973263
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree6" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 4
-position = Vector2(375, 438)
-rotation = 2.67409
-scale = Vector2(0.780843, 0.734354)
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree2" type="Sprite2D" parent="Decoration"]
-z_index = 3
-position = Vector2(-1841, 141)
-rotation = 0.681364
-scale = Vector2(0.489, -0.533)
-texture = ExtResource("8_bahl2")
-
 [node name="GodRay" type="Sprite2D" parent="Decoration"]
 modulate = Color(4, 4, 4, 1)
 z_index = -1
@@ -469,669 +410,6 @@ position = Vector2(-1943.44, 304.5)
 scale = Vector2(1.59814, 2.43555)
 texture = SubResource("GradientTexture2D_dga24")
 metadata/_edit_lock_ = true
-
-[node name="MediumTree3Bg" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-378, 738)
-rotation = 4.30245
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="MediumTree3Bg2" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-455, 378)
-rotation = 2.62439
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="MediumTree3Bg5" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.288518, 0.288518, 0.288518, 1)
-z_index = 3
-position = Vector2(4755, 2130)
-rotation = 3.46401
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="MediumTree3Bg3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.377919, 0.377919, 0.377919, 1)
-z_index = 3
-position = Vector2(-1583, 900)
-rotation = 1.49602
-scale = Vector2(0.490305, 0.586617)
-texture = ExtResource("10_np2pn")
-
-[node name="MediumTree3Bg4" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.377919, 0.377919, 0.377919, 1)
-z_index = 3
-position = Vector2(-1569, 340)
-rotation = 3.3731
-scale = Vector2(0.490305, 0.586617)
-texture = ExtResource("10_np2pn")
-
-[node name="ComplexTree1" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 2
-position = Vector2(516, 414)
-rotation = 2.18402
-scale = Vector2(0.326683, 0.298628)
-texture = ExtResource("11_v6ha0")
-
-[node name="MediumTree1Bg" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(-2433, 628)
-rotation = 2.24729
-scale = Vector2(0.471387, 0.398318)
-texture = ExtResource("11_v6ha0")
-
-[node name="MediumTree1Bg2" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(-769, 671)
-rotation = 2.99003
-scale = Vector2(0.352316, 0.283373)
-texture = ExtResource("11_v6ha0")
-
-[node name="MediumTree1Bg3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(2903, 2141)
-rotation = 2.90067
-scale = Vector2(0.352316, 0.283373)
-texture = ExtResource("11_v6ha0")
-
-[node name="MediumTree1Bg4" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(3266, 2455)
-rotation = 0.624117
-scale = Vector2(0.352316, 0.283373)
-texture = ExtResource("11_v6ha0")
-
-[node name="LightestTree3Bg2" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1791, 954)
-rotation = 1.58357
-scale = Vector2(0.615198, 0.333513)
-texture = ExtResource("12_gmpev")
-
-[node name="LightestTree3Bg" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1327, 541)
-rotation = 3.12975
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="LightestTree3Bg3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-2045, 910)
-rotation = -2.33146
-scale = Vector2(0.572027, 0.203079)
-texture = ExtResource("12_gmpev")
-
-[node name="SmallTwig1" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(2740, 2238)
-rotation = 2.9247
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="SmallTwig2" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(3387, 2175)
-rotation = -2.47789
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="SmallTwig3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(2561, 1056)
-rotation = -2.21581
-scale = Vector2(0.343629, 0.277081)
-texture = ExtResource("13_mkypq")
-
-[node name="ComplexTree2" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.47788, 0.47788, 0.47788, 1)
-z_index = 3
-position = Vector2(3127, 474)
-rotation = 2.02811
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="ComplexTree3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.47788, 0.47788, 0.47788, 1)
-z_index = 3
-position = Vector2(3869, 518)
-rotation = 3.1238
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="ComplexTree4" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.47788, 0.47788, 0.47788, 1)
-z_index = 3
-position = Vector2(2515, 456)
-rotation = -2.04765
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="DarkTwig" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.741385, 0.741385, 0.741385, 1)
-z_index = 3
-position = Vector2(4030, 1339)
-rotation = 1.95636
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig2" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.41598, 0.41598, 0.41598, 1)
-z_index = 2
-position = Vector2(3955, 1990)
-rotation = 2.64693
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="BigTree10" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(5922, 1422)
-rotation = -3.06193
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree11" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(5990, 2007)
-rotation = -1.62573
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree12" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(5809, 2075)
-rotation = -2.08519
-scale = Vector2(0.719926, 0.750671)
-texture = ExtResource("8_bahl2")
-
-[node name="DarkTwig3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(6005, 1488)
-rotation = -2.88445
-scale = Vector2(0.559896, 0.58114)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig4" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.60933, 0.60933, 0.60933, 1)
-z_index = 3
-position = Vector2(4963, 1945)
-rotation = 1.64883
-scale = Vector2(0.559896, 0.58114)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig5" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.60933, 0.60933, 0.60933, 1)
-z_index = 3
-position = Vector2(4339, 2436)
-rotation = 1.4925
-scale = Vector2(0.559896, 0.58114)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig6" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.60933, 0.60933, 0.60933, 1)
-z_index = 3
-position = Vector2(4122, 2412)
-rotation = -0.994784
-scale = Vector2(0.533571, 0.363272)
-texture = ExtResource("10_np2pn")
-
-[node name="ComplexTree5" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(1185, -1115)
-rotation = -2.36897
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="ComplexTree6" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(685, -1603)
-rotation = 1.38794
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="SmallTwig4" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(796, -1313)
-rotation = 1.25156
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="SmallTwig5" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(613, -420)
-rotation = 1.92852
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="TinyTwig" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(1039, -417)
-rotation = -3.13569
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="TinyTwig2" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(1223, -103)
-rotation = -1.62306
-scale = Vector2(0.433438, 0.280793)
-texture = ExtResource("12_gmpev")
-
-[node name="TinyTwig3" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(646, -1004)
-rotation = 2.50551
-scale = Vector2(0.433438, 0.280793)
-texture = ExtResource("12_gmpev")
-
-[node name="TinyTwig4" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(1056, -1389)
-rotation = 3.09731
-scale = Vector2(0.433438, 0.280793)
-texture = ExtResource("12_gmpev")
-
-[node name="DarkTwig7" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 2
-position = Vector2(-692, -1489)
-rotation = -2.23399
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="SmallTwig6" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 2
-position = Vector2(-443, -1521)
-rotation = 2.15144
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="TinyTwig5" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-191, -1523)
-rotation = -2.96066
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="DarkTwig8" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-2534, -943)
-rotation = 1.31202
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig9" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1380, -1140)
-rotation = -2.25908
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig10" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-2382, -1700)
-rotation = 2.18163
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="BigTree13" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 2
-position = Vector2(-2469, -1498)
-rotation = 2.28193
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree14" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1286, -1697)
-rotation = -3.09273
-scale = Vector2(0.684009, 0.710025)
-texture = ExtResource("8_bahl2")
-
-[node name="DarkTwig11" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-3741, -1685)
-rotation = -1.40977
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig12" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4618, -1959)
-rotation = 3.09507
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="SmallTwig7" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4707, -1904)
-rotation = -2.73948
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="TinyTwig6" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4554, -2208)
-rotation = 0.166705
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="SmallTwig8" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4825, -3198)
-rotation = 2.04
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="SmallTwig9" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4374, -3395)
-rotation = 3.07617
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="TinyTwig7" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4268, -3064)
-rotation = -2.10942
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="ComplexTree7" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(-4546, -2931)
-rotation = -2.47997
-scale = Vector2(0.31261, 0.329535)
-texture = ExtResource("11_v6ha0")
-
-[node name="DarkTwig13" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-3385, -3186)
-rotation = 1.3875
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="BigTree15" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-2849, -3531)
-rotation = 2.74933
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree16" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1034, -3854)
-rotation = 1.4465
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree17" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-175, -3475)
-rotation = -0.14546
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree18" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(698, -3435)
-rotation = -1.80523
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree19" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(1644, -3851)
-rotation = 2.8727
-texture = ExtResource("8_bahl2")
-
-[node name="BigTree20" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(3019, -3540)
-rotation = -1.39619
-texture = ExtResource("8_bahl2")
-
-[node name="DarkTwig14" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(3171, -3552)
-rotation = 0.748591
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig15" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(1850, -3766)
-rotation = 2.64707
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig16" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(888, -3415)
-rotation = 1.00091
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig17" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-139, -3312)
-rotation = 1.00091
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig18" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(252, -3360)
-rotation = -0.79698
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig19" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-550, -3905)
-rotation = 2.95938
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig20" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-675.322, -3975.34)
-rotation = -2.68495
-scale = Vector2(0.697995, 0.57606)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig21" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1317, -3926)
-rotation = -2.68495
-scale = Vector2(0.697995, 0.57606)
-texture = ExtResource("10_np2pn")
-
-[node name="SmallTwig10" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1452, -3261)
-rotation = 1.33227
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="SmallTwig11" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-756, -3418)
-rotation = -2.36125
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="SmallTwig12" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-699, -3627)
-rotation = -1.49401
-scale = Vector2(0.47125, 0.416429)
-texture = ExtResource("13_mkypq")
-
-[node name="TinyTwig8" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(322, -3879)
-rotation = -2.9529
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="TinyTwig9" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(2245, -3942)
-rotation = 2.01735
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="TinyTwig10" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(3657, -3291)
-rotation = 1.13368
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="TinyTwig11" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(4034, -4007)
-rotation = -2.77854
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="ComplexTree8" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(3563, -3919)
-rotation = 2.56021
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="ComplexTree9" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(-2064, -3925)
-rotation = 2.64194
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="ComplexTree10" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(-2134, -3159)
-rotation = -0.462564
-scale = Vector2(0.378194, 0.350244)
-texture = ExtResource("11_v6ha0")
-
-[node name="DarkTwig22" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-1901, -3228)
-rotation = 0.0889307
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="DarkTwig23" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4004, -3448)
-rotation = 2.23654
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="ComplexTree11" type="Sprite2D" parent="Decoration"]
-modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
-z_index = 3
-position = Vector2(-3610, -3466)
-rotation = 2.8628
-scale = Vector2(0.484, 0.425833)
-texture = ExtResource("11_v6ha0")
-
-[node name="BigTree21" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4675, -3389)
-rotation = 1.55397
-scale = Vector2(0.802054, 0.864732)
-texture = ExtResource("8_bahl2")
-
-[node name="DarkTwig24" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4629, -2568)
-rotation = -2.49125
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
-
-[node name="TinyTwig12" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4761, -1453)
-rotation = 0.993322
-scale = Vector2(0.525, 0.445714)
-texture = ExtResource("12_gmpev")
-
-[node name="DarkTwig25" type="Sprite2D" parent="Decoration"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-position = Vector2(-4017, -2313)
-rotation = -2.53917
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("10_np2pn")
 
 [node name="Lights" type="Node" parent="."]
 
@@ -1160,10 +438,10 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(4991, 1715)
+position = Vector2(-1915, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
-start_orbs = 2
+start_orbs = 0
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
@@ -1182,7 +460,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-1536, -3584)
 rotates = false
 loop = false
-comfort_distance = 700.0
+comfort_distance = 1100.0
 move_speed = 600.0
 StartArea = NodePath("../../BossStartArea")
 metadata/_edit_lock_ = true
@@ -1211,6 +489,14 @@ position = Vector2(75, -211.5)
 shape = SubResource("RectangleShape2D_wtwp4")
 metadata/_edit_lock_ = true
 
+[node name="BossEntrance" type="Area2D" parent="Checkpoints"]
+position = Vector2(-2580, -3292)
+script = ExtResource("9_dga24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/BossEntrance"]
+position = Vector2(75, -211.5)
+shape = SubResource("RectangleShape2D_wtwp4")
+
 [node name="PreBoss2" type="Area2D" parent="Checkpoints"]
 position = Vector2(816, -3445)
 script = ExtResource("9_dga24")
@@ -1233,6 +519,578 @@ position = Vector2(27, -44)
 shape = SubResource("CircleShape2D_iav0o")
 debug_color = Color(0, 0.6, 0.7, 0)
 metadata/_edit_lock_ = true
+
+[node name="FaceMasks" type="Node" parent="."]
+
+[node name="FacesAnx13" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(2040, -3991)
+texture = ExtResource("13_mm8aj")
+
+[node name="FacesAnx4" type="Sprite2D" parent="FaceMasks"]
+position = Vector2(2282, 227)
+texture = ExtResource("13_mm8aj")
+
+[node name="FacesAnx2" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(-1092, 548)
+rotation = 3.14159
+scale = Vector2(1.01904, -1)
+texture = ExtResource("13_mm8aj")
+
+[node name="FacesAnx3" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(1526, 233)
+texture = ExtResource("13_mm8aj")
+flip_h = true
+
+[node name="FacesAnx7" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(3696, 2066)
+texture = ExtResource("14_wtwp4")
+
+[node name="FacesAnx8" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(2477, 2067)
+texture = ExtResource("14_wtwp4")
+flip_h = true
+
+[node name="FacesAnx5" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(3931, 971)
+texture = ExtResource("14_wtwp4")
+
+[node name="FacesAnx6" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(1248, -497)
+texture = ExtResource("14_wtwp4")
+flip_h = true
+
+[node name="FacesAnx" type="Sprite2D" parent="FaceMasks"]
+z_index = 1
+position = Vector2(-2792, -1020)
+texture = ExtResource("13_mm8aj")
+
+[node name="FacesAnx9" type="Sprite2D" parent="FaceMasks"]
+position = Vector2(-4739, -2065)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("13_mm8aj")
+
+[node name="FacesAnx10" type="Sprite2D" parent="FaceMasks"]
+position = Vector2(4014, -3944)
+scale = Vector2(1.34, 1.34)
+texture = ExtResource("14_wtwp4")
+flip_h = true
+
+[node name="FacesAnx11" type="Sprite2D" parent="FaceMasks"]
+z_index = -2
+position = Vector2(4173, -3703)
+scale = Vector2(1.165, 1.165)
+texture = ExtResource("14_wtwp4")
+flip_h = true
+
+[node name="FacesAnx12" type="Sprite2D" parent="FaceMasks"]
+z_index = -2
+position = Vector2(4212, -3506)
+scale = Vector2(0.761666, 0.761666)
+texture = ExtResource("14_wtwp4")
+flip_h = true
+
+[node name="Drip2Anx" type="Sprite2D" parent="FaceMasks"]
+z_index = 2
+position = Vector2(1412, -612)
+texture = ExtResource("15_np2pn")
+
+[node name="FacesAnx" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-2475, -3881)
+scale = Vector2(1.175, 1.175)
+texture = ExtResource("13_mm8aj")
+
+[node name="Drip2Anx" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1929, 751)
+texture = ExtResource("15_np2pn")
+
+[node name="Drip3Anx" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-2708, 867)
+texture = ExtResource("16_v6ha0")
+
+[node name="Drip4Anx" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-2488, 306)
+rotation = 3.14159
+texture = ExtResource("17_gmpev")
+
+[node name="FacePlatform" type="Sprite2D" parent="."]
+position = Vector2(-1589, -1491)
+scale = Vector2(0.6175, 0.315)
+texture = ExtResource("18_mkypq")
+
+[node name="Drip5Anx" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-1530, 378)
+scale = Vector2(1, 0.995)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-1520, 359)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-2602, 585)
+texture = ExtResource("21_7h2jl")
+
+[node name="Drip4Anx2" type="Sprite2D" parent="."]
+position = Vector2(-329, 781)
+texture = ExtResource("17_gmpev")
+
+[node name="Drip2Anx2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-839, 550)
+texture = ExtResource("15_np2pn")
+
+[node name="Drip6Anx2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-537, 351)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip3Anx2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(96, 331)
+rotation = 3.14159
+scale = Vector2(1, 0.935)
+texture = ExtResource("16_v6ha0")
+
+[node name="Drip4Anx3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(626, 394)
+rotation = -1.60047
+texture = ExtResource("17_gmpev")
+flip_v = true
+
+[node name="Drip5Anx2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2569, 530)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip4Anx4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2615, 1165)
+texture = ExtResource("17_gmpev")
+
+[node name="Drip6Anx3" type="Sprite2D" parent="."]
+position = Vector2(2009, 1239)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip6Anx4" type="Sprite2D" parent="."]
+position = Vector2(2026, 1260)
+texture = ExtResource("20_ndtll")
+flip_h = true
+
+[node name="Drip6Anx5" type="Sprite2D" parent="."]
+position = Vector2(2042, 1251)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip3Anx3" type="Sprite2D" parent="."]
+position = Vector2(2092, 2405)
+scale = Vector2(1, 0.875)
+texture = ExtResource("16_v6ha0")
+
+[node name="Drip2Anx3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3172, 2513)
+scale = Vector2(1.565, 1.2625)
+texture = ExtResource("15_np2pn")
+
+[node name="Drip5Anx3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3205, 2075)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip4Anx5" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3172, 2100)
+rotation = -3.19395
+texture = ExtResource("17_gmpev")
+
+[node name="Drip5Anx4" type="Sprite2D" parent="."]
+position = Vector2(6018, 1455)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx6" type="Sprite2D" parent="."]
+position = Vector2(6022, 1441)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip2Anx4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(5755, 2221)
+texture = ExtResource("15_np2pn")
+flip_h = true
+
+[node name="Drip3Anx5" type="Sprite2D" parent="."]
+position = Vector2(1819, 1710)
+rotation = 1.57952
+scale = Vector2(1, 0.865)
+texture = ExtResource("16_v6ha0")
+
+[node name="Drip5Anx5" type="Sprite2D" parent="."]
+position = Vector2(2573, 2222)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5Anx6" type="Sprite2D" parent="."]
+position = Vector2(2602, 2202)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5Anx7" type="Sprite2D" parent="."]
+position = Vector2(2729, 2146)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx7" type="Sprite2D" parent="."]
+position = Vector2(3783, 1954)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip5Anx8" type="Sprite2D" parent="."]
+position = Vector2(3873, 1967)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip3Anx7" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3309, 2401)
+texture = ExtResource("16_v6ha0")
+
+[node name="Drip5Anx9" type="Sprite2D" parent="."]
+position = Vector2(5115, 2004)
+rotation = 0.0610865
+texture = ExtResource("19_mkypq")
+flip_h = true
+
+[node name="Drip5Anx10" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(3649, 1933)
+scale = Vector2(1.495, 1.495)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5Anx11" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(3613, 1998)
+scale = Vector2(1.495, 1.495)
+texture = ExtResource("19_mkypq")
+flip_h = true
+
+[node name="Drip6Anx8" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(3659, 1953)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip3Anx8" type="Sprite2D" parent="."]
+position = Vector2(483, 234)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("16_v6ha0")
+
+[node name="Drip3Anx9" type="Sprite2D" parent="."]
+position = Vector2(479, 105)
+rotation = 1.64061
+texture = ExtResource("16_v6ha0")
+flip_v = true
+
+[node name="Drip5Anx12" type="Sprite2D" parent="."]
+position = Vector2(601, -460)
+texture = ExtResource("19_mkypq")
+flip_h = true
+
+[node name="Drip5Anx13" type="Sprite2D" parent="."]
+position = Vector2(524, -264)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx9" type="Sprite2D" parent="."]
+position = Vector2(1360, -1068)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip5Anx14" type="Sprite2D" parent="."]
+position = Vector2(1326, -1115)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip4Anx6" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(757, -1224)
+rotation = 0.0523599
+texture = ExtResource("17_gmpev")
+flip_v = true
+
+[node name="Drip4Anx7" type="Sprite2D" parent="."]
+position = Vector2(2969, 300)
+rotation = 3.03687
+texture = ExtResource("17_gmpev")
+
+[node name="Drip6Anx10" type="Sprite2D" parent="."]
+position = Vector2(3031, 343)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip2" type="Sprite2D" parent="."]
+position = Vector2(3894, 537)
+rotation = -0.0331613
+texture = ExtResource("21_7h2jl")
+
+[node name="Drip3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(4080, 970)
+texture = ExtResource("21_7h2jl")
+
+[node name="Drip4" type="Sprite2D" parent="."]
+position = Vector2(1157, -261)
+texture = ExtResource("21_7h2jl")
+flip_h = true
+
+[node name="Drip6Anx11" type="Sprite2D" parent="."]
+position = Vector2(-791, -1564)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip5Anx15" type="Sprite2D" parent="."]
+position = Vector2(-132, -1543)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-1861, -1663)
+texture = ExtResource("21_7h2jl")
+
+[node name="Drip3Anx10" type="Sprite2D" parent="."]
+position = Vector2(-2923, -1435)
+rotation = 0.0261799
+texture = ExtResource("16_v6ha0")
+flip_h = true
+
+[node name="Drip6" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-4951, -1655)
+texture = ExtResource("21_7h2jl")
+
+[node name="Drip5Anx16" type="Sprite2D" parent="."]
+position = Vector2(-4844, -1693)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx12" type="Sprite2D" parent="."]
+position = Vector2(-4829, -1703)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip5Anx17" type="Sprite2D" parent="."]
+position = Vector2(-4058, -2336)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5Anx18" type="Sprite2D" parent="."]
+position = Vector2(-3852, -2198)
+texture = ExtResource("19_mkypq")
+flip_h = true
+
+[node name="Drip6Anx13" type="Sprite2D" parent="."]
+position = Vector2(-3822, -2150)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip6Anx14" type="Sprite2D" parent="."]
+position = Vector2(-4191, -2287)
+scale = Vector2(1.95, 1.95)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip4Anx8" type="Sprite2D" parent="."]
+position = Vector2(-4487, -2804)
+rotation = -0.0628319
+texture = ExtResource("17_gmpev")
+
+[node name="Drip4Anx9" type="Sprite2D" parent="."]
+position = Vector2(-4921, -3317)
+rotation = 0.0628319
+texture = ExtResource("17_gmpev")
+flip_h = true
+
+[node name="Drip3Anx11" type="Sprite2D" parent="."]
+position = Vector2(-4588, -3492)
+texture = ExtResource("16_v6ha0")
+flip_h = true
+flip_v = true
+
+[node name="Drip5Anx19" type="Sprite2D" parent="."]
+position = Vector2(-4285, -3480)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx15" type="Sprite2D" parent="."]
+position = Vector2(-3470, -3415)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip7" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-2967, -3582)
+texture = ExtResource("21_7h2jl")
+
+[node name="Drip5Anx20" type="Sprite2D" parent="."]
+position = Vector2(-1985, -3997)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip6Anx16" type="Sprite2D" parent="."]
+position = Vector2(-1832, -3985)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip6Anx17" type="Sprite2D" parent="."]
+position = Vector2(-992, -4049)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip3Anx12" type="Sprite2D" parent="."]
+position = Vector2(-1243, -3993)
+rotation = 1.5708
+texture = ExtResource("16_v6ha0")
+
+[node name="Drip4Anx10" type="Sprite2D" parent="."]
+position = Vector2(375, -3706)
+texture = ExtResource("17_gmpev")
+
+[node name="Drip4Anx13" type="Sprite2D" parent="."]
+position = Vector2(375, -3706)
+texture = ExtResource("17_gmpev")
+
+[node name="Drip3Anx14" type="Sprite2D" parent="."]
+position = Vector2(-618, -3609)
+texture = ExtResource("16_v6ha0")
+flip_h = true
+
+[node name="Drip6Anx18" type="Sprite2D" parent="."]
+position = Vector2(4808, 2073)
+texture = ExtResource("20_ndtll")
+
+[node name="Drip5Anx21" type="Sprite2D" parent="."]
+position = Vector2(4845, 2092)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip8" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(2365, 216)
+texture = ExtResource("21_7h2jl")
+
+[node name="Drip2Anx5" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2080, 242)
+texture = ExtResource("15_np2pn")
+
+[node name="Drip5Anx22" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1449, 113)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip5Anx23" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1643, 208)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip4Anx11" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-2546, -1213)
+rotation = 3.0456
+scale = Vector2(1.265, 1.265)
+texture = ExtResource("17_gmpev")
+
+[node name="Drip4Anx12" type="Sprite2D" parent="."]
+position = Vector2(-3234, -2000)
+rotation = 3.01069
+texture = ExtResource("17_gmpev")
+
+[node name="Drip2Anx6" type="Sprite2D" parent="."]
+position = Vector2(-2363, -3097)
+texture = ExtResource("15_np2pn")
+
+[node name="Drip9" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-2374, -3066)
+texture = ExtResource("21_7h2jl")
+flip_h = true
+
+[node name="Drip10" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3542, 579)
+rotation = 0.0610865
+texture = ExtResource("21_7h2jl")
+flip_h = true
+
+[node name="Drip5Anx24" type="Sprite2D" parent="."]
+position = Vector2(2391, -3856)
+scale = Vector2(1.885, 1.885)
+texture = ExtResource("19_mkypq")
+
+[node name="Drip3Anx4" type="Sprite2D" parent="."]
+position = Vector2(3307, -3412)
+texture = ExtResource("16_v6ha0")
+
+[node name="MediumTree1Bg" type="Sprite2D" parent="."]
+position = Vector2(-1625, 280)
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree3Bg" type="Sprite2D" parent="."]
+position = Vector2(-2408, 378)
+rotation = 3.44703
+scale = Vector2(0.83, 0.83)
+texture = ExtResource("10_np2pn")
+
+[node name="MediumTree1Bg2" type="Sprite2D" parent="."]
+position = Vector2(-2821, 668)
+rotation = -5.41925
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("11_v6ha0")
+
+[node name="LightestTree4Bg" type="Sprite2D" parent="."]
+position = Vector2(-1481, 857)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("13_mkypq")
+
+[node name="LightestTree3Bg" type="Sprite2D" parent="."]
+position = Vector2(-642, 412)
+rotation = -3.65646
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("12_gmpev")
+
+[node name="MediumTree1Bg3" type="Sprite2D" parent="."]
+position = Vector2(161, 333)
+rotation = -2.96706
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("11_v6ha0")
+
+[node name="MediumTree3Bg2" type="Sprite2D" parent="."]
+position = Vector2(-668, 631)
+rotation = 1.77675
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("10_np2pn")
+
+[node name="LightestTree3Bg2" type="Sprite2D" parent="."]
+position = Vector2(452, 481)
+rotation = -2.85536
+scale = Vector2(0.3, 0.271429)
+texture = ExtResource("12_gmpev")
+
+[node name="MediumTree1Bg4" type="Sprite2D" parent="."]
+position = Vector2(2353, 339)
+rotation = -3.11541
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("11_v6ha0")
+
+[node name="DarkestTree3Bg" type="Sprite2D" parent="."]
+position = Vector2(3195, 431)
+rotation = -3.23759
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_bahl2")
+
+[node name="DarkestTree3Bg2" type="Sprite2D" parent="."]
+position = Vector2(3439, 562)
+rotation = -4.12596
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_bahl2")
+
+[node name="DarkestTree3Bg3" type="Sprite2D" parent="."]
+position = Vector2(2107, 1201)
+rotation = 2.15723
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("8_bahl2")
 
 [node name="Music" type="Node" parent="."]
 

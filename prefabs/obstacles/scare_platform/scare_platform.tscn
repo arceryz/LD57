@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxt08hpfgmgyn"]
 
 [ext_resource type="Script" uid="uid://3aqp7lsheili" path="res://prefabs/obstacles/scare_platform/scare_platform.gd" id="1_swjs1"]
-[ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="2_8rvqh"]
+[ext_resource type="Texture2D" uid="uid://cu7epcoe04jmq" path="res://assets/art/Face_platorm_anx.png" id="2_8rvqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swjs1"]
 size = Vector2(146, 32)
@@ -14,11 +14,10 @@ height = 946.0
 rotates = false
 script = ExtResource("1_swjs1")
 
-[node name="ScaryFaces" type="Sprite2D" parent="."]
-modulate = Color(4, 4, 4, 1)
+[node name="FacePlatormAnx" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(0.375006, 16)
-scale = Vector2(0.664027, 0.301887)
+position = Vector2(-2, 17)
+scale = Vector2(0.585, 0.585)
 texture = ExtResource("2_8rvqh")
 
 [node name="Platform" type="AnimatableBody2D" parent="."]
@@ -33,7 +32,7 @@ debug_color = Color(0.635294, 0.341755, 1, 0.42)
 [node name="TriggerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
-position = Vector2(-1, -137)
+position = Vector2(22, -94)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8rvqh")
 debug_color = Color(0, 0.6, 0.7, 0)

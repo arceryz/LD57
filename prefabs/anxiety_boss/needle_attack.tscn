@@ -1,0 +1,150 @@
+[gd_scene load_steps=21 format=3 uid="uid://butpnmv72t18n"]
+
+[ext_resource type="Script" uid="uid://dra5sa6pxga8s" path="res://prefabs/anxiety_boss/needle_attack.gd" id="1_4gj2q"]
+[ext_resource type="Texture2D" uid="uid://8rtp0nq33kr8" path="res://assets/art/needleattack/frame1.png" id="2_iuu3p"]
+[ext_resource type="Texture2D" uid="uid://dtek6bpwgkeam" path="res://assets/art/needleattack/frame0.png" id="2_ui4yw"]
+[ext_resource type="Texture2D" uid="uid://bpw4pfu00a2hv" path="res://assets/art/needleattack/frame2.png" id="3_ui4yw"]
+[ext_resource type="Texture2D" uid="uid://44biqabeajnf" path="res://assets/art/needleattack/frame3.png" id="4_6j6lp"]
+[ext_resource type="Texture2D" uid="uid://bhokk8maj4jaw" path="res://assets/art/needleattack/frame4.png" id="5_xjpy1"]
+[ext_resource type="Texture2D" uid="uid://c2wqf3lev7xtj" path="res://assets/art/needleattack/frame5.png" id="6_gyesm"]
+[ext_resource type="Texture2D" uid="uid://bvwhgnu83x6ni" path="res://assets/art/needleattack/frame6.png" id="7_esnly"]
+[ext_resource type="Texture2D" uid="uid://djejfnlx05pem" path="res://assets/art/needleattack/frame7.png" id="8_6lmxc"]
+[ext_resource type="Texture2D" uid="uid://1y8xwuvnf6oy" path="res://assets/art/needleattack/frame8.png" id="9_4m62v"]
+[ext_resource type="Texture2D" uid="uid://c6kqh4eo416i7" path="res://assets/art/needleattack/frame9.png" id="10_8w4do"]
+[ext_resource type="Texture2D" uid="uid://bwc37dyer7dnm" path="res://assets/art/needleattack/frame10.png" id="11_7fxet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gj2q"]
+size = Vector2(106, 8)
+
+[sub_resource type="Animation" id="Animation_6j6lp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteRoot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ui4yw"]
+resource_name = "spawn"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteRoot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 12.566, -1, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.25)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xjpy1"]
+_data = {
+&"RESET": SubResource("Animation_6j6lp"),
+&"spawn": SubResource("Animation_ui4yw")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gj2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ui4yw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iuu3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ui4yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6j6lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xjpy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gyesm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_esnly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6lmxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4m62v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8w4do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7fxet")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ui4yw"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6j6lp"]
+gradient = SubResource("Gradient_ui4yw")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.487179, 0.504274)
+fill_to = Vector2(0.517094, 0.666667)
+
+[sub_resource type="Gradient" id="Gradient_6j6lp"]
+offsets = PackedFloat32Array(0.625, 1)
+colors = PackedColorArray(2, 2, 2, 1, 1, 1, 1, 0)
+
+[node name="NeedleAttack" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+monitorable = false
+script = ExtResource("1_4gj2q")
+fly_speed = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_4gj2q")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xjpy1")
+}
+
+[node name="SpriteRoot" type="Node2D" parent="."]
+z_index = 6
+
+[node name="Sprite" type="AnimatedSprite2D" parent="SpriteRoot"]
+unique_name_in_owner = true
+position = Vector2(-66, 0)
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_4gj2q")
+autoplay = "default"
+speed_scale = 2.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="SpriteRoot"]
+z_index = -1
+texture = SubResource("GradientTexture2D_6j6lp")
+lifetime = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(50, 5)
+gravity = Vector2(0, 100)
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_6j6lp")
