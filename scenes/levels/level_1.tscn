@@ -195,7 +195,6 @@ layer = 3
 
 [node name="IntroOverlay" parent="CanvasLayer" instance=ExtResource("29_0qwwm")]
 z_index = 3
-disable = true
 
 [node name="GameUi" parent="CanvasLayer" instance=ExtResource("2_t4umt")]
 z_index = 2
@@ -467,10 +466,9 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-2765, -3255)
+position = Vector2(-1904, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
-start_orbs = 1
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)

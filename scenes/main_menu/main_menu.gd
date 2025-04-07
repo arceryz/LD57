@@ -9,5 +9,6 @@ func _ready() -> void:
 	PlayButton.grab_focus()
 
 func _on_play_pressed():
+	$AnimationPlayer.play("play")
+	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_packed(Level1)
-	
