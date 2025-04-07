@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ieu5g78oar5a"]
-
-[ext_resource type="Texture2D" uid="uid://c02thvp8jsxvb" path="res://assets/art/mediumTree3_bg.png" id="1_7m5pd"]
-
-[node name="DarkTwig" type="Sprite2D"]
-modulate = Color(0, 0, 0, 1)
-z_index = 3
-scale = Vector2(0.714, 0.765714)
-texture = ExtResource("1_7m5pd")
