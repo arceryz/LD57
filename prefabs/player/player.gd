@@ -36,7 +36,6 @@ var target_hvelocity := 0.0
 var immunity := false
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	HitArea.body_entered.connect(_on_hit_body_entered)
 	Sprite.frame_changed.connect(OnFrameChange)
 	HitArea.area_entered.connect(_on_hit_body_entered)
@@ -53,7 +52,6 @@ func _physics_process(delta: float) -> void:
 	if not Global.intro_finished:
 		return
 	
-	queue_redraw()
 	Sprite.flip_h = velocity.x < 0
 
 	match state:
@@ -134,11 +132,6 @@ func kill():
 	tw.tween_interval(1.0)
 	tw.tween_property(self, "modulate", Color.WHITE, 0.5)
 	tw.tween_property(self, "immunity", false, 0)
-
-func _draw() -> void:
-	var mpos := get_local_mouse_position()
-	#draw_line(Vector2.ZERO, mpos, Color.BLUE)
-	draw_circle(mpos, 10.0, Color.SKY_BLUE, false, 1.0, true)
 
 func OnFrameChange(): 
 	if (Sprite.frame==1 or Sprite.frame==3) and state==State.GROUND:
