@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://darolbcqhfg54"
+path="res://.godot/imported/LD57_Boss1_Needle_Rotate-004.ogg-13d2e91a492b514c0414c2affb096bb2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Rotation/LD57_Boss1_Needle_Rotate-004.ogg"
+dest_files=["res://.godot/imported/LD57_Boss1_Needle_Rotate-004.ogg-13d2e91a492b514c0414c2affb096bb2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

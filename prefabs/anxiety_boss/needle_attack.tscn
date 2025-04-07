@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://butpnmv72t18n"]
+[gd_scene load_steps=27 format=3 uid="uid://butpnmv72t18n"]
 
 [ext_resource type="Script" uid="uid://dra5sa6pxga8s" path="res://prefabs/anxiety_boss/needle_attack.gd" id="1_4gj2q"]
 [ext_resource type="Texture2D" uid="uid://8rtp0nq33kr8" path="res://assets/art/needleattack/frame1.png" id="2_iuu3p"]
@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://1y8xwuvnf6oy" path="res://assets/art/needleattack/frame8.png" id="9_4m62v"]
 [ext_resource type="Texture2D" uid="uid://c6kqh4eo416i7" path="res://assets/art/needleattack/frame9.png" id="10_8w4do"]
 [ext_resource type="Texture2D" uid="uid://bwc37dyer7dnm" path="res://assets/art/needleattack/frame10.png" id="11_7fxet"]
+[ext_resource type="AudioStream" uid="uid://cif2xs7uaqxwl" path="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack-001.ogg" id="13_6lmxc"]
+[ext_resource type="AudioStream" uid="uid://8teqhgu05h7t" path="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack-002.ogg" id="14_4m62v"]
+[ext_resource type="AudioStream" uid="uid://cdgduhkm3hge4" path="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack-003.ogg" id="15_8w4do"]
+[ext_resource type="AudioStream" uid="uid://biwotph02leir" path="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack-004.ogg" id="16_7fxet"]
+[ext_resource type="AudioStream" uid="uid://dlmmdddbpq8gv" path="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack_Whoosh.ogg" id="17_m5mtg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gj2q"]
 size = Vector2(106, 8)
@@ -112,6 +117,14 @@ fill_to = Vector2(0.517094, 0.666667)
 offsets = PackedFloat32Array(0.625, 1)
 colors = PackedColorArray(2, 2, 2, 1, 1, 1, 1, 0)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tgl7x"]
+random_volume_offset_db = 3.0
+streams_count = 4
+stream_0/stream = ExtResource("13_6lmxc")
+stream_1/stream = ExtResource("14_4m62v")
+stream_2/stream = ExtResource("15_8w4do")
+stream_3/stream = ExtResource("16_7fxet")
+
 [node name="NeedleAttack" type="Area2D"]
 collision_layer = 2
 collision_mask = 0
@@ -148,3 +161,15 @@ emission_rect_extents = Vector2(50, 5)
 gravity = Vector2(0, 100)
 scale_amount_min = 0.5
 color_ramp = SubResource("Gradient_6j6lp")
+
+[node name="Boss_Needle_Attack" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_tgl7x")
+volume_db = 4.0
+max_distance = 4096.0
+attenuation = 0.0106722
+
+[node name="Boss_Needle_Attack_Whoosh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_m5mtg")
+volume_db = -7.782
+max_distance = 1000.0
+attenuation = 2.82843
