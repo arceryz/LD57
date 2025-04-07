@@ -445,7 +445,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1902, 812)
+position = Vector2(-1899, 841)
 flap_winddown = 0.4
 flap_duration = 0.0
 
