@@ -1,4 +1,5 @@
 
+
 [gd_scene load_steps=66 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
@@ -27,9 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="18_mkypq"]
 [ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
-[ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
 [ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
+
 
 [ext_resource type="Texture2D" uid="uid://cvhp6phbgcg0d" path="res://assets/art/BlackRoot1.png" id="30_cfnpk"]
 [ext_resource type="Texture2D" uid="uid://dulkk6lpocaxn" path="res://assets/art/BlackRoot3.png" id="31_wvtie"]
@@ -40,6 +41,8 @@
 [ext_resource type="Texture2D" uid="uid://bq1oyk41vscug" path="res://assets/art/anxiety_frames/steentje4.png" id="36_hvllt"]
 [ext_resource type="Texture2D" uid="uid://ihsvgut8wo8r" path="res://assets/art/anxiety_frames/steentje1.png" id="37_dp4fg"]
 
+
+[ext_resource type="AudioStream" uid="uid://bbel3wjasdtjx" path="res://assets/Audio/SFX/Ambience/LD57_Holly_Entrance.ogg" id="30_t4umt"]
 [ext_resource type="PackedScene" uid="uid://1gmv5iuld41k" path="res://scenes/intro_overlay/intro_overlay.tscn" id="29_0qwwm"]
 
 
@@ -175,6 +178,12 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4umt"]
+size = Vector2(252, 987)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yk0h"]
+size = Vector2(249, 762)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dga24"]
 size = Vector2(302.5, 673.375)
 
@@ -183,6 +192,8 @@ size = Vector2(376, 879)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iav0o"]
 radius = 320.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0qwwm"]
 
 [node name="LevelCameraRailTest" type="Node2D"]
 
@@ -460,7 +471,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1917, 828)
+position = Vector2(-1918, 843)
 flap_winddown = 0.4
 flap_duration = 0.0
 
@@ -477,14 +488,31 @@ metadata/_edit_lock_ = true
 curve = SubResource("Curve2D_mkypq")
 metadata/_edit_lock_ = true
 
-[node name="AnxietyBoss" parent="Entities/BossPath" node_paths=PackedStringArray("StartArea") instance=ExtResource("12_mm8aj")]
+[node name="AnxietyBoss" parent="Entities/BossPath" node_paths=PackedStringArray("StartArea", "NoReturnWallBack", "WaitWallFront") instance=ExtResource("12_mm8aj")]
 position = Vector2(-1536, -3584)
 rotates = false
 loop = false
 comfort_distance = 1100.0
 move_speed = 600.0
 StartArea = NodePath("../../BossStartArea")
+NoReturnWallBack = NodePath("../../NoReturnWall")
+WaitWallFront = NodePath("../../WaitWall")
 metadata/_edit_lock_ = true
+
+[node name="WaitWall" type="StaticBody2D" parent="Entities"]
+position = Vector2(-2209, -3396)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/WaitWall"]
+position = Vector2(8, -201.5)
+shape = SubResource("RectangleShape2D_t4umt")
+
+[node name="NoReturnWall" type="StaticBody2D" parent="Entities"]
+position = Vector2(-3041, -3330)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/NoReturnWall"]
+position = Vector2(89.5, -126)
+shape = SubResource("RectangleShape2D_4yk0h")
 
 [node name="Checkpoints" type="Node" parent="."]
 
@@ -1135,13 +1163,25 @@ texture = ExtResource("33_ebb2h")
 
 [node name="Audio" type="Node" parent="."]
 
-[node name="Gen_AmbienceHOW TO LOOP" type="AudioStreamPlayer" parent="Audio"]
+[node name="Gen_Ambience" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("19_v6ha0")
 volume_db = 6.797
 autoplay = true
+bus = &"SFX"
 
 [node name="Gen_Amb_Randoms" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("20_gmpev")
+
+
+stream = SubResource("AudioStreamRandomizer_0qwwm")
+bus = &"SFX"
+
+[node name="Ld57HollyLoop" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(-1921, 879)
+stream = ExtResource("30_t4umt")
+autoplay = true
+bus = &"SFX"
+
+
 
 [node name="MediumTree1Bg" type="Sprite2D" parent="."]
 position = Vector2(-2073, -1640)
