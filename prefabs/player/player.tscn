@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://chg1m1fymv0d0" path="res://assets/art/bigwingjump_sheet.png" id="5_klv5p"]
 [ext_resource type="Texture2D" uid="uid://dmadx3nuec21g" path="res://assets/art/RunAnim_sheet.png" id="6_iylwk"]
 [ext_resource type="AudioStream" uid="uid://bj0k6g6817uln" path="res://assets/Audio/SFX/Flap/LD57_Flap-001.ogg" id="7_ev8v4"]
-[ext_resource type="AudioStream" uid="uid://bxvtt3lxrn7sm" path="res://assets/Audio/SFX/Footsteps/LD57_Footsteps-001.ogg" id="8_vhck3"]
 [ext_resource type="AudioStream" uid="uid://d2ks4tbwpspcq" path="res://assets/Audio/SFX/Create_Block/LD57_Create_Block-001.ogg" id="9_2c4n1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvfjm"]
@@ -81,6 +80,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vhck3"]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sxsrd")
 flap_velocity = 1000.0
@@ -139,7 +140,10 @@ stream = ExtResource("7_ev8v4")
 bus = &"SFX"
 
 [node name="Footstep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_vhck3")
+stream = SubResource("AudioStreamRandomizer_vhck3")
+mix_target = 2
+max_polyphony = 2
+bus = &"SFX"
 
 [node name="Place_Platform_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_2c4n1")
