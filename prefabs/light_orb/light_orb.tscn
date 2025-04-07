@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq45dri0s7nq4"]
+[gd_scene load_steps=12 format=3 uid="uid://dq45dri0s7nq4"]
 
 [ext_resource type="Script" uid="uid://biks42v5yaqkl" path="res://prefabs/light_orb/light_orb.gd" id="1_ai561"]
 [ext_resource type="FastNoiseLite" uid="uid://ctf811v3n3hvq" path="res://assets/noise/noise_orb_hover.tres" id="2_xinsc"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="3_h1q02"]
+[ext_resource type="AudioStream" uid="uid://bubnpsng2liik" path="res://assets/audio-max/sound/Depths_Orb_Ambience_Loop.ogg" id="4_eo0er"]
+[ext_resource type="AudioStream" uid="uid://cm08mkuw07ycn" path="res://assets/audio-max/sound/Depths_Orb_Collect.ogg" id="5_24bay"]
+[ext_resource type="AudioStream" uid="uid://tfayl3klx6sm" path="res://assets/audio-max/music/Depths_Anxiety_Orb_Response_A.ogg" id="6_63u2b"]
+[ext_resource type="AudioStream" uid="uid://bigx815t4taa2" path="res://assets/audio-max/music/Depths_Anxiety_Orb_Response_B.ogg" id="7_uvyfo"]
 
 [sub_resource type="Gradient" id="Gradient_7ll3s"]
 offsets = PackedFloat32Array(0.311688, 0.844156)
@@ -19,6 +23,11 @@ fill_to = Vector2(0.854701, 0.0555556)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nji22"]
 radius = 32.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u4uic"]
+streams_count = 2
+stream_0/stream = ExtResource("6_63u2b")
+stream_1/stream = ExtResource("7_uvyfo")
+
 [node name="LightOrb" type="Area2D"]
 script = ExtResource("1_ai561")
 fly_speed = 1500.0
@@ -28,7 +37,7 @@ hover_pattern = ExtResource("2_xinsc")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(7.6252, -15.9071)
+position = Vector2(-18.3077, -11.2691)
 texture = SubResource("GradientTexture2D_ai561")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -39,3 +48,20 @@ position = Vector2(3, 1)
 scale = Vector2(4.57812, 4.0625)
 energy = 2.0
 texture = ExtResource("3_h1q02")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="OrbLoop" type="AudioStreamPlayer2D" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("4_eo0er")
+autoplay = true
+attenuation = 0.761487
+
+[node name="OrbPickup" type="AudioStreamPlayer2D" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("5_24bay")
+
+[node name="Response" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_u4uic")
+bus = &"Music"

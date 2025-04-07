@@ -6,6 +6,7 @@ class_name AnxietyBoss extends PathFollow2D
 @export var StartArea: Area2D
 @onready var Sprite: AnimatedSprite2D = $Sprite
 @onready var Anim: AnimationPlayer = $Anim
+@onready var Music: AudioStreamPlayer = $BossMusic
 
 enum State {
 	WAITING,
@@ -31,11 +32,13 @@ func _process(_delta: float) -> void:
 			progress += _delta * move_speed * stray
 			pass
 		State.DEATH:
+			Music["parameters/switch_to_clip"] = "Depths Anxiety Outro"
 			pass
 	pass
 
 func _on_area_body_entered(body: Node2D):
 	if body is PlayerC and state == State.WAITING:
+		$BossMusic.play()
 		Anim.play("wakeup")
 		await Anim.animation_finished
 		state = State.ACTIVE

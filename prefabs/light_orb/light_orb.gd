@@ -48,6 +48,14 @@ func _process(delta: float) -> void:
 		State.ANCHORED:
 			pass
 
+func pickup():
+	if Engine.is_editor_hint():return
+	%OrbLoop.stop()
+	%OrbPickup.play()
+	await get_tree().create_timer(2).timeout
+	%Response.play()
+
+
 func process_hover(delta):
 	time += delta * hover_speed
 	Sprite.position.x = hover_radius * hover_pattern.get_noise_1d(time+500.0)

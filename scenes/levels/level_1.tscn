@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=47 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://by5gxb0n020ns" path="res://prefabs/anxiety_boss/anxiety_boss.tscn" id="12_mm8aj"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="13_dnkej"]
 [ext_resource type="Texture2D" uid="uid://cqqicjedcq2av" path="res://assets/art/LightestTree4_bg.png" id="13_mkypq"]
+[ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -1157,7 +1158,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-1919, 841)
+position = Vector2(-1931, 829)
 flap_winddown = 0.4
 flap_duration = 0.0
 
@@ -1225,3 +1226,10 @@ position = Vector2(27, -44)
 shape = SubResource("CircleShape2D_iav0o")
 debug_color = Color(0, 0.6, 0.7, 0)
 metadata/_edit_lock_ = true
+
+[node name="Music" type="Node" parent="."]
+
+[node name="Opening" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("18_np2pn")
+autoplay = true
+bus = &"Music"
