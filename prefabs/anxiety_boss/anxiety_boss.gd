@@ -69,15 +69,20 @@ func spawn_needle():
 	var spawn_pos := global_position + Vector2(randf_range(0.0, needle_spawn_range), 0).rotated(randf_range(0, TAU))
 	var attack_pos := player.global_position
 	needle.attack(spawn_pos, attack_pos)
+	$Boss_Needles_Rotation.play()
 	pass
 
 func _on_area_body_entered(body: Node2D):
 	if body is PlayerC and state == State.WAITING:
 		state = State.WAKING_UP
 		$BossMusic.play()
+		$Boss_VoiceLayer01.play()
+		$Boss_VoiceLayer02.play()
+		$Boss_VoiceLayer03.play()
 		Anim.play("wakeup")
 		await Anim.animation_finished
 		state = State.ACTIVE
 		attack_timer.start()
+		
 		pass
 	pass

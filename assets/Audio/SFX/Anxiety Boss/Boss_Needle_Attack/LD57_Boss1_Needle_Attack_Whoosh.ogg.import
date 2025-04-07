@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlmmdddbpq8gv"
+path="res://.godot/imported/LD57_Boss1_Needle_Attack_Whoosh.ogg-37c10ceb3f720490501022641de648d8.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack_Whoosh.ogg"
+dest_files=["res://.godot/imported/LD57_Boss1_Needle_Attack_Whoosh.ogg-37c10ceb3f720490501022641de648d8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
