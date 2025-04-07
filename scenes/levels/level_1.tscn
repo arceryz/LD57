@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://bofpqf5so0am4"]
+[gd_scene load_steps=72 format=4 uid="uid://bofpqf5so0am4"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://pvb8gb0ywwr2" path="res://assets/art/anxiety_frames/steentje3.png" id="35_ytidy"]
 [ext_resource type="Texture2D" uid="uid://bq1oyk41vscug" path="res://assets/art/anxiety_frames/steentje4.png" id="36_hvllt"]
 [ext_resource type="Texture2D" uid="uid://ihsvgut8wo8r" path="res://assets/art/anxiety_frames/steentje1.png" id="37_dp4fg"]
+[ext_resource type="Texture2D" uid="uid://blifapxeo4am5" path="res://assets/art/lmb_indicator.png" id="37_hvllt"]
+[ext_resource type="Script" uid="uid://yl41m4f35g0s" path="res://scripts/trigger_on_light.gd" id="38_dp4fg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -467,7 +469,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-4312, -3064)
+position = Vector2(-3961, -3280)
 flap_winddown = 0.4
 flap_duration = 0.0
 start_orbs = 1
@@ -1722,6 +1724,12 @@ position = Vector2(-2140, 112)
 rotation = 2.86234
 scale = Vector2(0.395, 0.395)
 texture = ExtResource("30_cfnpk")
+
+[node name="LmbIndicator" type="Sprite2D" parent="SiebeMap" node_paths=PackedStringArray("light_orb")]
+position = Vector2(4147, 1775)
+texture = ExtResource("37_hvllt")
+script = ExtResource("38_dp4fg")
+light_orb = NodePath("../../Orbs/LightOrb")
 
 [node name="Music" type="Node" parent="."]
 

@@ -53,9 +53,9 @@ func pickup():
 	if Engine.is_editor_hint():return
 	%OrbLoop.stop()
 	%OrbPickup.play()
+	picked_up.emit()
 	await get_tree().create_timer(2).timeout
 	%Response.play()
-	picked_up.emit()
 
 
 func process_hover(delta):
