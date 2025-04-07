@@ -364,7 +364,7 @@ bus = &"SFX"
 stream = ExtResource("18_7kwoe")
 volume_db = 6.0
 autoplay = true
-max_distance = 4096.0
+max_distance = 4000.0
 attenuation = 0.0769467
 bus = &"SFX"
 

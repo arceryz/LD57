@@ -168,6 +168,7 @@ bus = &"SFX"
 
 [node name="Footstep" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_vhck3")
+volume_db = -8.531
 mix_target = 2
 max_polyphony = 2
 bus = &"SFX"

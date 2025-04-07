@@ -2,7 +2,6 @@ class_name CreditsEndingC extends Control
 
 @onready var ReturnButton: Button = %MainMenuBtn
 @onready var Anim: AnimationPlayer = $Anim
-const MainMenuP: PackedScene = preload("uid://oxgxc0rq0ps8")
 
 func _ready() -> void:
 	Global.ending_triggered = false
@@ -10,7 +9,8 @@ func _ready() -> void:
 	hide()
 
 func _on_main_menu_pressed():
-	get_tree().change_scene_to_packed(MainMenuP)
+	print("Pressing")
+	get_tree().change_scene_to_file("uid://oxgxc0rq0ps8")
 
 func trigger_ending():
 	Global.ending_triggered = true
