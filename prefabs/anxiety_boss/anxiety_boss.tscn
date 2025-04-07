@@ -1,13 +1,13 @@
-[gd_scene load_steps=36 format=3 uid="uid://by5gxb0n020ns"]
+[gd_scene load_steps=38 format=3 uid="uid://by5gxb0n020ns"]
 
 [ext_resource type="Script" uid="uid://d2ranft7oh7mi" path="res://prefabs/anxiety_boss/anxiety_boss.gd" id="1_kau3k"]
-[ext_resource type="Texture2D" uid="uid://nqmieprff1va" path="res://assets/art/anxiety_frames/anxiety1.tres" id="1_ouq2b"]
-[ext_resource type="Texture2D" uid="uid://x3g40eqie0ae" path="res://assets/art/anxiety_frames/anxiety2.tres" id="2_kau3k"]
-[ext_resource type="Texture2D" uid="uid://djjdsan8jsudf" path="res://assets/art/anxiety_frames/anxiety3.tres" id="3_cdf38"]
-[ext_resource type="Texture2D" uid="uid://cmq6cov8le3v8" path="res://assets/art/anxiety_frames/anxiety4.tres" id="4_t40mb"]
-[ext_resource type="Texture2D" uid="uid://uikgk0kkx8j1" path="res://assets/art/anxiety_frames/anxiety5.tres" id="5_0lsq4"]
-[ext_resource type="Texture2D" uid="uid://d1w6bswev02cu" path="res://assets/art/anxiety_frames/anxiety6.tres" id="6_2mb5l"]
-[ext_resource type="Texture2D" uid="uid://cbc441pkjyp6f" path="res://assets/art/anxiety_frames/anxiety7.tres" id="7_ijos5"]
+[ext_resource type="Shader" uid="uid://cccsxref6d7ki" path="res://prefabs/anxiety_boss/anxiety_boss.gdshader" id="2_c4gv1"]
+[ext_resource type="Texture2D" uid="uid://bd3qtnfxgko5u" path="res://assets/art/anxiety_frames/Untitled_Artwork-1.png" id="2_rokit"]
+[ext_resource type="Texture2D" uid="uid://chcsoso61m0o" path="res://assets/art/anxiety_frames/Untitled_Artwork-2.png" id="3_c4gv1"]
+[ext_resource type="Texture2D" uid="uid://dmo0uhs8sfgho" path="res://assets/art/anxiety_frames/Untitled_Artwork-3.png" id="4_qsrie"]
+[ext_resource type="Texture2D" uid="uid://bkj37255tw4sb" path="res://assets/art/anxiety_frames/Untitled_Artwork-4.png" id="5_sdext"]
+[ext_resource type="Texture2D" uid="uid://b6ms8x858r4ip" path="res://assets/art/anxiety_frames/Untitled_Artwork-5.png" id="6_pcugv"]
+[ext_resource type="Texture2D" uid="uid://dy2ifnava3fcj" path="res://assets/art/anxiety_frames/Untitled_Artwork-6.png" id="7_fim6g"]
 [ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="9_cdf38"]
 [ext_resource type="AudioStream" uid="uid://d3dnaaidacrnv" path="res://assets/audio-max/music/Depths_Anxiety_Intro.ogg" id="10_ydrr0"]
 [ext_resource type="AudioStream" uid="uid://db1hycqb7f6br" path="res://assets/audio-max/music/Depths_Anxiety_Segment_A.ogg" id="11_h5ags"]
@@ -28,29 +28,30 @@
 [ext_resource type="AudioStream" uid="uid://cdgduhkm3hge4" path="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack-003.ogg" id="26_pcugv"]
 [ext_resource type="AudioStream" uid="uid://biwotph02leir" path="res://assets/Audio/SFX/Anxiety Boss/Boss_Needle_Attack/LD57_Boss1_Needle_Attack-004.ogg" id="27_fim6g"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qsrie"]
+shader = ExtResource("2_c4gv1")
+shader_parameter/progress = 0.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_d0fio"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ouq2b")
+"texture": ExtResource("2_rokit")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_kau3k")
+"texture": ExtResource("3_c4gv1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_cdf38")
+"texture": ExtResource("4_qsrie")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_t40mb")
+"texture": ExtResource("5_sdext")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_0lsq4")
+"texture": ExtResource("6_pcugv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2mb5l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ijos5")
+"texture": ExtResource("7_fim6g")
 }],
 "loop": true,
 "name": &"default",
@@ -62,7 +63,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/path = NodePath("Scale/Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -74,7 +75,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:position:x")
+tracks/1/path = NodePath("Scale/Sprite:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -85,7 +86,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:speed_scale")
+tracks/2/path = NodePath("Scale/Sprite:speed_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -97,10 +98,34 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite:position")
+tracks/3/path = NodePath("Scale/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scale/Sprite:material:shader_parameter/progress")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scale:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -114,7 +139,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:speed_scale")
+tracks/0/path = NodePath("Scale/Sprite:speed_scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -126,7 +151,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:position")
+tracks/1/path = NodePath("Scale/Sprite:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -138,7 +163,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/path = NodePath("Scale/Sprite:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -148,13 +173,53 @@ tracks/2/keys = {
 "values": [Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_rokit"]
+resource_name = "death"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale/Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2.36667, 3.26667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scale/Sprite:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scale:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333334, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200)]
+}
+
 [sub_resource type="Animation" id="Animation_kau3k"]
 resource_name = "wakeup"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/path = NodePath("Scale/Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -166,7 +231,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:position:x")
+tracks/1/path = NodePath("Scale/Sprite:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -177,7 +242,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:speed_scale")
+tracks/2/path = NodePath("Scale/Sprite:speed_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -191,6 +256,7 @@ tracks/2/keys = {
 _data = {
 &"RESET": SubResource("Animation_cdf38"),
 &"chilling": SubResource("Animation_t40mb"),
+&"death": SubResource("Animation_rokit"),
 &"wakeup": SubResource("Animation_kau3k")
 }
 
@@ -241,14 +307,18 @@ stream_3/stream = ExtResource("27_fim6g")
 [node name="AnxietyBoss" type="PathFollow2D"]
 script = ExtResource("1_kau3k")
 needle_spawn_range = 500.0
-attack_interval_variation = 2.0
+attack_interval = 2.0
+attack_interval_variation = 3.0
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Scale" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Scale"]
 z_index = 5
-scale = Vector2(0.746388, 0.778121)
+material = SubResource("ShaderMaterial_qsrie")
+scale = Vector2(0.463678, 0.477295)
 sprite_frames = SubResource("SpriteFrames_d0fio")
 autoplay = "default"
-frame_progress = 0.862346
+frame_progress = 0.205085
 speed_scale = 2.0
 
 [node name="Anim" type="AnimationPlayer" parent="."]
@@ -262,6 +332,7 @@ position = Vector2(-14.0001, -12.5)
 scale = Vector2(33.9687, 26.6406)
 energy = 3.0
 texture = ExtResource("9_cdf38")
+metadata/_edit_lock_ = true
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamInteractive_7kwoe")

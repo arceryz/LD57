@@ -26,26 +26,32 @@ const PackedCrystalPlatform := preload("uid://cru4jlhhbwrqb")
 enum State {
 	GROUND,
 	FLYING,
-	FALLING
+	FALLING,
+	RESPAWNING,
 }
 var state := State.GROUND
 var fly_direction := Vector2.ZERO
 var fly_speed: float = 0.0
 var target_hvelocity := 0.0
+var immunity := false
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	HitArea.body_entered.connect(_on_hit_body_entered)
 	Sprite.frame_changed.connect(OnFrameChange)
 	HitArea.area_entered.connect(_on_hit_body_entered)
 	for i in range(start_orbs):
 		OrbHolder.generate_orb.call_deferred()
+	
+	Sprite.animation = "walk"
+	Sprite.speed_scale = 0
 
 func _on_hit_body_entered(_body: Node2D):
 	kill()
 
 func _physics_process(delta: float) -> void:
-	queue_redraw()
+	if not Global.player_can_move:
+		return
+	
 	Sprite.flip_h = velocity.x < 0
 
 	match state:
@@ -77,6 +83,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("place_platform") and OrbHolder.use_orb():
 				place_platform()
 			process_walk_movement(delta)
+			Sprite.speed_scale = 0.0
 			pass
 
 func process_walk_movement(_delta: float):
@@ -112,12 +119,19 @@ func place_platform():
 	$Place_Platform_SFX.play()
 
 func kill():
-	position = Global.active_checkpoint.position
+	if immunity or state == State.RESPAWNING:
+		return
+	immunity = true
+	state = State.RESPAWNING
+	var tw := create_tween()
 
-func _draw() -> void:
-	var mpos := get_local_mouse_position()
-	#draw_line(Vector2.ZERO, mpos, Color.BLUE)
-	draw_circle(mpos, 10.0, Color.SKY_BLUE, false, 1.0, true)
+	tw.tween_property(self, "modulate", Color.RED, 0.5)
+	tw.tween_interval(0.5)
+	tw.tween_property(self, "position", Global.active_checkpoint.position, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tw.tween_property(self, "state", State.GROUND, 0)
+	tw.tween_interval(1.0)
+	tw.tween_property(self, "modulate", Color.WHITE, 0.5)
+	tw.tween_property(self, "immunity", false, 0)
 
 func OnFrameChange(): 
 	if (Sprite.frame==1 or Sprite.frame==3) and state==State.GROUND:

@@ -8,10 +8,14 @@ class_name AnxietyBoss extends PathFollow2D
 @export var attack_count_variation: int = 1
 
 @export var StartArea: Area2D
+@export var NoReturnWallBack: StaticBody2D
+@export var WaitWallFront: StaticBody2D
+
 @onready var Sprite: AnimatedSprite2D = $Sprite
 @onready var Anim: AnimationPlayer = $Anim
 @onready var Music: AudioStreamPlayer = $BossMusic
-@onready var NeedleProjectileP: PackedScene = preload("uid://butpnmv72t18n")
+const NeedleProjectileP: PackedScene = preload("uid://butpnmv72t18n")
+const LightOrbP: PackedScene = preload("uid://dq45dri0s7nq4")
 
 enum State {
 	WAITING,
@@ -45,9 +49,12 @@ func _process(_delta: float) -> void:
 			var stray := signf(comfort_distance - distance)
 			
 			progress += _delta * move_speed * stray
+			
+			if progress_ratio == 1.0 and distance < 500:
+				do_death()
 			pass
 		State.DEATH:
-			Music["parameters/switch_to_clip"] = "Depths Anxiety Outro"
+			# Effects when death -> see do_death() function.
 			pass
 	pass
 
@@ -72,15 +79,37 @@ func spawn_needle():
 	$Boss_Needles_Rotation.play()
 	pass
 
+func do_death():
+	state = State.DEATH
+	attack_timer.stop()
+
+	Music["parameters/switch_to_clip"] = "Depths Anxiety Outro"
+	$Boss_VoiceLayer01.stop()
+	$Boss_VoiceLayer02.stop()
+	$Boss_VoiceLayer03.stop()
+
+	Anim.play("death")
+	await Anim.animation_finished
+	var orb: LightOrbC = LightOrbP.instantiate()
+	get_tree().root.add_child(orb)
+	orb.global_position = global_position
+	orb.scale *= 3.0
+	orb.modulate.a = 0
+	var tw := orb.create_tween()
+	tw.tween_property(orb, "modulate:a", 1.0, 2.0)
+
+
 func _on_area_body_entered(body: Node2D):
 	if body is PlayerC and state == State.WAITING:
 		state = State.WAKING_UP
+		NoReturnWallBack.collision_layer = 1
 		$BossMusic.play()
 		$Boss_VoiceLayer01.play()
 		$Boss_VoiceLayer02.play()
 		$Boss_VoiceLayer03.play()
 		Anim.play("wakeup")
 		await Anim.animation_finished
+		WaitWallFront.collision_layer = 0
 		state = State.ACTIVE
 		attack_timer.start()
 		
