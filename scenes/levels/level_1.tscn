@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://b1q026pito2a3"]
+[gd_scene load_steps=59 format=4 uid="uid://b1q026pito2a3"]
 
 [ext_resource type="TileSet" uid="uid://ym7uw0mbpfsf" path="res://assets/tilemap/main_tileset.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cm7tfs3l6606r" path="res://prefabs/player/player.tscn" id="2_6iamk"]
@@ -26,9 +26,9 @@
 [ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
 [ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
-[ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
 [ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
+[ext_resource type="AudioStream" uid="uid://bbel3wjasdtjx" path="res://assets/Audio/SFX/Ambience/LD57_Holly_Entrance.ogg" id="30_t4umt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -170,6 +170,8 @@ size = Vector2(376, 879)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iav0o"]
 radius = 320.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0qwwm"]
 
 [node name="LevelCameraRailTest" type="Node2D"]
 
@@ -438,7 +440,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-3557, -3326)
+position = Vector2(-1922, 759)
 flap_winddown = 0.4
 flap_duration = 0.0
 
@@ -1100,10 +1102,18 @@ bus = &"Music"
 
 [node name="Audio" type="Node" parent="."]
 
-[node name="Gen_AmbienceHOW TO LOOP" type="AudioStreamPlayer" parent="Audio"]
+[node name="Gen_Ambience" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("19_v6ha0")
 volume_db = 6.797
 autoplay = true
+bus = &"SFX"
 
 [node name="Gen_Amb_Randoms" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("20_gmpev")
+stream = SubResource("AudioStreamRandomizer_0qwwm")
+bus = &"SFX"
+
+[node name="Ld57HollyLoop" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(-1921, 879)
+stream = ExtResource("30_t4umt")
+autoplay = true
+bus = &"SFX"
