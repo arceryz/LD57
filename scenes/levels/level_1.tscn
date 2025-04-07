@@ -23,12 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://baw5w50yfhv6j" path="res://assets/art/DrippyBlackness/drip3_anx.png" id="16_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://cd2hu21dmsdkr" path="res://assets/art/DrippyBlackness/drip4_anx.png" id="17_gmpev"]
 [ext_resource type="Texture2D" uid="uid://dluf2pesqlfmv" path="res://assets/art/face_platform.png" id="18_mkypq"]
-[ext_resource type="AudioStream" uid="uid://bk6ehgu6aq7wp" path="res://assets/audio-max/music/Depths_Opening.ogg" id="18_np2pn"]
 [ext_resource type="Texture2D" uid="uid://diteonci1rioj" path="res://assets/art/DrippyBlackness/drip5_anx.png" id="19_mkypq"]
 [ext_resource type="AudioStream" uid="uid://dvob87eixckvj" path="res://assets/Audio/SFX/Ambience/LD57_Gen_Amb.ogg" id="19_v6ha0"]
 [ext_resource type="AudioStream" uid="uid://bm8025drb20ag" path="res://assets/Audio/SFX/Ambience/Randoms/LD57_Gen_Amb_Randoms-007.ogg" id="20_gmpev"]
 [ext_resource type="Texture2D" uid="uid://biecv125pysw1" path="res://assets/art/DrippyBlackness/drip6_anx.png" id="20_ndtll"]
 [ext_resource type="Texture2D" uid="uid://pyweo2oaj7rv" path="res://assets/art/DrippyBlackness/drip 1.png" id="21_7h2jl"]
+[ext_resource type="PackedScene" uid="uid://1gmv5iuld41k" path="res://scenes/intro_overlay/intro_overlay.tscn" id="29_0qwwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwpqx"]
 size = Vector2(1920, 1080)
@@ -172,6 +172,12 @@ size = Vector2(376, 879)
 radius = 320.0
 
 [node name="LevelCameraRailTest" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="IntroOverlay" parent="CanvasLayer" instance=ExtResource("29_0qwwm")]
+z_index = 1
 
 [node name="Darkening" type="CanvasModulate" parent="."]
 color = Color(0.800491, 0.800491, 0.800491, 1)
@@ -441,7 +447,6 @@ metadata/_edit_lock_ = true
 position = Vector2(-1915, 840)
 flap_winddown = 0.4
 flap_duration = 0.0
-start_orbs = 0
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
@@ -669,7 +674,6 @@ texture = ExtResource("16_v6ha0")
 z_index = 1
 position = Vector2(626, 394)
 rotation = -1.60047
-scale = Vector2(1, 1)
 texture = ExtResource("17_gmpev")
 flip_v = true
 
@@ -766,7 +770,6 @@ texture = ExtResource("16_v6ha0")
 [node name="Drip5Anx9" type="Sprite2D" parent="FaceMasks"]
 position = Vector2(5115, 2004)
 rotation = 0.0610865
-scale = Vector2(1, 1)
 texture = ExtResource("19_mkypq")
 flip_h = true
 
@@ -1011,7 +1014,6 @@ flip_h = true
 z_index = 1
 position = Vector2(3542, 579)
 rotation = 0.0610865
-scale = Vector2(1, 1)
 texture = ExtResource("21_7h2jl")
 flip_h = true
 
@@ -1096,11 +1098,6 @@ scale = Vector2(0.265, 0.265)
 texture = ExtResource("8_bahl2")
 
 [node name="Music" type="Node" parent="."]
-
-[node name="Opening" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("18_np2pn")
-autoplay = true
-bus = &"Music"
 
 [node name="Audio" type="Node" parent="."]
 

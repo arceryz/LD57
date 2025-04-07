@@ -40,11 +40,17 @@ func _ready() -> void:
 	HitArea.area_entered.connect(_on_hit_body_entered)
 	for i in range(start_orbs):
 		OrbHolder.generate_orb.call_deferred()
+	
+	Sprite.animation = "walk"
+	Sprite.speed_scale = 0
 
 func _on_hit_body_entered(_body: Node2D):
 	kill()
 
 func _physics_process(delta: float) -> void:
+	if not Global.intro_finished:
+		return
+	
 	queue_redraw()
 	Sprite.flip_h = velocity.x < 0
 
@@ -77,6 +83,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("place_platform") and OrbHolder.use_orb():
 				place_platform()
 			process_walk_movement(delta)
+			Sprite.speed_scale = 0.0
 			pass
 
 func process_walk_movement(_delta: float):
