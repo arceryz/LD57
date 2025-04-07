@@ -459,7 +459,7 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="w" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-2376, 830)
+position = Vector2(-1918, 828)
 flap_winddown = 0.4
 flap_duration = 0.0
 
@@ -554,7 +554,6 @@ scale = Vector2(0.352316, 0.283373)
 [node name="LightestTree3Bg" parent="." instance=ExtResource("17_bahl2")]
 position = Vector2(-1327, 541)
 rotation = -3.15344
-scale = Vector2(0.525, 0.445714)
 
 [node name="LightestTree3Bg2" parent="." instance=ExtResource("17_bahl2")]
 position = Vector2(-1791, 954)
