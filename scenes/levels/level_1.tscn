@@ -438,10 +438,9 @@ metadata/_edit_lock_ = true
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("2_6iamk")]
-position = Vector2(-3869, -3334)
+position = Vector2(-3557, -3326)
 flap_winddown = 0.4
 flap_duration = 0.0
-start_orbs = 0
 
 [node name="BossStartArea" type="Area2D" parent="Entities"]
 position = Vector2(-2624, -3456)
@@ -669,7 +668,6 @@ texture = ExtResource("16_v6ha0")
 z_index = 1
 position = Vector2(626, 394)
 rotation = -1.60047
-scale = Vector2(1, 1)
 texture = ExtResource("17_gmpev")
 flip_v = true
 
@@ -766,7 +764,6 @@ texture = ExtResource("16_v6ha0")
 [node name="Drip5Anx9" type="Sprite2D" parent="FaceMasks"]
 position = Vector2(5115, 2004)
 rotation = 0.0610865
-scale = Vector2(1, 1)
 texture = ExtResource("19_mkypq")
 flip_h = true
 
@@ -1011,7 +1008,6 @@ flip_h = true
 z_index = 1
 position = Vector2(3542, 579)
 rotation = 0.0610865
-scale = Vector2(1, 1)
 texture = ExtResource("21_7h2jl")
 flip_h = true
 

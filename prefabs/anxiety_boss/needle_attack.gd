@@ -37,6 +37,8 @@ func attack(from: Vector2, attack_target: Vector2):
 	monitorable = true
 	speed_target = fly_speed
 	Sprite.play("flying")
+	$Boss_Needle_Attack.play()
+	$Boss_Needle_Attack_Whoosh.play()
 
 	await get_tree().create_timer(lifetime).timeout
 
