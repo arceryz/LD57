@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://csl1dq7beeeey"]
 
 [ext_resource type="Texture2D" uid="uid://dcfocuaysjaau" path="res://assets/art/backdrop_bg (1).png" id="1_4nnt3"]
-[ext_resource type="Texture2D" uid="uid://bcdyvsturplux" path="res://assets/art/rocks_bg.png" id="2_kyoqn"]
-[ext_resource type="Texture2D" uid="uid://bn34xke8kinri" path="res://assets/art/thorns_bg.png" id="3_lg3xb"]
+[ext_resource type="Texture2D" uid="uid://bv7ycruxv7bhi" path="res://assets/art/RocksFar_bg.png" id="2_kyoqn"]
+[ext_resource type="Texture2D" uid="uid://c8pv2j5wvl1g" path="res://assets/art/RocksClose_bg.png" id="3_lg3xb"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
