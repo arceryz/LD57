@@ -19,6 +19,7 @@ signal wing_flapped()
 @onready var OrbHolder: OrbHolderC = $OrbHolder
 @onready var HitArea: Area2D = $HitArea
 @onready var PlatformLocation: Node2D = $PlatformLocation
+@onready var Sprite: AnimatedSprite2D = $Sprite
 
 const PackedCrystalPlatform := preload("uid://cru4jlhhbwrqb")
 
@@ -43,7 +44,8 @@ func _on_hit_body_entered(_body: Node2D):
 
 func _physics_process(delta: float) -> void:
 	queue_redraw()
-	
+	Sprite.flip_h = velocity.x < 0
+
 	match state:
 		State.GROUND:
 			if Input.is_action_just_pressed("jump"):
@@ -59,6 +61,8 @@ func _physics_process(delta: float) -> void:
 		State.FLYING:
 			velocity = fly_direction * fly_speed
 			motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+			Sprite.speed_scale = 1.0
+			Sprite.animation = "flying"
 			move_and_slide()
 			pass
 		
@@ -77,6 +81,8 @@ func process_walk_movement(_delta: float):
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 	var direction := Input.get_axis("move_left", "move_right")
 	target_hvelocity = direction * hspeed
+	Sprite.animation = "walk"
+	Sprite.speed_scale = 0.0 if is_zero_approx(direction) else 1.0
 
 	var acc := walk_deaccel if is_zero_approx(direction) else walk_accel
 	velocity.x = lerp(velocity.x, target_hvelocity, acc * _delta)
