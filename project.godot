@@ -10,7 +10,9 @@ config_version=5
 
 [application]
 
-config/name="LD57"
+config/name="Depths Of Anxiety"
+config/description="A spirit climbs from the depths of anxiety by using the light.
+"
 config/tags=PackedStringArray("jam")
 run/main_scene="uid://oxgxc0rq0ps8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
