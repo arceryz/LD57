@@ -16,7 +16,6 @@ sync_to_physics = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(-0.5, 15)
 shape = SubResource("RectangleShape2D_ttk86")
-one_way_collision = true
 debug_color = Color(0.635294, 0.341755, 1, 0.42)
 
 [node name="Faces1" type="Sprite2D" parent="."]
@@ -28,7 +27,6 @@ texture = ExtResource("1_ttk86")
 position = Vector2(-1.5, -9.5)
 scale = Vector2(0.898496, 0.863636)
 texture = ExtResource("2_ri5qt")
-script = ExtResource("1_ri5qt")
 
 [node name="Faces4" type="Sprite2D" parent="."]
 position = Vector2(-2.25, 93.75)

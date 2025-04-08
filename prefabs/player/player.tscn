@@ -130,7 +130,7 @@ shape = SubResource("RectangleShape2D_wv1mm")
 
 [node name="OrbHolder" type="Area2D" parent="."]
 script = ExtResource("2_rdx4y")
-orb_recovery_time = 2.0
+orb_recovery_time = 2.5
 rotation_xradius = 69.173
 rotation_yradius = 92.481
 rotation_variation = 23.233

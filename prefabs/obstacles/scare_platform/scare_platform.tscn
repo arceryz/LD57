@@ -10,7 +10,7 @@ size = Vector2(146, 32)
 radius = 257.0
 height = 946.0
 
-[node name="PathFollow" type="PathFollow2D"]
+[node name="ScarePlatform" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_swjs1")
 
