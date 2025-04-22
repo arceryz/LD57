@@ -6,8 +6,6 @@ extends Control
 
 const MainMenuP: PackedScene = preload("uid://oxgxc0rq0ps8")
 
-var is_active := false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
@@ -16,6 +14,7 @@ func _ready() -> void:
 	ReturnButton.pressed.connect(_on_return_pressed)
 
 func _on_main_menu_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(MainMenuP)
 
 func _on_return_pressed():
@@ -25,7 +24,7 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 func toggle_active():
-	if is_active:
+	if Root.visible:
 		get_tree().paused = false
 		Root.hide()
 	else:
