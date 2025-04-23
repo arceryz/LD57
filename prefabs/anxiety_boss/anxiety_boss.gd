@@ -92,7 +92,7 @@ func do_death():
 	Anim.play("death")
 	await Anim.animation_finished
 	var orb: LightOrbC = LightOrbP.instantiate()
-	get_tree().root.add_child(orb)
+	get_tree().get_first_node_in_group("level").add_child(orb)
 	orb.global_position = Sprite.global_position
 	orb.scale *= 3.0
 	orb.modulate.a = 0
@@ -101,6 +101,9 @@ func do_death():
 	orb.picked_up.connect(ending.trigger_ending)
 	var tw := orb.create_tween()
 	tw.tween_property(orb, "modulate:a", 1.0, 2.0)
+	tw.parallel().tween_property($Light, "energy", 0, 2.0)
+	tw.tween_callback($BossMusic.queue_free)
+	tw.tween_callback(self.queue_free)
 
 
 func _on_area_body_entered(body: Node2D):
@@ -116,6 +119,5 @@ func _on_area_body_entered(body: Node2D):
 		WaitWallFront.collision_layer = 0
 		state = State.ACTIVE
 		attack_timer.start()
-		
 		pass
 	pass

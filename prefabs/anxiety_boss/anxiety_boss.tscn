@@ -328,7 +328,7 @@ libraries = {
 }
 autoplay = "chilling"
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Light" type="PointLight2D" parent="."]
 position = Vector2(-14.0001, -12.5)
 scale = Vector2(33.9687, 26.6406)
 energy = 3.0
@@ -336,6 +336,7 @@ texture = ExtResource("9_cdf38")
 metadata/_edit_lock_ = true
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = SubResource("AudioStreamInteractive_7kwoe")
 bus = &"Music"
 

@@ -41,21 +41,21 @@ region = Rect2(200, 0, 200, 200)
 atlas = ExtResource("5_klv5p")
 region = Rect2(400, 0, 200, 200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2c4n1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocyg1"]
 atlas = ExtResource("6_iylwk")
-region = Rect2(0, 0, 200, 200)
+region = Rect2(34, 25, 157, 175)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oo3uv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_408ek"]
 atlas = ExtResource("6_iylwk")
-region = Rect2(200, 0, 200, 200)
+region = Rect2(237, 25, 157, 175)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_30gqm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxdrd"]
 atlas = ExtResource("6_iylwk")
-region = Rect2(400, 0, 200, 200)
+region = Rect2(440, 25, 157, 175)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hvqk4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2w56"]
 atlas = ExtResource("6_iylwk")
-region = Rect2(600, 0, 200, 200)
+region = Rect2(643, 25, 157, 175)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2c4n1"]
 animations = [{
@@ -75,16 +75,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2c4n1")
+"texture": SubResource("AtlasTexture_ocyg1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oo3uv")
+"texture": SubResource("AtlasTexture_408ek")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_30gqm")
+"texture": SubResource("AtlasTexture_dxdrd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hvqk4")
+"texture": SubResource("AtlasTexture_a2w56")
 }],
 "loop": true,
 "name": &"walk",
@@ -151,11 +151,11 @@ texture = ExtResource("4_binfn")
 position = Vector2(0, 48)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-12, -27)
+position = Vector2(-4, -16)
 sprite_frames = SubResource("SpriteFrames_2c4n1")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.314158
+frame_progress = 0.916732
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true

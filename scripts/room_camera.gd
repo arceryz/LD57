@@ -5,13 +5,21 @@ var room_center := Vector2.ZERO
 var room_size := Vector2.ZERO
 var offset2 := Vector2.ZERO
 
+var delta_pos := Vector2.ZERO
+var prev_pos := Vector2.ZERO
+
 func _ready() -> void:
 	for el in get_tree().get_nodes_in_group("room"):
 		var room: RoomC = el
 		room.body_entered.connect(_on_room_body_entered.bind(room))
+	prev_pos = get_screen_center_position()
 
 func _process(delta: float) -> void:
 	process_position(delta)
+
+	delta_pos = get_screen_center_position() - prev_pos
+	prev_pos = get_screen_center_position()
+
 
 func _on_room_body_entered(body: Node2D, room: RoomC):
 	if body is PlayerC:

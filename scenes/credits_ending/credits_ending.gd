@@ -9,8 +9,7 @@ func _ready() -> void:
 	hide()
 
 func _on_main_menu_pressed():
-	print("Pressing")
-	get_tree().change_scene_to_file("uid://oxgxc0rq0ps8")
+	get_tree().change_scene_to_file.call_deferred("uid://oxgxc0rq0ps8")
 
 func trigger_ending():
 	Global.ending_triggered = true

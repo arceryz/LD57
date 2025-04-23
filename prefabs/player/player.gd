@@ -52,7 +52,8 @@ func _physics_process(delta: float) -> void:
 	if not Global.player_can_move:
 		return
 	
-	Sprite.flip_h = velocity.x < 0
+	if velocity.x != 0:
+		Sprite.flip_h = velocity.x < 0
 
 	match state:
 		State.GROUND:

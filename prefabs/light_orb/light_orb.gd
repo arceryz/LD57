@@ -26,9 +26,6 @@ var state := State.PICKUP
 var time: float = 0.0
 var target_node: Node2D
 
-var activation_cooldown: float = 0.0
-var activation_timer: SceneTreeTimer
-
 func _ready() -> void:
 	time = randf() * 1000.0
 
@@ -38,16 +35,34 @@ func _process(delta: float) -> void:
 			process_hover(delta)
 
 		State.FLYING:
-			var diff: Vector2 = target_node.global_position - position
-			if diff.length() > APPROACH_DISTANCE:
-				position += diff.normalized() * fly_speed * delta
+			move_to_target(delta)
 		
 		State.ACTIVATION:
 			process_hover(delta)
-			queue_redraw()
+			enforce_screen_position()
 		
 		State.ANCHORED:
 			pass
+
+func enforce_screen_position():
+	var rect := get_viewport_rect()
+	var camera: RoomCamera = get_viewport().get_camera_2d()
+	var campos := camera.get_screen_center_position()
+	rect.position += campos - rect.size / 2.0
+
+	var lightrect := Rect2()
+	var radius := 100.0
+	lightrect.position = global_position - Vector2.ONE * radius
+	lightrect.size = 2 * Vector2.ONE * radius
+
+	if not rect.encloses(lightrect):
+		global_position += camera.delta_pos
+
+func move_to_target(delta: float):
+	var diff: Vector2 = target_node.global_position - position
+	if diff.length() > APPROACH_DISTANCE:
+		position += diff.normalized() * fly_speed * delta
+	pass
 
 func pickup():
 	if Engine.is_editor_hint():return
@@ -67,17 +82,28 @@ func process_hover(delta):
 # After a delay, start flying back to the target.
 func activate(delay: float):
 	state = State.ACTIVATION
+	print("moving")
+	
+	var steps := 2
+	var step_dur := delay / steps
+	var curscale := scale
 
-	activation_timer = get_tree().create_timer(delay)
-	activation_cooldown = delay
-	await activation_timer.timeout
+	var tw := create_tween()
+	tw.set_trans(Tween.TRANS_SINE)
+	tw.set_ease(Tween.EASE_IN_OUT)
 
+	for i in range(steps):
+		tw.tween_property(self, "scale", curscale * 1.0, step_dur / 3.0)
+		tw.parallel().tween_property(self, "modulate:a", 0.1, step_dur / 3.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+
+		tw.tween_property(self, "scale", curscale * 1.3, step_dur / 3.0)
+		tw.parallel().tween_property(self, "modulate:a", 1.0, step_dur / 3.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+		
+		tw.tween_interval(step_dur / 3.0)
+	
+	tw.tween_property(self, "scale", curscale * 1.0, 0)
+	tw.tween_callback(finish_activation)
+
+func finish_activation():
 	state = State.FLYING
-	queue_redraw()
 	finished_activation.emit(self)
-
-# This code is for a progress circle to indicate activation delay.
-#func _draw() -> void:
-#	if is_activated:
-#		var f := activation_timer.time_left / activation_cooldown
-#		draw_arc(Sprite.position, 25.0, 0, TAU - TAU * f, 32, Color.WHITE, 2.0, true)

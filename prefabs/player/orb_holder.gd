@@ -74,6 +74,7 @@ func receive_orb(neworb: LightOrbC):
 		all_collected_orbs.append(neworb)
 		neworb.finished_activation.connect(receive_orb)
 		neworb.pickup()
+		Global.orb_collected.emit()
 
 	neworb.target_node = self
 	neworb.state = LightOrbC.State.ANCHORED

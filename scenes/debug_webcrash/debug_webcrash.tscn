@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0hp45e38fvh7"]
+
+[ext_resource type="Script" uid="uid://dhmof1tsdy5bj" path="res://scenes/debug_webcrash/debug_webcrash.gd" id="1_d4uj5"]
+[ext_resource type="AudioStream" uid="uid://d3dnaaidacrnv" path="res://assets/audio-max/music/Depths_Anxiety_Intro.ogg" id="2_vldvu"]
+[ext_resource type="AudioStream" uid="uid://db1hycqb7f6br" path="res://assets/audio-max/music/Depths_Anxiety_Segment_A.ogg" id="3_8cjjy"]
+[ext_resource type="AudioStream" uid="uid://ckp4limbblci4" path="res://assets/audio-max/music/Depths_Anxiety_Segment_B.ogg" id="4_1sl0y"]
+[ext_resource type="AudioStream" uid="uid://btq746cefdclr" path="res://assets/audio-max/music/Depths_Anxiety_Segment_C.ogg" id="5_ershg"]
+[ext_resource type="AudioStream" uid="uid://dhwsh2ondi1a4" path="res://assets/audio-max/music/Depths_Anxiety_Outro.ogg" id="6_6xwwy"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6p8xu"]
+clip_count = 5
+clip_0/name = &"Depths Anxiety Intro"
+clip_0/stream = ExtResource("2_vldvu")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Depths Anxiety Segment A"
+clip_1/stream = ExtResource("3_8cjjy")
+clip_1/auto_advance = 1
+clip_1/next_clip = 2
+clip_2/name = &"Depths Anxiety Segment B"
+clip_2/stream = ExtResource("4_1sl0y")
+clip_2/auto_advance = 1
+clip_2/next_clip = 3
+clip_3/name = &"Depths Anxiety Segment C"
+clip_3/stream = ExtResource("5_ershg")
+clip_3/auto_advance = 0
+clip_4/name = &"Depths Anxiety Outro"
+clip_4/stream = ExtResource("6_6xwwy")
+clip_4/auto_advance = 0
+_transitions = {
+Vector2i(-1, 4): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 2,
+"to_time": 1
+}
+}
+
+[node name="DebugWebcrash" type="Node2D"]
+script = ExtResource("1_d4uj5")
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamInteractive_6p8xu")
+bus = &"Music"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 131.0
+offset_top = 113.0
+offset_right = 205.0
+offset_bottom = 144.0
+text = "Kill mew"

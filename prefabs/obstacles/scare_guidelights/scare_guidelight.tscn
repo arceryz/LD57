@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq3pa8qpn1hel"]
+
+[ext_resource type="Texture2D" uid="uid://de2qed13jvv4a" path="res://assets/light_shapes/light_defaulttres.tres" id="1_88b75"]
+
+[sub_resource type="Gradient" id="Gradient_u84tr"]
+offsets = PackedFloat32Array(0.202083, 0.975)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_88b75"]
+gradient = SubResource("Gradient_u84tr")
+width = 16
+height = 16
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.487179, 0.504274)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_88b75"]
+offsets = PackedFloat32Array(0, 0.165966, 0.52521, 0.997899)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="ScareGuidelight" type="CPUParticles2D"]
+modulate = Color(0.344076, 0.344076, 0.344075, 1)
+light_mask = 0
+z_index = -1
+scale = Vector2(1.1057, 1.15203)
+amount = 32
+texture = SubResource("GradientTexture2D_88b75")
+lifetime = 2.0
+gravity = Vector2(0, 0)
+color_ramp = SubResource("Gradient_88b75")
+
+[node name="LightDefaulttres" type="Sprite2D" parent="."]
+scale = Vector2(0.394143, 0.365677)
+texture = ExtResource("1_88b75")
