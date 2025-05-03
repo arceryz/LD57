@@ -342,21 +342,21 @@ bus = &"Music"
 
 [node name="Boss_VoiceLayer01" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_h5ags")
-volume_db = 6.0
+volume_db = 2.0
 max_distance = 4096.0
 attenuation = 0.0507659
 bus = &"SFX"
 
 [node name="Boss_VoiceLayer02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_f7lfn")
-volume_db = 6.0
+volume_db = 2.0
 max_distance = 4096.0
 attenuation = 0.108819
 bus = &"SFX"
 
 [node name="Boss_VoiceLayer03" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_33rep")
-volume_db = 6.0
+volume_db = 2.0
 max_distance = 4096.0
 attenuation = 0.0883885
 bus = &"SFX"
